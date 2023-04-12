@@ -6,7 +6,7 @@
   font-family: 'Quicksand', sans-serif;
 }
 body {
-  background-color: #f7f7f7;
+  background-color: #264E86;
 }
 .header {
   display: flex;
@@ -28,6 +28,13 @@ body {
   color: black;
   font-size: 19px;
   font-weight: 700;
+  transition: 0.3s;
+}
+.header a:hover {
+  font-weight: 700;
+  color:#EE6C4D;
+  cursor: pointer;
+  font-size: 20px;
 }
 .header img {
   max-width: 250px;
@@ -35,4 +42,14 @@ body {
 .headerSide2 {
   display: flex;
   gap: 20px;
+}
+.headerSide2:nth-of-type(3) {
+  display: flex;
+  align-items: center;
+}
+.headerSide2:nth-of-type(3) a:first-child {
+  border-radius: 30px;
+  background-color: #d53200;
+  padding: 7px 21px;
+  color: white
 }
