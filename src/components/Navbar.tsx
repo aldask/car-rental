@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Logo from "../images/logo.png";
-
 
 function Navbar() {
   return (

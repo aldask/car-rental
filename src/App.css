@@ -21,7 +21,7 @@ body {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.212);
   margin: 0 auto;
   gap: 20px;
-  background-color: #E2ECFD;
+  background-color: #EFF0F4;
 }
 .header a {
   text-decoration: none;
@@ -30,7 +30,7 @@ body {
   font-weight: 700;
 }
 .header img {
-  max-width: 200px;
+  max-width: 250px;
 }
 .headerSide2 {
   display: flex;
