@@ -5,16 +5,16 @@ function Navbar() {
     <>
       <div className="header">
         <section className="headerSide1">
-          <a href="aa"><img src={Logo} alt="logo"></img></a>
+          <a href="#"><img src={Logo} alt="logo"></img></a>
         </section>
         <section className="headerSide2">
-          <a href="aa">About</a>
-          <a href="aa">Vehicles</a>
-          <a href="aa">Our Team</a>
+          <a href="#">About</a>
+          <a href="#">Vehicles</a>
+          <a href="#">Our Team</a>
         </section>
         <section className="headerSide2">
-          <a href="aa">Sign Up</a>
-          <a href="aa">Log In</a>
+          <a href="#">Log In</a>
+          <a href="#">Sign Up</a>
         </section>
       </div>
     </>
