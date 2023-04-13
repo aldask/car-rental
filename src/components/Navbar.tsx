@@ -11,10 +11,7 @@ function Navbar() {
           <a href="#">About</a>
           <a href="#">Vehicles</a>
           <a href="#">Our Team</a>
-        </section>
-        <section className="headerSide2">
-          <a href="#">Log In</a>
-          <a href="#">Sign Up</a>
+          <a href="#">Customer Area</a>
         </section>
       </div>
     </>

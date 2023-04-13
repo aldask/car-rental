@@ -9,6 +9,7 @@
 }
 body {
   margin: 140px 250px;
+  background-color: rgb(231, 231, 231);
 }
 .header {
   display: flex;
@@ -27,14 +28,11 @@ body {
   text-decoration: none;
   color: black;
   font-size: 19px;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .header a:hover {
-  font-weight: 500;
-  color: #f5430c;
+  color: rgb(0, 85, 241);
   cursor: pointer;
-  font-size: 20px;
-  box-shadow: 5px 0 80px rgba(0, 0, 0, 0.212);
 }
 .header img {
   max-width: 200px;
@@ -42,17 +40,18 @@ body {
 .header .headerSide2 {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
-.header .headerSide2:last-child a:first-child {
+.header .headerSide2:last-child a:last-child {
   border-radius: 30px;
-  background: #f5430c;
+  background: rgb(59, 111, 207);
   padding: 7px 21px;
   color: white;
 }
 
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   margin-bottom: 1rem;
 }
 .bold {
@@ -60,9 +59,6 @@ h1 {
 }
 .blue {
   color: rgb(59, 111, 207);
-}
-p {
-  font-size: 1.35rem;
 }
 
 
@@ -80,6 +76,16 @@ p {
   align-items: flex-start;
   color: black;
 }
+
+.heroSide1 h1 {
+  margin-bottom: 10px;
+}
+p {
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0.2px;
+  width: 80%;
+}
 .heroSide2 {
   width: 50%;
   display: flex;
@@ -89,4 +95,20 @@ p {
 }
 .heroSide2 img {
   width: 1200px;;
+}
+.tripPlan {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 11px;
+  border-radius: 5px;
+  background-color: rgb(59, 111, 207);
+  border-style: none;
+  color: white;
+  box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
+  transition: 0.1s;
+}
+.tripPlan:hover {
+  box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
+  cursor: pointer;
 }
