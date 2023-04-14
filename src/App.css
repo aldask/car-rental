@@ -1,3 +1,6 @@
+/* css */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -6,11 +9,15 @@
   padding: 0;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 body {
   margin: 140px 250px;
   background-color: rgb(231, 231, 231);
 }
+
+/* Header section */
+
 .header {
   display: flex;
   justify-content: space-evenly;
@@ -61,12 +68,14 @@ h1 {
   color: rgb(59, 111, 207);
 }
 
+/* Hero section */
 
 .heroSection {
   display: flex;
   justify-content: center;
   align-items: center;
   inline-size: 150;
+  margin-bottom: 150px;
 }
 .heroSide1 {
   width: 50%;
@@ -78,7 +87,7 @@ h1 {
 }
 
 .heroSide1 h1 {
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }
 p {
   font-size: 18px;
@@ -106,9 +115,82 @@ p {
   border-style: none;
   color: white;
   box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
-  transition: 0.1s;
+  transition: 0.3s;
+  margin-top: 65px;
 }
 .tripPlan:hover {
+  box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
+  cursor: pointer;
+}
+
+/* Car booking section */
+.bookingTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2.7rem;
+}
+
+.booking-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  background-color: white;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
+  margin-bottom: 120px;
+  padding: 28px;
+  background-image: url("./images/bookingBC.png");
+  background-size: cover;
+}
+.booking-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-content: flex-start;
+  width: 100%;
+}
+.selectionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.selectionBox label {
+  margin-bottom: 8px;
+}
+.selectionBox input,
+.selectionBox select,
+.selectionBox button {
+  height: 2.1rem;
+  width: 80%;
+}
+.selectionBox label {
+  font-size: 16px;
+  font-weight: 700;
+}
+.selectionBox input,
+.selection {
+  padding: 18px;
+}
+.selectionBox label:last-of-type {
+  display: hidden;
+}
+.red {
+  color: red;
+  font-weight: 700;
+}
+.confirmBooking {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgb(59, 111, 207);
+  border-style: none;
+  color: white;
+  box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
+  transition: 0.3s;
+}
+.confirmBooking:hover {
   box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
   cursor: pointer;
 }
