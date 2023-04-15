@@ -129,24 +129,22 @@ p {
   font-weight: 700;
   margin-bottom: 2.7rem;
 }
-
 .booking-Container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   flex-wrap: wrap;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
   margin-bottom: 120px;
-  padding: 28px;
+  padding: 25px;
   background-image: url("./images/bookingBC.png");
   background-size: cover;
 }
 .booking-box {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template: repeat(2, auto) / repeat(3, 1fr);
   justify-content: flex-start;
   width: 100%;
 }
@@ -155,26 +153,27 @@ p {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 10px;
+  padding: 10px;
 }
 .selectionBox label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.selectionBox label:not(:last-of-type) {
   margin-bottom: 8px;
 }
 .selectionBox input,
 .selectionBox select,
 .selectionBox button {
-  height: 2.1rem;
   width: 80%;
-}
-.selectionBox label {
-  font-size: 16px;
-  font-weight: 700;
+  padding: 10px;
 }
 .selectionBox input,
-.selection {
-  padding: 18px;
-}
-.selectionBox label:last-of-type {
-  display: hidden;
+.selectionBox select {
+  border: 1px solid #ccd7e6
 }
 .red {
   color: red;
@@ -194,3 +193,4 @@ p {
   box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
   cursor: pointer;
 }
+/* Car booking section */
