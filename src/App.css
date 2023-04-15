@@ -1,3 +1,6 @@
+/* css */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -6,10 +9,15 @@
   padding: 0;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 body {
   margin: 140px 250px;
+  background-color: rgb(231, 231, 231);
 }
+
+/* Header section */
+
 .header {
   display: flex;
   justify-content: space-evenly;
@@ -27,14 +35,11 @@ body {
   text-decoration: none;
   color: black;
   font-size: 19px;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .header a:hover {
-  font-weight: 500;
-  color: #f5430c;
+  color: rgb(0, 85, 241);
   cursor: pointer;
-  font-size: 20px;
-  box-shadow: 5px 0 80px rgba(0, 0, 0, 0.212);
 }
 .header img {
   max-width: 200px;
@@ -42,17 +47,18 @@ body {
 .header .headerSide2 {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
-.header .headerSide2:last-child a:first-child {
+.header .headerSide2:last-child a:last-child {
   border-radius: 30px;
-  background: #f5430c;
+  background: rgb(59, 111, 207);
   padding: 7px 21px;
   color: white;
 }
 
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   margin-bottom: 1rem;
 }
 .bold {
@@ -61,16 +67,15 @@ h1 {
 .blue {
   color: rgb(59, 111, 207);
 }
-p {
-  font-size: 1.35rem;
-}
 
+/* Hero section */
 
 .heroSection {
   display: flex;
   justify-content: center;
   align-items: center;
   inline-size: 150;
+  margin-bottom: 150px;
 }
 .heroSide1 {
   width: 50%;
@@ -79,6 +84,16 @@ p {
   justify-content: center;
   align-items: flex-start;
   color: black;
+}
+
+.heroSide1 h1 {
+  margin-bottom: 24px;
+}
+p {
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0.2px;
+  width: 80%;
 }
 .heroSide2 {
   width: 50%;
@@ -90,3 +105,92 @@ p {
 .heroSide2 img {
   width: 1200px;;
 }
+.tripPlan {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 11px;
+  border-radius: 5px;
+  background-color: rgb(59, 111, 207);
+  border-style: none;
+  color: white;
+  box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
+  transition: 0.3s;
+  margin-top: 65px;
+}
+.tripPlan:hover {
+  box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
+  cursor: pointer;
+}
+
+/* Car booking section */
+.bookingTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2.7rem;
+}
+.booking-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  background-color: rgb(240, 240, 240);
+  flex-wrap: wrap;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
+  margin-bottom: 120px;
+  padding: 25px;
+  background-image: url("./images/bookingBC.png");
+  background-size: cover;
+}
+.booking-box {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(3, 1fr);
+  justify-content: flex-start;
+  width: 100%;
+}
+.selectionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.selectionBox label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.selectionBox label:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+.selectionBox input,
+.selectionBox select,
+.selectionBox button {
+  width: 80%;
+  padding: 10px;
+}
+.selectionBox input,
+.selectionBox select {
+  border: 1px solid #ccd7e6
+}
+.red {
+  color: red;
+  font-weight: 700;
+}
+.confirmBooking {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgb(59, 111, 207);
+  border-style: none;
+  color: white;
+  box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
+  transition: 0.3s;
+}
+.confirmBooking:hover {
+  box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
+  cursor: pointer;
+}
+/* Car booking section */
