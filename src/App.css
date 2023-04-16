@@ -16,6 +16,34 @@ body {
   background-color: rgb(231, 231, 231);
 }
 
+/* Universal */
+h1 {
+  font-size: 3.8rem;
+  margin-bottom: 1rem;
+}
+.bold {
+  font-weight: 700;
+}
+.blue {
+  color: rgb(59, 111, 207);
+}
+p {
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0.2px;
+  width: 80%;
+}
+.red {
+  color: red;
+  font-weight: 700;
+}
+.strong {
+  font-weight: 700;
+}
+.lessStrong {
+  font-weight: 600;
+}
+
 /* Header section */
 
 .header {
@@ -56,18 +84,6 @@ body {
   color: white;
 }
 
-
-h1 {
-  font-size: 3.8rem;
-  margin-bottom: 1rem;
-}
-.bold {
-  font-weight: 700;
-}
-.blue {
-  color: rgb(59, 111, 207);
-}
-
 /* Hero section */
 
 .heroSection {
@@ -88,12 +104,6 @@ h1 {
 
 .heroSide1 h1 {
   margin-bottom: 24px;
-}
-p {
-  font-size: 18px;
-  line-height: 29px;
-  letter-spacing: 0.2px;
-  width: 80%;
 }
 .heroSide2 {
   width: 50%;
@@ -175,10 +185,6 @@ p {
 .selectionBox select {
   border: 1px solid #ccd7e6
 }
-.red {
-  color: red;
-  font-weight: 700;
-}
 .confirmBooking {
   font-size: 20px;
   font-weight: 700;
@@ -193,4 +199,96 @@ p {
   box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
   cursor: pointer;
 }
+
 /* Car booking section */
+
+.fleetContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.containerTexts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8rem;
+  text-align: center;
+}
+.containerTexts h1 {
+  margin-bottom: 2.1rem;
+}
+.carSelections {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+.carsSelect {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+.carsSelect button {
+  font-size: 21px;
+  text-align: left;
+  padding: 1.5rem 2.5rem;
+  font-weight: 600;
+  background-color: #f3f3f3;
+  color: #000;
+  border: none;
+  margin: 0.2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  cursor: pointer;
+  max-height: 100%;
+}
+.carsSelect button:hover {
+  background-color: #3b6fcf;
+  box-shadow: 0 10px 20px 0 rgba(59, 111, 207, 0.1);
+  color: #fff;
+}
+.carPic {
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+.carPic img {
+  display: block;
+  max-width: 100%;
+}
+.carDetails {
+  display: grid;
+  font-size: 1.1rem;
+  max-height: 100%;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 5px;
+}
+.label {
+  font-weight: bold;
+}
+.value {
+  text-align: center;
+}
+.reserveButton {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgb(59, 111, 207);
+  border-style: none;
+  color: white;
+  transition: 0.3s;
+}
+.reserveButton:hover {
+  box-shadow: 0px 0px 4px 3px rgba(59, 111, 207, 0.39);
+  cursor: pointer;
+}
+.price {
+  text-align: center;
+  font-size: 21px;
+}
