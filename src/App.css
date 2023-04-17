@@ -124,7 +124,6 @@ p {
   background-color: rgb(59, 111, 207);
   border-style: none;
   color: white;
-  box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
   transition: 0.3s;
   margin-top: 65px;
 }
@@ -291,4 +290,69 @@ p {
 .price {
   text-align: center;
   font-size: 21px;
+}
+
+/* Banner section */
+
+.bannerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  width: 100%;
+}
+
+.whyChoose {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  gap: 20px;
+}
+
+.boxSide1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+.boxSide2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+.insideBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px;
+  gap: 2rem;
+}
+
+.insideBoxInside {
+  display: flex;
+  flex-direction: column;
+}
+
+.insideBoxInside p {
+  color: #706f7b;
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+}
+
+.icons {
+  font-size: 100px;
+  color: rgb(59, 111, 207);
+  width: 50px;
 }
