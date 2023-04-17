@@ -31,7 +31,6 @@ p {
   font-size: 18px;
   line-height: 29px;
   letter-spacing: 0.2px;
-  width: 80%;
 }
 .red {
   color: red;
@@ -302,7 +301,6 @@ p {
   margin-top: 8rem;
   width: 100%;
 }
-
 .whyChoose {
   display: flex;
   flex-direction: row;
@@ -311,19 +309,16 @@ p {
   width: 90%;
   gap: 20px;
 }
-
 .boxSide1 {
   display: flex;
   flex-direction: column;
   width: 50%
 }
-
 .boxSide2 {
   display: flex;
   flex-direction: column;
   width: 50%
 }
-
 .insideBox {
   display: flex;
   flex-direction: row;
@@ -332,27 +327,69 @@ p {
   margin: 10px;
   gap: 2rem;
 }
-
 .insideBoxInside {
   display: flex;
   flex-direction: column;
 }
-
 .insideBoxInside p {
   color: #706f7b;
   font-family: Rubik, sans-serif;
   font-size: 16px;
   line-height: 1.3;
 }
-
 h2 {
   font-size: 40px;
   margin-bottom: 1.4rem;
   font-weight: 600;
 }
-
 .icons {
   font-size: 100px;
   color: rgb(59, 111, 207);
   width: 50px;
+}
+
+/* Reviews */
+
+.reviewsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 150px;
+}
+.reviewsTitle {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 9rem;
+}
+.reviewsTitle  {
+  text-align: center;
+  width: 75%;
+}
+.reviewsBoxes {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  padding: 3rem;
+  width: 100%;
+}
+.userBox {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+  padding: 40px;
+}
+.userBox p {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.reviewerCredentials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

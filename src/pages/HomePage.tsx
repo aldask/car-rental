@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import Booking from "../components/Booking";
 import RentalFleet from "../components/RentalFleet";
 import Banner from "../components/Banner";
+import Reviews from "../components/Reviews";
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
       <Booking />
       <RentalFleet />
       <Banner />
+      <Reviews />
     </>
   );
 }
