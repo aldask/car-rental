@@ -1,4 +1,3 @@
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar, faEuroSign, faBan } from '@fortawesome/free-solid-svg-icons';
 import bannerPic from '../images/bannerPic.png'

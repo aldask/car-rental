@@ -411,16 +411,26 @@ display: flex;
   display: flex;
   flex-direction: column;
   width: 60%;
-  background-color: red;
   text-align: center;
 }
-.questionBox p {
+.question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   cursor: pointer;
+  align-items: center;
   width: 100%;
+  background-color: white;
+  padding: 10px 35px;
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
 }
 .answer {
   cursor: none;
+  text-align: left;
+  background-color: white;
+  padding: 10px 35px;
   display: none;
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
 }
 .down {
   text-align: right;
