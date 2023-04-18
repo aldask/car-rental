@@ -18,23 +18,26 @@ body {
 
 /* Universal */
 h1 {
-  font-size: 3.8rem;
-  margin-bottom: 1rem;
+  font-size: 61px;
+  margin-bottom: 30px;
 }
-.bold {
-  font-weight: 700;
+h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 .blue {
   color: rgb(59, 111, 207);
 }
 p {
-  font-size: 18px;
-  line-height: 29px;
-  letter-spacing: 0.2px;
+  font-size: 17px;
+  line-height: 30px;
+  color: #636366;
 }
 .red {
   color: red;
   font-weight: 700;
+  font-size: 21px;
 }
 .strong {
   font-weight: 700;
@@ -85,24 +88,23 @@ p {
 
 /* Hero section */
 
-.heroSection {
+.heroContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 150;
+  width: 100%;
   margin-bottom: 150px;
 }
 .heroSide1 {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   color: black;
 }
-
-.heroSide1 h1 {
-  margin-bottom: 24px;
+.heroSide1 p {
+  margin-bottom: 60px;
 }
 .heroSide2 {
   width: 50%;
@@ -115,29 +117,23 @@ p {
   width: 1200px;;
 }
 .tripPlan {
-  margin-top: 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  padding: 11px;
+  padding: 14px;
   border-radius: 5px;
   background-color: rgb(59, 111, 207);
   border-style: none;
   color: white;
   transition: 0.3s;
-  margin-top: 65px;
 }
 .tripPlan:hover {
-  box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
+  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
   cursor: pointer;
 }
 
 /* Car booking section */
-.bookingTitle {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 2.7rem;
-}
-.booking-Container {
+
+.bookingContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,19 +145,23 @@ p {
   padding: 25px;
   background-image: url("./images/bookingBC.png");
   background-size: cover;
+  width: 100%;
+  margin-bottom: 150px;
 }
 .booking-box {
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, 1fr);
+  grid-gap: 15px;
   justify-content: flex-start;
-  width: 100%;
+  align-items: center;
 }
 .selectionBox {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 10px;
+  align-self: flex-end;
 }
 .selectionBox label {
   font-size: 16px;
@@ -176,25 +176,30 @@ p {
 .selectionBox input,
 .selectionBox select,
 .selectionBox button {
-  width: 80%;
+  width: 100%;
   padding: 10px;
+  box-sizing: border-box;
 }
 .selectionBox input,
 .selectionBox select {
   border: 1px solid #ccd7e6
 }
+.selectionBox label {
+display: flex;
+  align-items: center;
+}
 .confirmBooking {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 14px;
   border-radius: 5px;
   background-color: rgb(59, 111, 207);
   border-style: none;
   color: white;
-  box-shadow: 0px 0px 4px 0.5px rgb(59, 111, 207);
   transition: 0.3s;
 }
 .confirmBooking:hover {
-  box-shadow: 0px 0px 4px 3px rgb(59, 111, 207);
+  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
   cursor: pointer;
 }
 
@@ -205,14 +210,17 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  margin-bottom: 150px;
 }
 .containerTexts {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 8rem;
   text-align: center;
+  margin-bottom: 50px;
+}
+.containerTexts p {
+  width: 60%;
 }
 .containerTexts h1 {
   margin-bottom: 2.1rem;
@@ -248,7 +256,7 @@ p {
   color: #fff;
 }
 .carPic {
-  margin: 0 1rem;
+  margin: 0 10px;
   display: flex;
   align-items: center;
 }
@@ -258,7 +266,7 @@ p {
 }
 .carDetails {
   display: grid;
-  font-size: 1.1rem;
+  font-size: 16px;
   max-height: 100%;
 }
 .row {
@@ -300,6 +308,7 @@ p {
   justify-content: center;
   margin-top: 8rem;
   width: 100%;
+  margin-bottom: 150px;
 }
 .whyChoose {
   display: flex;
@@ -307,7 +316,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  gap: 20px;
+  gap: 50px;
 }
 .boxSide1 {
   display: flex;
@@ -331,21 +340,10 @@ p {
   display: flex;
   flex-direction: column;
 }
-.insideBoxInside p {
-  color: #706f7b;
-  font-family: Rubik, sans-serif;
-  font-size: 16px;
-  line-height: 1.3;
-}
-h2 {
-  font-size: 40px;
-  margin-bottom: 1.4rem;
-  font-weight: 600;
-}
 .icons {
   font-size: 100px;
   color: rgb(59, 111, 207);
-  width: 50px;
+  width: 75px;
 }
 
 /* Reviews */
@@ -356,12 +354,12 @@ h2 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 150px;
+  margin-bottom: 150px;
 }
 .reviewsTitle {
   text-align: center;
   width: 100%;
-  margin-bottom: 9rem;
+  margin-bottom: 50px;
 }
 .reviewsTitle  {
   text-align: center;
@@ -372,7 +370,7 @@ h2 {
   gap: 3rem;
   justify-content: center;
   padding: 3rem;
-  width: 100%;
+  width: 90%;
 }
 .userBox {
   display: flex;
@@ -382,7 +380,7 @@ h2 {
   padding: 40px;
 }
 .userBox p {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 500;
   text-align: left;
   margin-bottom: 10px;
@@ -392,4 +390,38 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Reviews */
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 150px;
+}
+.faqTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.questionBox {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: red;
+  text-align: center;
+}
+.questionBox p {
+  cursor: pointer;
+  width: 100%;
+}
+.answer {
+  cursor: none;
+  display: none;
+}
+.down {
+  text-align: right;
 }
