@@ -1,10 +1,9 @@
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Booking() {
   return (
   <>
-    <section className="booking-Container">
-        <h1 className="bookingTitle">Book a Car</h1>
+    <section className="bookingContainer">
+        <h2 className="bookingTitle">Book a Car</h2>
         <div className="booking-box">
           <div className="selectionBox">
             <label>Car Model <span className="red">*</span></label>
@@ -45,7 +44,6 @@ function Booking() {
             <input type="date"></input>
           </div>
           <div className="selectionBox">
-            <label>random shit</label>
             <button className="confirmBooking">Confirm</button>
           </div>
         </div>
