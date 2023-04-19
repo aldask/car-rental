@@ -401,11 +401,15 @@ display: flex;
   width: 100%;
   margin-bottom: 150px;
 }
+.faqTitle p {
+  width: 70%;
+  text-align: center;
+}
 .faqTitle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .questionBox {
   display: flex;
@@ -423,6 +427,10 @@ display: flex;
   background-color: white;
   padding: 10px 35px;
   box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+}
+.question p {
+  color: black;
+  font-weight: 500;
 }
 .answer {
   cursor: none;
