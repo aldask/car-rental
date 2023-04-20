@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import bmw3series from '../images/bmw3series.png'
 
 const carMakes = [
-  { value: 'audia3', label: 'Audi A3', },
+  { value: 'audia3', label: 'Audi A3', img: bmw3series },
   { value: 'bmw3', label: 'BMW 3 Series' },
   { value: 'mercedes', label: 'Mercedes-Benz C-Class' },
   { value: 'vw', label: 'VW Golf GTI' },
@@ -22,9 +23,11 @@ function Booking() {
   const [dropOffCity, setDropOffCity] = useState("");
   const [pickDate, setPickDate] = useState("");
   const [dropDate, setDropDate] = useState("");
+  const [carImg, setCarImg] = useState("");
 
   const handleCar = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCarModel(e.target.value);
+    setCarImg(e.target.value)
   };
   const handlePickCity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPickUpCity(e.target.value);
@@ -37,6 +40,15 @@ function Booking() {
   }
   const handleDropDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDropDate(e.target.value);
+  }
+
+  let imgUrl;
+  switch (carImg) {
+    case "BMW 3 Series":
+      imgUrl = bmw3series;
+      break;
+    default:
+      imgUrl = "";
   }
 
   //Show error if one of fields not selected
@@ -65,25 +77,29 @@ function Booking() {
   return (
   <>
     <section className="booking">
-      <div className='confirmBox'>
+      
+      <section className='confirmBox'>
         <div className='upperBar'>
           <h3>Complete reservation</h3>
           <p>X</p>
         </div>
-        <div className='mainConfirmBox'>
-          <div className='baseInfo'>
-            <FontAwesomeIcon icon={faCircleInfo} />
-            <p>Your reservation is almost done!</p>
-          </div>
-          <div className='aa'>
-            <div className='detailedInfo'>
-              <h6>Pick-Up Date & Time</h6>
+        <div className='mainConfirmBoxCotainer'>
+          <div className='side1'>
+            <h4>Location & Date</h4>
+            <div className='selectedInfoTitle'>
+              <FontAwesomeIcon icon={faLocationDot} />
+              <h4>Pick-Up Date & Time</h4>
+            </div>
+            <div className='result'>
               <p>{pickDate} /{" "}
-                    <input type="time" className="input-time"></input></p>
+                <input type="time" className="input-time"></input></p>
             </div>
           </div>
+          <div className='selectedCar'>
+              <img src={imgUrl} alt='selected-car'></img>
+          </div>
         </div>
-      </div>
+      </section>
       <div className='container'>
         <div className='carsBookingBox'>
           <h2 className="bookingTitle">Book a Car</h2>

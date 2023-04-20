@@ -143,85 +143,6 @@ p {
   position: relative;
   justify-items: center;
 }
-.confirmBox {
-  position: fixed;
-  display: none;
-  flex-direction: column;
-  z-index: 5;
-  background-color: #fff;
-  color: #010103;
-  height: 100vh;
-  left: 50%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  top: 60%;
-  transform: translate(-50%,-50%);
-  width: 80rem;
-  width: 100%;
-}
-.upperBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: rgb(59, 111, 207);
-  color: white;
-  font-weight: 600;
-  padding: 2rem 3rem;
-}
-.mainConfirmBox {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 3rem;
-
-}
-.baseInfo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-  padding: 2rem 3rem;
-  font-size: 60px;
-}
-.baseInfo p {
-  font-size: 28px;
-}
-.upperBar p {
-  color: white;
-  font-weight: 600;
-  font-size: 30px;
-}
-.carsBookingBox {
-  margin-bottom: 20px;
-  background-color: rgb(240, 240, 240);
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
-  padding: 25px;
-  background-image: url("./images/bookingBC.png");
-  background-size: cover;
-}
-.success {
-  display: none;
-  background-color: #c3fabe;
-  border: 1px solid transparent;
-  border-radius: 11px;
-  color: #2a6817;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  margin-top: -16px;
-  padding: 11px 22px;
-}
-.fail {
-  display: none;
-  background-color: #f8d7da;
-  border: 1px solid transparent;
-  border-radius: 11px;
-  color: #721c24;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  margin-top: -16px;
-  padding: 11px 22px;
-}
 .bookingBox {
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, 1fr);
@@ -258,7 +179,7 @@ p {
   border: 1px solid #ccd7e6
 }
 .selectionBox label {
-display: flex;
+  display: flex;
   align-items: center;
 }
 .confirmBooking {
@@ -275,6 +196,93 @@ display: flex;
   box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
   cursor: pointer;
 }
+
+/* Confirmation box */
+
+.success {
+  display: none;
+  background-color: #c3fabe;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #2a6817;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  padding: 11px 22px;
+}
+.fail {
+  display: none;
+  background-color: #f8d7da;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #721c24;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  padding: 11px 22px;
+}
+.confirmBox {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  z-index: 5;
+  background-color: #fff;
+  color: #010103;
+  height: 100vh;
+  left: 50%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 64%;
+  transform: translate(-50%,-50%);
+  width: 80rem;
+}
+.upperBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(59, 111, 207);
+  color: white;
+  padding: 2rem 3rem;
+}
+.mainConfirmBoxCotainer {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 3rem;
+  background-color: #c3fabe;
+  justify-content: space-between;
+}
+.side1 {
+  display: flex;
+  flex-direction: column;
+}
+.selectedInfoTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 33px;
+  gap: 10px;
+}
+.result {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6px;
+}
+
+
+
+
+
+.carsBookingBox {
+  margin-bottom: 20px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
+  padding: 25px;
+  background-image: url("./images/bookingBC.png");
+  background-size: cover;
+}
+
 
 /*.booking {
   display: flex;
