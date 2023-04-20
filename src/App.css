@@ -97,7 +97,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 150px;
   background-image: url('./images/heroBack.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -141,8 +140,55 @@ p {
 .booking {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
+  justify-items: center;
+}
+.confirmBox {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  z-index: 5;
+  background-color: #fff;
+  color: #010103;
+  height: 100vh;
+  left: 50%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 60%;
+  transform: translate(-50%,-50%);
+  width: 80rem;
+  width: 100%;
+}
+.upperBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(59, 111, 207);
+  color: white;
+  font-weight: 600;
+  padding: 2rem 3rem;
+}
+.mainConfirmBox {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+
+}
+.baseInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 2rem 3rem;
+  font-size: 60px;
+}
+.baseInfo p {
+  font-size: 28px;
+}
+.upperBar p {
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
 }
 .carsBookingBox {
   margin-bottom: 20px;
@@ -151,6 +197,30 @@ p {
   padding: 25px;
   background-image: url("./images/bookingBC.png");
   background-size: cover;
+}
+.success {
+  display: none;
+  background-color: #c3fabe;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #2a6817;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  padding: 11px 22px;
+}
+.fail {
+  display: none;
+  background-color: #f8d7da;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #721c24;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  padding: 11px 22px;
 }
 .bookingBox {
   display: grid;
