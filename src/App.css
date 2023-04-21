@@ -250,29 +250,38 @@ p {
   display: flex;
   flex-direction: row;
   padding: 2rem 3rem;
-  background-color: #c3fabe;
-  justify-content: space-between;
+  background-color: #49ca3d;
+  justify-content: space-evenly;
 }
 .side1 {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
-.selectedInfoTitle {
+.infoBox {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 33px;
   gap: 10px;
 }
+.choice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/*
 .result {
   display: flex;
   flex-direction: row;
   margin-top: 6px;
 }
-
-
-
-
+.selectedCar img {
+  width: 50%;
+}
 
 .carsBookingBox {
   margin-bottom: 20px;

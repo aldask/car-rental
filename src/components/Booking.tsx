@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import bmw3series from '../images/bmw3series.png'
 import vw from '../images/bmw3series.png'
@@ -106,20 +106,62 @@ function Booking() {
         <div className='mainConfirmBoxCotainer'>
           <div className='side1'>
             <h4>Location & Date</h4>
-            <div className='selectedInfoTitle'>
-              <FontAwesomeIcon icon={faLocationDot} />
-              <h4>Pick-Up Date & Time</h4>
-            </div>
-            <div className='result'>
-              <p>{pickDate} /{" "}
-                <input type="time" className="input-time"></input></p>
+            <div className='infoBox'>
+              <div className='choice'>
+                <FontAwesomeIcon icon={faCalendarDays} />
+                <div className='result'>
+                  <div className='resultTitle'>
+                    <p>Pick-Up Date & Time</p>
+                  </div>
+                  <div className='resultData'>
+                    <p>{pickDate} /{" "}
+                    <input type="time" className="input-time"></input></p>
+                  </div>
+                </div>
+              </div>
+              <div className='choice'>
+                <FontAwesomeIcon icon={faCalendarDays} />
+                <div className='result'>
+                  <div className='resultTitle'>
+                    <p>Drop-Off Date & Time</p>
+                  </div>
+                  <div className='resultData'>
+                    <p>{dropDate} /{" "}
+                    <input type="time" className="input-time"></input></p>
+                  </div>
+                </div>
+              </div>
+              <div className='choice'>
+                <FontAwesomeIcon icon={faLocationDot} />
+                <div className='result'>
+                  <div className='resultTitle'>
+                    <p>Pick-Up Location</p>
+                  </div>
+                  <div className='resultData'>
+                    <p>{pickUpCity}</p>
+                  </div>
+                </div>
+              </div>
+              <div className='choice'>
+                <FontAwesomeIcon icon={faLocationDot} />
+                <div className='result'>
+                  <div className='resultTitle'>
+                    <p>Drop-Off Location</p>
+                  </div>
+                  <div className='resultData'>
+                    <p>{dropOffCity}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className='selectedCar'>
-              <img src={img} alt='selected-car'></img>
+            TEST2
+            <img src={img} alt='selected-car'></img>
           </div>
         </div>
       </section>
+
       <div className='container'>
         <div className='carsBookingBox'>
           <h2 className="bookingTitle">Book a Car</h2>
