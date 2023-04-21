@@ -2,19 +2,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import bmw3series from '../images/bmw3series.png'
+import vw from '../images/bmw3series.png'
+import a from '../images/bmw3series.png'
+import c from '../images/bmw3series.png'
 
-const carMakes = [
-  { value: 'audia3', label: 'Audi A3', img: bmw3series },
-  { value: 'bmw3', label: 'BMW 3 Series' },
-  { value: 'mercedes', label: 'Mercedes-Benz C-Class' },
-  { value: 'vw', label: 'VW Golf GTI' },
+interface Car {
+  value: string;
+  label: string;
+  img: string;
+};
+const cars: Car[] = [
+  { value: 'audia3', label: 'Audi A3', img: 'bmw3series' },
+  { value: 'bmw3', label: 'BMW 3 Series', img: 'vw' },
+  { value: 'mercedes', label: 'Mercedes-Benz C-Class', img: 'a' },
+  { value: 'vw', label: 'VW Golf GTI', img: 'c' },
 ];
+
+interface City {
+  value: string;
+  label: string;
+};
 const cities = [
-  { value: 'vilnius', label: 'Vilnius', },
+  { value: 'vilnius', label: 'Vilnius' },
   { value: 'kaunas', label: 'Kaunas' },
   { value: 'riga', label: 'Riga' },
   { value: 'warsaw', label: 'Warsaw' },
-];
+]
+
 
 function Booking() {
 
@@ -42,14 +56,20 @@ function Booking() {
     setDropDate(e.target.value);
   }
 
-  let imgUrl;
-  switch (carImg) {
-    case "BMW 3 Series":
-      imgUrl = bmw3series;
-      break;
-    default:
-      imgUrl = "";
-  }
+  let img = carImg;
+
+  cars.forEach((car) => {
+    switch(car.value) {
+      case 'audia3':
+        img = bmw3series;
+        break;
+      case 'bmw3':
+        img = bmw3series;
+        break;
+      default:
+        break;
+    }
+  });
 
   //Show error if one of fields not selected
 
@@ -96,7 +116,7 @@ function Booking() {
             </div>
           </div>
           <div className='selectedCar'>
-              <img src={imgUrl} alt='selected-car'></img>
+              <img src={img} alt='selected-car'></img>
           </div>
         </div>
       </section>
@@ -110,7 +130,7 @@ function Booking() {
               <label>Car Model <span className="red">*</span></label>
               <select value={carModel} onChange={handleCar}>
                 <option>Select car model</option>
-                {carMakes.map((car) => (
+                {cars.map((car) => (
                 <option key={car.value} value={car.value}>
                   {car.label}</option>
                   ))}
