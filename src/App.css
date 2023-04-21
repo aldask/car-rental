@@ -13,6 +13,7 @@ html {
 body {
   position: relative;
   background-color: rgb(231, 231, 231);
+  overflow: auto;
 }
 .container {
   margin: 0 133px!important;
@@ -28,6 +29,13 @@ h1 {
 h2 {
   font-size: 30px;
   margin-bottom: 25px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 30px;
   font-weight: 600;
 }
 .blue {
@@ -143,6 +151,14 @@ p {
   position: relative;
   justify-items: center;
 }
+.carsBookingBox {
+  margin-bottom: 20px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
+  padding: 25px;
+  background-image: url("./images/bookingBC.png");
+  background-size: cover;
+}
 .bookingBox {
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, 1fr);
@@ -223,17 +239,18 @@ p {
   margin-top: -16px;
   padding: 11px 22px;
 }
-.confirmBox {
+.modal {
   position: fixed;
   display: none;
   flex-direction: column;
   z-index: 5;
-  background-color: #fff;
+  background-color: rgb(231, 231, 231);
   color: #010103;
   height: 100vh;
   left: 50%;
   overflow-x: hidden;
   overflow-y: scroll;
+  overflow: hidden;
   top: 64%;
   transform: translate(-50%,-50%);
   width: 80rem;
@@ -245,25 +262,41 @@ p {
   background-color: rgb(59, 111, 207);
   color: white;
   padding: 2rem 3rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.212);
 }
-.mainConfirmBoxCotainer {
+.upperBar h3,
+.upperBar p {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+.upperBar p {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.upperBar p:hover {
+  color: red;
+}
+.modalContainer {
   display: flex;
   flex-direction: row;
   padding: 2rem 3rem;
-  background-color: #49ca3d;
   justify-content: space-evenly;
 }
 .side1 {
   display: flex;
   flex-direction: column;
   width: 50%;
+  padding: 2rem 3rem;
+  background-color: #01aad4e0;
+  box-shadow: 3px 8px 7px rgba(0, 0, 0, 0.212);
 }
 .infoBox {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   margin-top: 33px;
-  gap: 10px;
+  gap: 15px;
 }
 .choice {
   display: flex;
@@ -271,25 +304,42 @@ p {
   align-items: center;
   gap: 10px;
 }
-
-
-/*
 .result {
   display: flex;
-  flex-direction: row;
-  margin-top: 6px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.resultTitle p {
+  font-weight: 900;
+  color: black
+}
+.resultData p {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.userDetails {
+  padding: 2rem 3rem;
 }
 .selectedCar img {
-  width: 50%;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carsBookingBox {
-  margin-bottom: 20px;
-  background-color: rgb(240, 240, 240);
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
-  padding: 25px;
-  background-image: url("./images/bookingBC.png");
-  background-size: cover;
+.userDetails {
+  border-top: 1px solid grey;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #c3fabe;
+}
+.baseInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
 }
 
 

@@ -2,9 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import bmw3series from '../images/bmw3series.png'
-import vw from '../images/bmw3series.png'
-import a from '../images/bmw3series.png'
-import c from '../images/bmw3series.png'
+import bmwtest from '../images/55.png'
 
 interface Car {
   value: string;
@@ -56,12 +54,19 @@ function Booking() {
     setDropDate(e.target.value);
   }
 
+  // Exit box button
+  const handleExit = () => {
+    const box = document.querySelector(".modal") as HTMLDivElement;
+    box.style.display = "none";
+  }
+
+  // Car images switch
   let img = carImg;
 
   cars.forEach((car) => {
     switch(car.value) {
       case 'audia3':
-        img = bmw3series;
+        img = bmwtest;
         break;
       case 'bmw3':
         img = bmw3series;
@@ -76,7 +81,7 @@ function Booking() {
   const showMsg = () => {
     const errorMsg = document.querySelector(".fail") as HTMLDivElement;
     const successMsg = document.querySelector(".success") as HTMLDivElement;
-    const box = document.querySelector(".confirmBox") as HTMLDivElement;
+    const box = document.querySelector(".modal") as HTMLDivElement;
   
     if (
       carModel === "" ||
@@ -97,13 +102,13 @@ function Booking() {
   return (
   <>
     <section className="booking">
-      
-      <section className='confirmBox'>
+
+      <section className='modal'>
         <div className='upperBar'>
           <h3>Complete reservation</h3>
-          <p>X</p>
+          <p onClick={handleExit}>X</p>
         </div>
-        <div className='mainConfirmBoxCotainer'>
+        <div className='modalContainer'>
           <div className='side1'>
             <h4>Location & Date</h4>
             <div className='infoBox'>
@@ -156,9 +161,32 @@ function Booking() {
             </div>
           </div>
           <div className='selectedCar'>
-            TEST2
+            <h2>{carModel}</h2>
             <img src={img} alt='selected-car'></img>
           </div>
+        </div>
+        <div className='userDetails'>
+          <h4>Personal Info</h4>
+          <form className='userInfo'>
+            <div className='baseInfo'>
+              <span>
+                <label>First Name *</label>
+                <input type='text' max={16} min={2} required placeholder='Enter Your First Name'></input>
+              </span>
+              <span>
+                <label>Last Name *</label>
+                <input type='text' max={16} min={2} required placeholder='Enter Your Last Name'></input>
+              </span>
+              <span>
+                <label>Phone Number *</label>
+                <input type='tel' max={16} min={2} required placeholder='Enter Your Phone Number'></input>
+              </span>
+              <span>
+                <label>Age *</label>
+                <input type='number' max={16} min={2} required placeholder='Enter Your Age'></input>
+              </span>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -176,7 +204,7 @@ function Booking() {
                 <option key={car.value} value={car.value}>
                   {car.label}</option>
                   ))}
-                  </select>
+              </select>
             </div>
             <div className="selectionBox">
               <label>Pick-up location <span className="red">*</span></label>
