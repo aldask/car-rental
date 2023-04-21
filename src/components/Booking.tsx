@@ -169,19 +169,19 @@ function Booking() {
           <h4>Personal Info</h4>
           <form className='userInfo'>
             <div className='baseInfo'>
-              <span>
+              <span className='names'>
                 <label>First Name *</label>
                 <input type='text' max={16} min={2} required placeholder='Enter Your First Name'></input>
               </span>
-              <span>
+              <span className='names'>
                 <label>Last Name *</label>
                 <input type='text' max={16} min={2} required placeholder='Enter Your Last Name'></input>
               </span>
-              <span>
+              <span className='names'>
                 <label>Phone Number *</label>
                 <input type='tel' max={16} min={2} required placeholder='Enter Your Phone Number'></input>
               </span>
-              <span>
+              <span className='names'>
                 <label>Age *</label>
                 <input type='number' max={16} min={2} required placeholder='Enter Your Age'></input>
               </span>

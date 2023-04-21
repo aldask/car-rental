@@ -250,7 +250,6 @@ p {
   left: 50%;
   overflow-x: hidden;
   overflow-y: scroll;
-  overflow: hidden;
   top: 64%;
   transform: translate(-50%,-50%);
   width: 80rem;
@@ -338,8 +337,11 @@ p {
 .baseInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 100%;
+}
+.names {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 

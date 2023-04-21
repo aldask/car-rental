@@ -17,7 +17,6 @@ function HomePage() {
       <Banner />
       <Reviews />
       <Faq />
-      <DownloadApp />
     </>
   );
 }
