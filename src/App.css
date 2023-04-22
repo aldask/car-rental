@@ -14,6 +14,7 @@ body {
   position: relative;
   background-color: rgb(231, 231, 231);
   overflow: auto;
+  backdrop: static;
 }
 .container {
   margin: 0 133px!important;
@@ -250,7 +251,7 @@ p {
   left: 50%;
   overflow-x: hidden;
   overflow-y: scroll;
-  top: 64%;
+  top: 54%;
   transform: translate(-50%,-50%);
   width: 80rem;
 }

@@ -13,10 +13,6 @@ function HomePage() {
       <Navbar />
       <HeroSection />
       <Booking />
-      <RentalFleet />
-      <Banner />
-      <Reviews />
-      <Faq />
     </>
   );
 }
