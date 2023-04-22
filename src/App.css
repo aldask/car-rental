@@ -252,6 +252,7 @@ p {
   overflow-x: hidden;
   overflow-y: scroll;
   top: 54%;
+  bottom: 54%;
   transform: translate(-50%,-50%);
   width: 80rem;
 }
@@ -326,23 +327,44 @@ p {
   justify-content: center;
   align-items: center;
 }
-
 .userDetails {
   border-top: 1px solid grey;
 }
 .userInfo {
   display: flex;
   flex-direction: column;
-  background-color: #c3fabe;
 }
-.baseInfo {
+.two-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
-.names {
+.one-col {
+  display: grid;
+  gap: 12px;
+}
+.data {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  padding: 10px 0;
+}
+.data input {
+  padding: 10px;
+}
+.subscription {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.bottomBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  padding: 0.5rem 3rem;
+  margin-bottom: 50px;
 }
 
 

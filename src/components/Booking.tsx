@@ -168,25 +168,54 @@ function Booking() {
         <div className='userDetails'>
           <h4>Personal Info</h4>
           <form className='userInfo'>
-            <div className='baseInfo'>
-              <span className='names'>
-                <label>First Name *</label>
+            <div className='two-cols'>
+              <span className='data'>
+                <label>First Name <span className='red'>*</span></label>
                 <input type='text' max={16} min={2} required placeholder='Enter Your First Name'></input>
               </span>
-              <span className='names'>
-                <label>Last Name *</label>
+              <span className='data'>
+                <label>Last Name <span className='red'>*</span></label>
                 <input type='text' max={16} min={2} required placeholder='Enter Your Last Name'></input>
               </span>
-              <span className='names'>
-                <label>Phone Number *</label>
+              <span className='data'>
+                <label>Phone Number <span className='red'>*</span></label>
                 <input type='tel' max={16} min={2} required placeholder='Enter Your Phone Number'></input>
               </span>
-              <span className='names'>
-                <label>Age *</label>
+              <span className='data'>
+                <label>Age <span className='red'>*</span></label>
                 <input type='number' max={16} min={2} required placeholder='Enter Your Age'></input>
               </span>
             </div>
+            <div className='one-col'>
+              <span className='data'>
+                <label>Email <span className='red'>*</span></label>
+                <input type='email' max={16} min={2} required placeholder='Enter Your Email'></input>
+              </span>
+              <span className='data'>
+                <label>Address <span className='red'>*</span></label>
+                <input type='text' max={16} min={2} required placeholder='Enter Your Address'></input>
+              </span>
+            </div>
+            <div className='two-cols'>
+              <span className='data'>
+                <label>City <span className='red'>*</span></label>
+                <input type='text' max={16} min={2} required placeholder='Enter Your City'></input>
+              </span>
+              <span className='data'>
+                <label>Zip Code <span className='red'>*</span></label>
+                <input type='number' max={16} min={2} required placeholder='Enter Your Zip Code'></input>
+              </span>
+            </div>
           </form>
+          <div className='subscription'>
+            <input type="radio"></input>
+            <label>
+              <p>I agree to receive newsletters, updates, promotions, and offers via email</p>
+            </label>
+          </div>
+        </div>
+        <div className='bottomBar'>
+          <button className='tripPlan' onClick={handleExit}>Reserve now</button>
         </div>
       </section>
 
