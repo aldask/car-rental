@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import bmw3series from '../images/bmw3series.png'
 import bmwtest from '../images/55.png'
+import Modal from './Modal';
 
+// Cars object
 interface Car {
   value: string;
   label: string;
@@ -16,20 +18,25 @@ const cars: Car[] = [
   { value: 'vw', label: 'VW Golf GTI', img: 'c' },
 ];
 
+// Cities object
 interface City {
   value: string;
   label: string;
 };
-const cities = [
+const cities: City[] = [
   { value: 'vilnius', label: 'Vilnius' },
   { value: 'kaunas', label: 'Kaunas' },
   { value: 'riga', label: 'Riga' },
   { value: 'warsaw', label: 'Warsaw' },
-]
+];
+
+//NEW
+
 
 
 function Booking() {
 
+  // Modal states
   const [carModel, setCarModel] = useState("");
   const [pickUpCity, setPickUpCity] = useState("");
   const [dropOffCity, setDropOffCity] = useState("");
@@ -37,9 +44,10 @@ function Booking() {
   const [dropDate, setDropDate] = useState("");
   const [carImg, setCarImg] = useState("");
 
+  // Modal handlers
   const handleCar = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCarModel(e.target.value);
-    setCarImg(e.target.value)
+    setCarImg(e.target.value);
   };
   const handlePickCity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPickUpCity(e.target.value);
@@ -54,11 +62,67 @@ function Booking() {
     setDropDate(e.target.value);
   }
 
-  // Exit box button
-  const handleExit = () => {
-    const box = document.querySelector(".modal") as HTMLDivElement;
-    box.style.display = "none";
+  // Modal settings
+  const body = document.querySelector("body") as HTMLElement;
+  const errorMsg = document.querySelector(".fail") as HTMLDivElement;
+  const successMsg = document.querySelector(".success") as HTMLDivElement;
+  const showModal = document.querySelector(".modal") as HTMLDivElement;
+  const bookingBox = document.querySelector("body") as HTMLElement;
+  const headerBar = document.querySelector(".header") as HTMLDivElement;
+
+  // Modal exit button
+  const handleExit = (e: React.MouseEvent<HTMLParagraphElement>) => {
+    e.preventDefault();
+    setModal(false);
+    showModal.style.display = "none";
+  };
+
+  // Modal exit button
+  const handleDone = (e: any) => {
+    e.preventDefault();
+    setModal(false);
+    errorMsg.style.display = "none";
+    successMsg.style.display = "flex";
+    showModal.style.display = "none";
   }
+
+  // Disabling main page scroll and hiding background if modal true
+  useEffect(() => {
+    if (modal === true) {
+      body.style.overflow = "hidden";
+      body.classList.add("overlay");
+      bookingBox.classList.add("overlay");
+      headerBar.classList.add("overlay");
+    } else {
+      body.style.overflow = "auto";
+      body.classList.remove("overlay");
+      bookingBox.classList.remove("overlay");
+      headerBar.classList.remove("overlay");
+
+    }
+  }, [modal]);
+
+  // Checking out if base info is selected
+  const showMsg = (e: any) => {
+    e.preventDefault(); // prevent default form submission behavior
+    if (
+      carModel === "" ||
+      pickUpCity === "" ||
+      dropOffCity === "" ||
+      pickDate === "" ||
+      dropDate === ""
+    ) {
+      errorMsg.style.display = "flex";
+      successMsg.style.display = "none";
+    } else {
+      setModal(true);
+      errorMsg.style.display = "none";
+      showModal.scroll(0, 0);
+      showModal.style.display = "flex";
+    }
+  };
+    
+    ///////////////////////////////////////////////////////
 
   // Car images switch
   let img = carImg;
@@ -76,148 +140,11 @@ function Booking() {
     }
   });
 
-  //Show error if one of fields not selected
-
-  const showMsg = () => {
-    const errorMsg = document.querySelector(".fail") as HTMLDivElement;
-    const successMsg = document.querySelector(".success") as HTMLDivElement;
-    const box = document.querySelector(".modal") as HTMLDivElement;
-  
-    if (
-      carModel === "" ||
-      pickUpCity === "" ||
-      dropOffCity === "" ||
-      pickDate === "" ||
-      dropDate === ""
-    ) {
-      errorMsg.style.display = "flex";
-      successMsg.style.display = "none";
-    } else {
-      successMsg.style.display = "flex";
-      errorMsg.style.display = "none";
-      box.style.display = "flex";
-    }
-  };
+  //Show error if one of fields not selected NOT
 
   return (
   <>
     <section className="booking">
-
-      <section className='modal'>
-        <div className='upperBar'>
-          <h3>Complete reservation</h3>
-          <p onClick={handleExit}>X</p>
-        </div>
-        <div className='modalContainer'>
-          <div className='side1'>
-            <h4>Location & Date</h4>
-            <div className='infoBox'>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faCalendarDays} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Pick-Up Date & Time</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{pickDate} /{" "}
-                    <input type="time" className="input-time"></input></p>
-                  </div>
-                </div>
-              </div>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faCalendarDays} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Drop-Off Date & Time</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{dropDate} /{" "}
-                    <input type="time" className="input-time"></input></p>
-                  </div>
-                </div>
-              </div>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faLocationDot} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Pick-Up Location</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{pickUpCity}</p>
-                  </div>
-                </div>
-              </div>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faLocationDot} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Drop-Off Location</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{dropOffCity}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='selectedCar'>
-            <h2>{carModel}</h2>
-            <img src={img} alt='selected-car'></img>
-          </div>
-        </div>
-        <div className='userDetails'>
-          <h4>Personal Info</h4>
-          <form className='userInfo'>
-            <div className='two-cols'>
-              <span className='data'>
-                <label>First Name <span className='red'>*</span></label>
-                <input type='text' max={16} min={2} required placeholder='Enter Your First Name'></input>
-              </span>
-              <span className='data'>
-                <label>Last Name <span className='red'>*</span></label>
-                <input type='text' max={16} min={2} required placeholder='Enter Your Last Name'></input>
-              </span>
-              <span className='data'>
-                <label>Phone Number <span className='red'>*</span></label>
-                <input type='tel' max={16} min={2} required placeholder='Enter Your Phone Number'></input>
-              </span>
-              <span className='data'>
-                <label>Age <span className='red'>*</span></label>
-                <input type='number' max={16} min={2} required placeholder='Enter Your Age'></input>
-              </span>
-            </div>
-            <div className='one-col'>
-              <span className='data'>
-                <label>Email <span className='red'>*</span></label>
-                <input type='email' max={16} min={2} required placeholder='Enter Your Email'></input>
-              </span>
-              <span className='data'>
-                <label>Address <span className='red'>*</span></label>
-                <input type='text' max={16} min={2} required placeholder='Enter Your Address'></input>
-              </span>
-            </div>
-            <div className='two-cols'>
-              <span className='data'>
-                <label>City <span className='red'>*</span></label>
-                <input type='text' max={16} min={2} required placeholder='Enter Your City'></input>
-              </span>
-              <span className='data'>
-                <label>Zip Code <span className='red'>*</span></label>
-                <input type='number' max={16} min={2} required placeholder='Enter Your Zip Code'></input>
-              </span>
-            </div>
-          </form>
-          <div className='subscription'>
-            <input type="radio"></input>
-            <label>
-              <p>I agree to receive newsletters, updates, promotions, and offers via email</p>
-            </label>
-          </div>
-        </div>
-        <div className='bottomBar'>
-          <button className='tripPlan' onClick={handleExit}>Reserve now</button>
-        </div>
-      </section>
 
       <div className='container'>
         <div className='carsBookingBox'>
