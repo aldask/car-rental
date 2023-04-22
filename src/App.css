@@ -1,6 +1,3 @@
-/* css */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -9,13 +6,23 @@
   padding: 0;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
+}
+html {
   scroll-behavior: smooth;
 }
 body {
+  position: relative;
   background-color: rgb(231, 231, 231);
+  overflow: auto;
+  backdrop: static;
+}
+.container {
+  margin: 0 133px!important;
+  max-width: 133rem!important;
 }
 
 /* Universal */
+
 h1 {
   font-size: 61px;
   margin-bottom: 30px;
@@ -23,6 +30,13 @@ h1 {
 h2 {
   font-size: 30px;
   margin-bottom: 25px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 30px;
   font-weight: 600;
 }
 .blue {
@@ -44,11 +58,6 @@ p {
 .lessStrong {
   font-weight: 600;
 }
-.container {
-  margin: 0 auto!important;
-  max-width: 133rem!important;
-  padding: 0;
-}
 
 /* Header section */
 
@@ -64,6 +73,7 @@ p {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.212);
   gap: 20px;
   background: #eff0f4;
+  z-index: 1;
 }
 .header a {
   text-decoration: none;
@@ -92,33 +102,32 @@ p {
 
 /* Hero section */
 
-.heroContainer {
-  margin: 140px 250px;
+.hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 150px;
+  background-image: url('./images/heroBack.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+  position: relative;
+}
+.heroContent {
+  display: flex;
+  flex-direction: row;
 }
 .heroSide1 {
-  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
   color: black;
 }
 .heroSide1 p {
   margin-bottom: 60px;
 }
-.heroSide2 {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: max-content;
-}
 .heroSide2 img {
-  width: 1200px;;
+  width: 820px;;
 }
 .tripPlan {
   font-size: 18px;
@@ -137,22 +146,21 @@ p {
 
 /* Car booking section */
 
-.bookingContainer {
+.booking {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  position: relative;
   justify-items: center;
+}
+.carsBookingBox {
+  margin-bottom: 20px;
   background-color: rgb(240, 240, 240);
-  flex-wrap: wrap;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
-  margin-bottom: 120px;
   padding: 25px;
   background-image: url("./images/bookingBC.png");
   background-size: cover;
-  margin: 140px 250px;
-  margin-bottom: 150px;
 }
-.booking-box {
+.bookingBox {
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, 1fr);
   grid-gap: 15px;
@@ -162,10 +170,202 @@ p {
 .selectionBox {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   padding: 0 0 10px;
   align-self: flex-end;
+}
+.selectionBox label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.selectionBox label:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+.selectionBox input,
+.selectionBox select,
+.selectionBox button {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.selectionBox input,
+.selectionBox select {
+  border: 1px solid #ccd7e6
+}
+.selectionBox label {
+  display: flex;
+  align-items: center;
+}
+.confirmBooking {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 14px;
+  border-radius: 5px;
+  background-color: rgb(59, 111, 207);
+  border-style: none;
+  color: white;
+  transition: 0.3s;
+}
+.confirmBooking:hover {
+  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
+  cursor: pointer;
+}
+
+/* Confirmation box */
+
+.success {
+  display: none;
+  background-color: #c3fabe;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #2a6817;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  padding: 11px 22px;
+}
+.fail {
+  display: none;
+  background-color: #f8d7da;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #721c24;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: -16px;
+  padding: 11px 22px;
+}
+.modal {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  z-index: 5;
+  background-color: rgb(231, 231, 231);
+  color: #010103;
+  height: 100vh;
+  left: 50%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 54%;
+  transform: translate(-50%,-50%);
+  width: 80rem;
+}
+.upperBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(59, 111, 207);
+  color: white;
+  padding: 2rem 3rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.212);
+}
+.upperBar h3,
+.upperBar p {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+.upperBar p {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.upperBar p:hover {
+  color: red;
+}
+.modalContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 3rem;
+  justify-content: space-evenly;
+}
+.side1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 2rem 3rem;
+  background-color: #01aad4e0;
+  box-shadow: 3px 8px 7px rgba(0, 0, 0, 0.212);
+}
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: 33px;
+  gap: 15px;
+}
+.choice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.resultTitle p {
+  font-weight: 900;
+  color: black
+}
+.resultData p {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.userDetails {
+  padding: 2rem 3rem;
+}
+.selectedCar img {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userDetails {
+  border-top: 1px solid grey;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #c3fabe;
+}
+.baseInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.names {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/*.booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  background-color: rgb(240, 240, 240);
+  flex-wrap: wrap;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
+  padding: 25px;
+  background-image: url("./images/bookingBC.png");
+  background-size: cover;
+  margin: 140px 250px;
+}
+
+.booking-box {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(3, 1fr);
+  grid-gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
 }
 .selectionBox label {
   font-size: 16px;
