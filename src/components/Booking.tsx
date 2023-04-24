@@ -3,7 +3,7 @@ import { faCircleInfo, faLocationDot, faCalendarDays } from '@fortawesome/free-s
 import React, { useState, useEffect } from 'react';
 import bmw3series from '../images/bmw3series.png'
 import bmwtest from '../images/55.png'
-import Modal from './Modal';
+import { Modal } from './Modal';
 
 // Cars object
 interface Car {
@@ -36,6 +36,8 @@ const cities: City[] = [
 
 function Booking() {
 
+  const [modal, setModal] = useState(false);
+
   // Modal states
   const [carModel, setCarModel] = useState("");
   const [pickUpCity, setPickUpCity] = useState("");
@@ -61,49 +63,7 @@ function Booking() {
   const handleDropDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDropDate(e.target.value);
   }
-
-  // Modal settings
-  const body = document.querySelector("body") as HTMLElement;
-  const errorMsg = document.querySelector(".fail") as HTMLDivElement;
-  const successMsg = document.querySelector(".success") as HTMLDivElement;
-  const showModal = document.querySelector(".modal") as HTMLDivElement;
-  const bookingBox = document.querySelector("body") as HTMLElement;
-  const headerBar = document.querySelector(".header") as HTMLDivElement;
-
-  // Modal exit button
-  const handleExit = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    e.preventDefault();
-    setModal(false);
-    showModal.style.display = "none";
-  };
-
-  // Modal exit button
-  const handleDone = (e: any) => {
-    e.preventDefault();
-    setModal(false);
-    errorMsg.style.display = "none";
-    successMsg.style.display = "flex";
-    showModal.style.display = "none";
-  }
-
-  // Disabling main page scroll and hiding background if modal true
-  useEffect(() => {
-    if (modal === true) {
-      body.style.overflow = "hidden";
-      body.classList.add("overlay");
-      bookingBox.classList.add("overlay");
-      headerBar.classList.add("overlay");
-    } else {
-      body.style.overflow = "auto";
-      body.classList.remove("overlay");
-      bookingBox.classList.remove("overlay");
-      headerBar.classList.remove("overlay");
-
-    }
-  }, [modal]);
-
-  // Checking out if base info is selected
-  const showMsg = (e: any) => {
+  const handleSetModalTrue = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault(); // prevent default form submission behavior
     if (
       carModel === "" ||
@@ -112,40 +72,15 @@ function Booking() {
       pickDate === "" ||
       dropDate === ""
     ) {
-      errorMsg.style.display = "flex";
-      successMsg.style.display = "none";
+      console.log("just work finally shit");
     } else {
       setModal(true);
-      errorMsg.style.display = "none";
-      showModal.scroll(0, 0);
-      showModal.style.display = "flex";
     }
   };
-    
-    ///////////////////////////////////////////////////////
-
-  // Car images switch
-  let img = carImg;
-
-  cars.forEach((car) => {
-    switch(car.value) {
-      case 'audia3':
-        img = bmwtest;
-        break;
-      case 'bmw3':
-        img = bmw3series;
-        break;
-      default:
-        break;
-    }
-  });
-
-  //Show error if one of fields not selected NOT
-
   return (
   <>
+  <Modal setModal={setModal} isOpen={modal} />
     <section className="booking">
-
       <div className='container'>
         <div className='carsBookingBox'>
           <h2 className="bookingTitle">Book a Car</h2>
@@ -193,7 +128,7 @@ function Booking() {
               <input type="date" value={dropDate} onChange={handleDropDate}></input>
             </div>
             <div className="selectionBox">
-              <button className="confirmBooking" onClick={showMsg}>Confirm</button>
+              <button className="confirmBooking" onClick={handleSetModalTrue}>Confirm</button>
             </div>
           </div>
         </div>

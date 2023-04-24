@@ -215,6 +215,7 @@ p {
   border-style: none;
   color: white;
   transition: 0.3s;
+  align-self: flex-end;
 }
 .confirmBooking:hover {
   box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
@@ -248,8 +249,11 @@ p {
   padding: 11px 22px;
 }
 .modal {
-  position: fixed;
   display: none;
+}
+.is-active {
+  position: fixed;
+  display: flex;
   flex-direction: column;
   z-index: 999999999999;
   background-color: rgb(231, 231, 231);

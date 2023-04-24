@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import Booking from "../components/Booking";
@@ -6,7 +7,6 @@ import Banner from "../components/Banner";
 import Reviews from "../components/Reviews";
 import Faq from "../components/Faq";
 import DownloadApp from "../components/DownloadApp";
-import Modal from "../components/Modal";
 
 function HomePage() {
   return (
@@ -14,7 +14,6 @@ function HomePage() {
       <Navbar />
       <HeroSection />
       <Booking />
-      <Modal />
       <RentalFleet />
       <Banner />
       <Reviews />
