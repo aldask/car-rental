@@ -4,11 +4,17 @@ import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 
 
 interface ModalProps {
-  setModal: Dispatch<SetStateAction<boolean>>;
-  isOpen: boolean;
+  setModal: any;
+  isOpen: any;
+  carModel: any;
+  carImg: any;
+  pickUpCity: any;
+  dropOffCity: any;
+  pickDate: any;
+  dropDate: any;
 }
 
-export function Modal({ setModal, isOpen }: ModalProps) {
+export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffCity, pickDate, dropDate }: ModalProps) {
   function handleExit() {
     setModal(false);
   };
@@ -37,7 +43,7 @@ export function Modal({ setModal, isOpen }: ModalProps) {
                 </div>
                 <div className="resultData">
                   <p>
-                    d /{" "}
+                    {pickDate} /{" "}
                     <input type="time" className="input-time" name="pickup-time" />
                   </p>
                 </div>
@@ -51,7 +57,7 @@ export function Modal({ setModal, isOpen }: ModalProps) {
                 </div>
                 <div className="resultData">
                   <p>
-                    d /{" "}
+                    {dropDate} /{" "}
                     <input type="time" className="input-time" name="dropoff-time" />
                   </p>
                 </div>
@@ -64,7 +70,7 @@ export function Modal({ setModal, isOpen }: ModalProps) {
                   <p>Pick-Up Location</p>
                 </div>
                 <div className="resultData">
-                  <p>d</p>
+                  <p>{pickUpCity}</p>
                 </div>
               </div>
             </div>
@@ -75,7 +81,7 @@ export function Modal({ setModal, isOpen }: ModalProps) {
                   <p>Drop-Off Location</p>
                 </div>
                 <div className="resultData">
-                  <p>d</p>
+                  <p>{dropOffCity}</p>
                 </div>
               </div>
             </div>
@@ -83,7 +89,7 @@ export function Modal({ setModal, isOpen }: ModalProps) {
           </div>
           <div className='selectedCar'>
             <h2>carmake</h2>
-            <img src="{img}" alt='selected-car'></img>
+            <img src={carImg} alt='selected-car'></img>
           </div>
         </div>
         <div className="userDetails">

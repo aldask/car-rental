@@ -79,7 +79,16 @@ function Booking() {
   };
   return (
   <>
-  <Modal setModal={setModal} isOpen={modal} />
+    <Modal
+    setModal={setModal}
+    isOpen={modal}
+    carModel={carModel}
+    carImg={carImg}
+    pickUpCity={pickUpCity}
+    dropOffCity={dropOffCity}
+    pickDate={pickDate}
+    dropDate={dropDate}
+  />
     <section className="booking">
       <div className='container'>
         <div className='carsBookingBox'>
