@@ -19,13 +19,14 @@ export function Modal({ setModal, isOpen }: ModalProps) {
 
 
   return (
-    <section className={`modal ${isOpen ? "is-active" : ""}`}>
+    <section className={`${isOpen ? "activeModal" : "disabled"}`}>
       <div className="upperBar">
         <h3>Complete reservation</h3>
         <p onClick={handleExit}>X</p>
       </div>
       <div className="modalContainer">
-        <div className="side1">
+        <div className='userSelections'>
+          <div className='side1'>
           <h4>Location & Date</h4>
           <div className="infoBox">
             <div className="choice">
@@ -79,54 +80,21 @@ export function Modal({ setModal, isOpen }: ModalProps) {
               </div>
             </div>
           </div>
+          </div>
+          <div className='selectedCar'>
+            <h2>carmake</h2>
+            <img src="{img}" alt='selected-car'></img>
+          </div>
         </div>
-        <div className="side2">
-          <h4>Personal Information</h4>
-          <div className="infoBox">
-            <div className="choice">
-              <div className="result">
-                <div className="resultTitle">
-                  <p>First Name</p>
-                </div>
-                <div className="resultData">
-                  <input type="text" className="input-text" name="first-name" />
-                </div>
-              </div>
-            </div>
-            <div className="choice">
-              <div className="result">
-                <div className="resultTitle">
-                  <p>Last Name</p>
-                </div>
-                <div className="resultData">
-                  <input type="text" className="input-text" name="last-name" />
-                </div>
-              </div>
-            </div>
-            <div className="choice">
-              <div className="result">
-                <div className="resultTitle">
-                  <p>Email</p>
-                </div>
-                <div className="resultData">
-                  <input type="email" className="input-text" name="email" />
-                </div>
-              </div>
-            </div>
-            <div className="choice">
-              <div className="result">
-                <div className="resultTitle">
-                  <p>Phone Number</p>
-                </div>
-                <div className="resultData">
-                  <input type="tel" className="input-text" name="phone" />
-                </div>
-              </div>
-            </div>
+        <div className="userDetails">
+          <h4>Personal info</h4>
+          <div className='two-cols'>
+            <form>
+              <span>test</span>
+            </form>
           </div>
           <div className="buttonsContainer">
-            <button className="doneBtn" onClick={handleDone}>Done
-            </button>
+            <button className="doneBtn" onClick={handleDone}>Done</button>
           </div>
         </div>
       </div>
