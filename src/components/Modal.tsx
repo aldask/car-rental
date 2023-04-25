@@ -88,13 +88,52 @@ export function Modal({ setModal, isOpen }: ModalProps) {
         </div>
         <div className="userDetails">
           <h4>Personal info</h4>
-          <div className='two-cols'>
-            <form>
-              <span>test</span>
-            </form>
+          <form className='userInfo'>
+            <div className='two-cols'>
+              <span className='data'>
+                <label>First Name <span className='red'>*</span></label>
+                <input type='text' max={16} min={2} required placeholder='Enter Your First Name'></input>
+              </span>
+              <span className='data'>
+                <label>Last Name <span className='red'>*</span></label>
+                <input type='text' max={16} min={2} required placeholder='Enter Your Last Name'></input>
+              </span>
+              <span className='data'>
+                <label>Phone Number <span className='red'>*</span></label>
+                <input type='tel' min={9} max={9} required placeholder='Enter Your Phone Number'></input>
+              </span>
+              <span className='data'>
+                <label>Age <span className='red'>*</span></label>
+                <input type='number' max={18} min={120} required placeholder='Enter Your Age'></input>
+              </span>
+            </div>
+            <div className='one-col'>
+              <span className='data'>
+                <label>Email <span className='red'>*</span></label>
+                <input type='email' required placeholder='Enter Your Email'></input>
+              </span>
+              <span className='data'>
+                <label>Address <span className='red'>*</span></label>
+                <input type='text' required placeholder='Enter Your Street Address'></input>
+              </span>
+            </div>
+            <div className='two-cols'>
+              <span className='data'>
+                <label>City <span className='red'>*</span></label>
+                <input type='text' required placeholder='Enter Your City'></input>
+              </span>
+              <span className='data'>
+                <label>Zip Code <span className='red'>*</span></label>
+                <input type='text' required placeholder='Enter Your Zip Code'></input>
+              </span>
+            </div>
+          </form>
+          <div className='subscription'>
+            <input type="radio" />
+            <label>Subscribe to our newsletter</label>
           </div>
-          <div className="buttonsContainer">
-            <button className="doneBtn" onClick={handleDone}>Done</button>
+          <div className="bottomBar">
+            <button className="tripPlan" onClick={handleDone}>Complete Reservation</button>
           </div>
         </div>
       </div>

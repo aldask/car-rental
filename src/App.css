@@ -295,7 +295,7 @@ body.overlay {
   color: white;
   padding: 1.25rem 2rem;
   text-transform: uppercase;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.212);
+  box-shadow: -1px -2px 30px 0px rgba(0, 0, 0, 0.288);
 }
 .upperBar h3,
 .upperBar p {
@@ -352,10 +352,6 @@ body.overlay {
   font-weight: 500;
   text-transform: capitalize;
 }
-.userDetails {
-  padding: 2rem 3rem;
-  background-color: #3b6fcf;
-}
 .selectedCar img {
   width: 800px;
   display: flex;
@@ -366,7 +362,10 @@ body.overlay {
 
 
 .userDetails {
-  border-top: 1px solid grey;
+  padding: 2rem 3rem;
+  background: rgb(59,111,207);
+  background: linear-gradient(0deg, rgba(59,111,207,1) 0%, rgba(31,142,230,1) 62%, rgba(0,176,255,0.8687850140056023) 100%);
+  box-shadow: -1px -2px 30px 0px rgba(0, 0, 0, 0.288);
 }
 .userInfo {
   display: flex;
@@ -391,6 +390,8 @@ body.overlay {
 .data input {
   padding: 10px;
 }
+
+
 .subscription {
   display: flex;
   flex-direction: row;
@@ -402,7 +403,6 @@ body.overlay {
   justify-content: flex-end;
   align-items: center;
   color: white;
-  padding: 0.5rem 3rem;
   margin-bottom: 50px;
 }
 
