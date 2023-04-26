@@ -11,7 +11,7 @@ function HeroSection() {
             <p>The go-to car rental service for all your transportation needs. 
               Affordable prices, excellent customer service, and a wide selection of 
               reliable vehicles to choose from. Book your rental today and experience convenience!</p>
-            <button className='tripPlan'>Book Ride! ✓</button>
+              <a href="#book"><button className='tripPlan'>Book Ride! ✓</button></a>
           </div>
           <div className="heroSide2">
             <img src={mainCar} alt="mainCar" />

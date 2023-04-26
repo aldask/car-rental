@@ -4,27 +4,30 @@ import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 
 
 interface ModalProps {
-  setModal: any;
-  isOpen: any;
-  carModel: any;
-  carImg: any;
-  pickUpCity: any;
-  dropOffCity: any;
-  pickDate: any;
-  dropDate: any;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpen: boolean;
+  carModel: string;
+  carImg: string;
+  pickUpCity: string;
+  dropOffCity: string;
+  pickDate: string;
+  dropDate: string;
+  setSuccessMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffCity, pickDate, dropDate }: ModalProps) {
+export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffCity, pickDate, dropDate, setSuccessMessage }: ModalProps) {
   function handleExit() {
     setModal(false);
   };
 
   function handleDone() {
-    setModal(true);
+    setModal(false);
+    setSuccessMessage(true);
   };
 
 
-  return (
+  return (    
+    <>
     <section className={`${isOpen ? "activeModal" : "disabled"}`}>
       <div className="upperBar">
         <h3>Complete reservation</h3>
@@ -88,7 +91,7 @@ export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffC
           </div>
           </div>
           <div className='selectedCar'>
-            <h2>carmake</h2>
+            <h2>{carModel}</h2>
             <img src={carImg} alt='selected-car'></img>
           </div>
         </div>
@@ -144,5 +147,6 @@ export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffC
         </div>
       </div>
     </section>
+    </>
     )
   };
