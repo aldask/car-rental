@@ -13,15 +13,7 @@ html {
 body {
   position: relative;
   background-color: rgb(231, 231, 231);
-}
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 999;
+  overflow: auto;
 }
 .container {
   margin: 0 133px!important;
@@ -275,18 +267,9 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  pointer-events: none;
-}
-.overlay .modal {
-  pointer-events: auto;
-}
-body.overlay {
   overflow: hidden;
-}
-.header.overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6); /* You can change the opacity by changing the last value (0.6) */
+  z-index: 1000; /* You can adjust the z-index to make sure it's on top of other elements */
 }
 .upperBar {
   display: flex;
@@ -356,12 +339,11 @@ body.overlay {
   text-transform: capitalize;
 }
 .selectedCar {
-  width: 50%;
+  width: 70%;
 }
 .selectedCar img {
-  width: 800px;
+  width: 500px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 

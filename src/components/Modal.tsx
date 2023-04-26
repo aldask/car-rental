@@ -15,19 +15,26 @@ interface ModalProps {
   setSuccessMessage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffCity, pickDate, dropDate, setSuccessMessage }: ModalProps) {
+export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffCity, pickDate, dropDate, setSuccessMessage }: ModalProps) { 
+  
+  const box = document.querySelector("body") as HTMLElement;
+
+
   function handleExit() {
     setModal(false);
+    document.body.style.overflow = "auto";
   };
 
   function handleDone() {
     setModal(false);
     setSuccessMessage(true);
+    document.body.style.overflow = "auto";
   };
 
 
   return (    
     <>
+    {isOpen && <div className=" body overlay" />}
     <section className={`${isOpen ? "activeModal" : "disabled"}`}>
       <div className="upperBar">
         <h3>Complete reservation</h3>

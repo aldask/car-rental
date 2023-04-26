@@ -90,6 +90,7 @@ function Booking() {
     } else {
       setModal(true);
       setShowErrorMessage(false);
+      document.body.style.overflow = "hidden";
     }
   };
 
