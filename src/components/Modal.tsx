@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 
 
 interface ModalProps {
@@ -16,9 +15,6 @@ interface ModalProps {
 }
 
 export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffCity, pickDate, dropDate, setSuccessMessage }: ModalProps) { 
-  
-  const box = document.querySelector("body") as HTMLElement;
-
 
   function handleExit() {
     setModal(false);

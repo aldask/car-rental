@@ -1,9 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect } from 'react';
 import { Modal } from './Modal';
-import bmw3series from '../images/bmw3series.png';
-import bmwtest from '../images/55.png';
+
+// Img's for cars
+import AudiA3 from '../images/AudiA3.png';
+import BMW3 from '../images/BMW3.png';
+import MBE from '../images/MBE.png';
+import GolfGTI from '../images/GolfGTI.png';
 
 // Cars object
 interface Car {
@@ -11,10 +13,10 @@ interface Car {
   img: any;
 };
 const cars: Car[] = [
-  { label: 'Audi A3', img: bmw3series },
-  { label: 'BMW 3 Series', img: bmwtest },
-  { label: 'Mercedes-Benz C-Class', img: 'a' },
-  { label: 'VW Golf GTI', img: 'c' },
+  { label: 'Audi A3', img: AudiA3 },
+  { label: 'BMW 3 Series', img: BMW3 },
+  { label: 'Mercedes-Benz E-Class', img: MBE },
+  { label: 'VW Golf GTI', img: GolfGTI },
 ];
 
 // Cities object
