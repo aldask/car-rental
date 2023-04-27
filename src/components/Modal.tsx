@@ -39,7 +39,7 @@ export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffC
       <div className="modalContainer">
         <div className='userSelections'>
           <div className='side1'>
-          <h4>Location & Date</h4>
+          <h4 className='strong'>Location & Date</h4>
           <div className="infoBox">
             <div className="choice">
               <FontAwesomeIcon icon={faCalendarDays} />
@@ -94,12 +94,12 @@ export function Modal({ setModal, isOpen, carModel, carImg, pickUpCity, dropOffC
           </div>
           </div>
           <div className='selectedCar'>
-            <h2>{carModel}</h2>
+            <h2 className='strong'>{carModel}</h2>
             <img src={carImg} alt='selected-car'></img>
           </div>
         </div>
         <div className="userDetails">
-          <h4>Personal info</h4>
+          <h2>Personal info</h2>
           <form className='userInfo'>
             <div className='two-cols'>
               <span className='data'>
