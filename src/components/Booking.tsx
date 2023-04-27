@@ -1,35 +1,43 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
-import bmw3series from '../images/bmw3series.png'
-import bmwtest from '../images/55.png'
+import React, { useState, useEffect } from 'react';
+import { Modal } from './Modal';
 
+// Img's for cars
+import AudiA3 from '../images/AudiA3.png';
+import BMW3 from '../images/BMW3.png';
+import MBE from '../images/MBE.png';
+import GolfGTI from '../images/GolfGTI.png';
+
+// Cars object
 interface Car {
-  value: string;
   label: string;
-  img: string;
+  img: any;
 };
 const cars: Car[] = [
-  { value: 'audia3', label: 'Audi A3', img: 'bmw3series' },
-  { value: 'bmw3', label: 'BMW 3 Series', img: 'vw' },
-  { value: 'mercedes', label: 'Mercedes-Benz C-Class', img: 'a' },
-  { value: 'vw', label: 'VW Golf GTI', img: 'c' },
+  { label: 'Audi A3', img: AudiA3 },
+  { label: 'BMW 3 Series', img: BMW3 },
+  { label: 'Mercedes-Benz E-Class', img: MBE },
+  { label: 'VW Golf GTI', img: GolfGTI },
 ];
 
+// Cities object
 interface City {
-  value: string;
   label: string;
 };
-const cities = [
-  { value: 'vilnius', label: 'Vilnius' },
-  { value: 'kaunas', label: 'Kaunas' },
-  { value: 'riga', label: 'Riga' },
-  { value: 'warsaw', label: 'Warsaw' },
-]
+const cities: City[] = [
+  { label: 'Vilnius' },
+  { label: 'Kaunas' },
+  { label: 'Riga' },
+  { label: 'Warsaw' },
+];
 
 
 function Booking() {
 
+  // Modal states
+
+  const [modal, setModal] = useState(false);
+
+  // Input states
   const [carModel, setCarModel] = useState("");
   const [pickUpCity, setPickUpCity] = useState("");
   const [dropOffCity, setDropOffCity] = useState("");
@@ -37,52 +45,42 @@ function Booking() {
   const [dropDate, setDropDate] = useState("");
   const [carImg, setCarImg] = useState("");
 
+  // Messages states
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [showSuccessMessage, setSuccessMessage] = useState(false);
+
+  // Set car model and img
   const handleCar = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCarModel(e.target.value);
-    setCarImg(e.target.value)
+    const selectedCar = cars.find(car => car.label === e.target.value);
+    if(selectedCar) {
+      setCarModel(selectedCar.label);
+      setCarImg(selectedCar.img);
+    }
   };
+
+  // Set pick up city
   const handlePickCity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPickUpCity(e.target.value);
   };
+
+  // Set drop city
   const handleDropCity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setDropOffCity(e.target.value);
-  }
+  };
+
+  // Set pick up date
   const handlePickDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPickDate(e.target.value);
-  }
+  };
+
+  // Set drop off date
   const handleDropDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDropDate(e.target.value);
-  }
+  };
 
-  // Exit box button
-  const handleExit = () => {
-    const box = document.querySelector(".modal") as HTMLDivElement;
-    box.style.display = "none";
-  }
-
-  // Car images switch
-  let img = carImg;
-
-  cars.forEach((car) => {
-    switch(car.value) {
-      case 'audia3':
-        img = bmwtest;
-        break;
-      case 'bmw3':
-        img = bmw3series;
-        break;
-      default:
-        break;
-    }
-  });
-
-  //Show error if one of fields not selected
-
-  const showMsg = () => {
-    const errorMsg = document.querySelector(".fail") as HTMLDivElement;
-    const successMsg = document.querySelector(".success") as HTMLDivElement;
-    const box = document.querySelector(".modal") as HTMLDivElement;
-  
+  // Display modal if inputs are filled
+  const handleSetModalTrue = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
     if (
       carModel === "" ||
       pickUpCity === "" ||
@@ -90,118 +88,42 @@ function Booking() {
       pickDate === "" ||
       dropDate === ""
     ) {
-      errorMsg.style.display = "flex";
-      successMsg.style.display = "none";
+      setShowErrorMessage(true);
     } else {
-      successMsg.style.display = "flex";
-      errorMsg.style.display = "none";
-      box.style.display = "flex";
+      setModal(true);
+      setShowErrorMessage(false);
+      document.body.style.overflow = "hidden";
     }
   };
 
+  // Car img cases 
+
   return (
   <>
-    <section className="booking">
-
-      <section className='modal'>
-        <div className='upperBar'>
-          <h3>Complete reservation</h3>
-          <p onClick={handleExit}>X</p>
-        </div>
-        <div className='modalContainer'>
-          <div className='side1'>
-            <h4>Location & Date</h4>
-            <div className='infoBox'>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faCalendarDays} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Pick-Up Date & Time</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{pickDate} /{" "}
-                    <input type="time" className="input-time"></input></p>
-                  </div>
-                </div>
-              </div>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faCalendarDays} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Drop-Off Date & Time</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{dropDate} /{" "}
-                    <input type="time" className="input-time"></input></p>
-                  </div>
-                </div>
-              </div>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faLocationDot} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Pick-Up Location</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{pickUpCity}</p>
-                  </div>
-                </div>
-              </div>
-              <div className='choice'>
-                <FontAwesomeIcon icon={faLocationDot} />
-                <div className='result'>
-                  <div className='resultTitle'>
-                    <p>Drop-Off Location</p>
-                  </div>
-                  <div className='resultData'>
-                    <p>{dropOffCity}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='selectedCar'>
-            <h2>{carModel}</h2>
-            <img src={img} alt='selected-car'></img>
-          </div>
-        </div>
-        <div className='userDetails'>
-          <h4>Personal Info</h4>
-          <form className='userInfo'>
-            <div className='baseInfo'>
-              <span className='names'>
-                <label>First Name *</label>
-                <input type='text' max={16} min={2} required placeholder='Enter Your First Name'></input>
-              </span>
-              <span className='names'>
-                <label>Last Name *</label>
-                <input type='text' max={16} min={2} required placeholder='Enter Your Last Name'></input>
-              </span>
-              <span className='names'>
-                <label>Phone Number *</label>
-                <input type='tel' max={16} min={2} required placeholder='Enter Your Phone Number'></input>
-              </span>
-              <span className='names'>
-                <label>Age *</label>
-                <input type='number' max={16} min={2} required placeholder='Enter Your Age'></input>
-              </span>
-            </div>
-          </form>
-        </div>
-      </section>
-
+    <Modal
+    setModal={setModal}
+    isOpen={modal}
+    carModel={carModel}
+    carImg={carImg}
+    pickUpCity={pickUpCity}
+    dropOffCity={dropOffCity}
+    pickDate={pickDate}
+    dropDate={dropDate}
+    setSuccessMessage={setSuccessMessage}
+  />
+    <section className="booking" id='book'>
       <div className='container'>
         <div className='carsBookingBox'>
           <h2 className="bookingTitle">Book a Car</h2>
-          <p className='fail'>All fields needs to be selected</p>
-          <p className='success'>Check your email to confirm an order</p>
+          {showErrorMessage && (<p className="fail">All fields need to be selected</p>)}
+          {showSuccessMessage && (<p className='success'>Check your email to confirm the reservation!</p>)}
           <div className="bookingBox">
             <div className="selectionBox">
               <label>Car Model <span className="red">*</span></label>
               <select value={carModel} onChange={handleCar}>
                 <option>Select car model</option>
                 {cars.map((car) => (
-                <option key={car.value} value={car.value}>
+                <option key={car.label} value={car.label}>
                   {car.label}</option>
                   ))}
               </select>
@@ -211,7 +133,7 @@ function Booking() {
               <select value={pickUpCity} onChange={handlePickCity}>
                 <option>Select car pick-up location</option>
                 {cities.map((city) => (
-                  <option key={city.value} value={city.value}>
+                  <option key={city.label} value={city.label}>
                     {city.label}
                   </option>
                 ))}
@@ -222,7 +144,7 @@ function Booking() {
               <select value={dropOffCity} onChange={handleDropCity}>
                 <option>Select car drop-off location</option>
                 {cities.map((city) => (
-                  <option key={city.value} value={city.value}>
+                  <option key={city.label} value={city.label}>
                     {city.label}
                   </option>
                 ))}
@@ -237,7 +159,7 @@ function Booking() {
               <input type="date" value={dropDate} onChange={handleDropDate}></input>
             </div>
             <div className="selectionBox">
-              <button className="confirmBooking" onClick={showMsg}>Confirm</button>
+              <button className="confirmBooking" onClick={handleSetModalTrue}>Confirm</button>
             </div>
           </div>
         </div>
