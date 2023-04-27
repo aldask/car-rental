@@ -34,63 +34,56 @@ function RentalFleet() {
   return (
     <>
     <section className="fleetContainer">
-  <div className="containerTexts">
-    <h1>Our Rental Fleet</h1>
-    <p>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip.</p>
-  </div>
-  <div className="carSelections">
-    <div className="carsSelect">
-      {cars.map((car) => (
-      <button key={car.label} value={car.label} onClick={handleCarFleet}>
-        {car.label}</button>
-        ))}
+      <div className="containerTexts">
+        <h1>Our Rental Fleet</h1>
+        <p>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip.</p>
     </div>
-    <div className="carPic">
-      <img src={selectedFleetCarImg} alt="chosen-car-picture"></img>
+    <div className="carSelections">
+      <div className="carsSelect">
+        {cars.map((car) => (
+        <button key={car.label} value={car.label} onClick={handleCarFleet}>
+          {car.label}</button>
+          ))}
+      </div>
+      <div className="carPic">
+        <img src={selectedFleetCarImg} alt="chosen-car-picture"></img>
+      </div>
+      <div className="carDetails">
+        <p className="price">Price: 45€/day</p>
+        <div className="row">
+          <div className="label">Manufacturer</div>
+          <div className="value">{selectedCarManufaturer}</div>
+        </div>
+        <div className="row">
+          <div className="label">Model</div>
+          <div className="value">{selectedCarModel}</div>
+        </div>
+        <div className="row">
+          <div className="label">Year</div>
+          <div className="value">{selectedCarYear}</div>
+        </div>
+        <div className="row">
+          <div className="label">Doors</div>
+          <div className="value">{selectedCarDoors}</div>
+        </div>
+        <div className="row">
+          <div className="label">AC</div>
+          <div className="value">{selectedCarAC}</div>
+        </div>
+        <div className="row">
+          <div className="label">Transmission</div>
+          <div className="value">{selectedCarTransmission}</div>
+        </div>
+        <div className="row">
+          <div className="label">Fuel</div>
+          <div className="value">{selectedCarFuel}</div>
+        </div>
+        <button className="reserveButton">Reserve</button>
+      </div>
     </div>
-    <div className="carDetails">
-      <p className="price">Price: 45€/day</p>
-      <div className="row">
-        <div className="label">Manufacturer</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarManufaturer}</div>
-      </div>
-      <div className="row">
-        <div className="label">Model</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarModel}</div>
-      </div>
-      <div className="row">
-        <div className="label">Year</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarYear}</div>
-      </div>
-      <div className="row">
-        <div className="label">Doors</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarDoors}</div>
-      </div>
-      <div className="row">
-        <div className="label">AC</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarAC}</div>
-      </div>
-      <div className="row">
-        <div className="label">Transmission</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarTransmission}</div>
-      </div>
-      <div className="row">
-        <div className="label">Fuel</div>
-        <div className="divide">|</div>
-        <div className="value">{selectedCarFuel}</div>
-      </div>
-      <button className="reserveButton">Reserve</button>
-    </div>
-  </div>
-</section>
-    </>
-  );
-}
+  </section>
+      </>
+    );
+  }
 
 export default RentalFleet;
