@@ -355,6 +355,9 @@ p {
   background: linear-gradient(0deg, rgba(0,176,255,0.4206057422969187) 0%, rgba(59,150,240,1) 62%, rgba(59,111,207,1) 100%);
   box-shadow: -1px -2px 30px 0px rgba(0, 0, 0, 0.288);
 }
+.userDetails h2 {
+  color: rgb(224, 224, 224);
+}
 .userInfo {
   display: flex;
   flex-direction: column;
@@ -398,12 +401,17 @@ input[type="radio"] {
 }
 input[type="radio"]:checked {
   border-color: rgb(243, 243, 243);
-  background-color: rgb(15, 126, 0);
+  background-color: rgb(19, 161, 0);
 }
 .subscription {
   display: flex;
   flex-direction: row;
   gap: 12px;
+  margin-top: 15px;
+}
+.subscription label {
+  font-weight: 500;
+  color:rgb(224, 224, 224);
 }
 .bottomBar {
   display: flex;
@@ -414,67 +422,6 @@ input[type="radio"]:checked {
   margin-bottom: 50px;
 }
 
-
-/*.booking {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  background-color: rgb(240, 240, 240);
-  flex-wrap: wrap;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
-  padding: 25px;
-  background-image: url("./images/bookingBC.png");
-  background-size: cover;
-  margin: 140px 250px;
-}
-
-.booking-box {
-  display: grid;
-  grid-template: repeat(2, auto) / repeat(3, 1fr);
-  grid-gap: 15px;
-  justify-content: flex-start;
-  align-items: center;
-}
-.selectionBox label {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.selectionBox label:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-.selectionBox input,
-.selectionBox select,
-.selectionBox button {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
-.selectionBox input,
-.selectionBox select {
-  border: 1px solid #ccd7e6
-}
-.selectionBox label {
-display: flex;
-  align-items: center;
-}
-.confirmBooking {
-  font-size: 18px;
-  font-weight: 500;
-  padding: 14px;
-  border-radius: 5px;
-  background-color: rgb(59, 111, 207);
-  border-style: none;
-  color: white;
-  transition: 0.3s;
-}
-.confirmBooking:hover {
-  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
-  cursor: pointer;
-}
 
 /* Car booking section */
 

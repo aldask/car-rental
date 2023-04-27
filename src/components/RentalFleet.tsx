@@ -1,4 +1,36 @@
+import { useState } from "react";
+import { cars } from './Booking';
+
+// Set car model and img
+
 function RentalFleet() {
+
+  const [selectedFleetCar, setSelectedFleetCar] = useState(cars[0]);
+  const [selectedFleetCarImg, setSelectedFleetCarImg] = useState(selectedFleetCar.img);
+  const [selectedCarManufaturer, setSelectedCarManufaturer] = useState(selectedFleetCar.manufacturer);
+  const [selectedCarModel, setSelectedCarModel] = useState(selectedFleetCar.model);
+  const [selectedCarYear, setSelectedCarYear] = useState(selectedFleetCar.year);
+  const [selectedCarDoors, setSelectedCarDoors] = useState(selectedFleetCar.doors);
+  const [selectedCarAC, setSelectedCarAC] = useState(selectedFleetCar.ac);
+  const [selectedCarTransmission, setSelectedCarTransmission] = useState(selectedFleetCar.transmission);
+  const [selectedCarFuel, setSelectedCarFuel] = useState(selectedFleetCar.fuel);
+
+  const handleCarFleet = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const selectedCar = cars.find(car => car.label === e.currentTarget.value);
+    if (selectedCar) {
+      setSelectedFleetCar(selectedCar);
+      setSelectedFleetCarImg(selectedCar.img);
+      setSelectedCarManufaturer(selectedCar.manufacturer);
+      setSelectedCarModel(selectedCar.model);
+      setSelectedCarYear(selectedCar.year);
+      setSelectedCarDoors(selectedCar.doors);
+      setSelectedCarAC(selectedCar.ac);
+      setSelectedCarTransmission(selectedCar.transmission);
+      setSelectedCarFuel(selectedCar.fuel);
+    }
+  };
+
+
   return (
     <>
     <section className="fleetContainer">
@@ -8,50 +40,50 @@ function RentalFleet() {
   </div>
   <div className="carSelections">
     <div className="carsSelect">
-      <button>Audi RS6</button>
-      <button>Bugatti Chiron</button>
-      <button>BMW M5</button>
-      <button>VW Tiguan</button>
+      {cars.map((car) => (
+      <button key={car.label} value={car.label} onClick={handleCarFleet}>
+        {car.label}</button>
+        ))}
     </div>
     <div className="carPic">
-      <img src="carPic" alt="chosen-car-picture"></img>
+      <img src={selectedFleetCarImg} alt="chosen-car-picture"></img>
     </div>
     <div className="carDetails">
       <p className="price">Price: 45€/day</p>
       <div className="row">
         <div className="label">Manufacturer</div>
         <div className="divide">|</div>
-        <div className="value">BMW</div>
+        <div className="value">{selectedCarManufaturer}</div>
       </div>
       <div className="row">
         <div className="label">Model</div>
         <div className="divide">|</div>
-        <div className="value">3 Series</div>
+        <div className="value">{selectedCarModel}</div>
       </div>
       <div className="row">
         <div className="label">Year</div>
         <div className="divide">|</div>
-        <div className="value">2012</div>
+        <div className="value">{selectedCarYear}</div>
       </div>
       <div className="row">
         <div className="label">Doors</div>
         <div className="divide">|</div>
-        <div className="value">4/5</div>
+        <div className="value">{selectedCarDoors}</div>
       </div>
       <div className="row">
         <div className="label">AC</div>
         <div className="divide">|</div>
-        <div className="value">Yes</div>
+        <div className="value">{selectedCarAC}</div>
       </div>
       <div className="row">
         <div className="label">Transmission</div>
         <div className="divide">|</div>
-        <div className="value">Automatic</div>
+        <div className="value">{selectedCarTransmission}</div>
       </div>
       <div className="row">
         <div className="label">Fuel</div>
         <div className="divide">|</div>
-        <div className="value">Gasoline</div>
+        <div className="value">{selectedCarFuel}</div>
       </div>
       <button className="reserveButton">Reserve</button>
     </div>
