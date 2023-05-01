@@ -547,49 +547,61 @@ button.pressedCar {
 
 /* Banner section */
 
+
+.banner {
+  background-image: url("../src/images/bookingBC.png");
+  background-position: -225px 255px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .bannerBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 8rem;
-  margin: 140px 250px;
-  margin-bottom: 150px;
+  margin-top: 10rem;
 }
 .whyChoose {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   gap: 50px;
 }
 .boxSide1 {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 50%;
+  align-items: left;
 }
 .boxSide2 {
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 50%;
 }
 .insideBox {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin: 10px;
   gap: 2rem;
-}
-.insideBoxInside {
-  display: flex;
-  flex-direction: column;
+  margin: 10px;
 }
 .icons {
   font-size: 100px;
   color: rgb(59, 111, 207);
-  width: 75px;
+  display: flex;
+  align-items: flex-start;
+  width: 100px;
+  height: 100px;
+}
+.insideBoxInside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+  flex: 1;
 }
 
 /* Reviews */
