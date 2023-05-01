@@ -18,12 +18,13 @@ interface Car {
   ac: string;
   transmission: string;
   fuel: string;
+  price: string;
 };
 export const cars: Car[] = [
-  { label: 'Audi A3', img: AudiA3, manufacturer: 'Audi', model: 'A3', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline' },
-  { label: 'BMW 3 Series', img: BMW3, manufacturer: 'BMW', model: '3 Series', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline'  },
-  { label: 'Mercedes-Benz E-Class', img: MBE, manufacturer: 'Mercedes-Benz', model: 'E-Class', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline'  },
-  { label: 'VW Golf GTI', img: GolfGTI, manufacturer: 'Volkswagen', model: 'Golf GTI', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline'  },
+  { label: 'Audi A3', img: AudiA3, manufacturer: 'Audi', model: 'A3', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline', price: "42" },
+  { label: 'BMW 3 Series', img: BMW3, manufacturer: 'BMW', model: '3 Series', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline', price: "70" },
+  { label: 'Mercedes-Benz E-Class', img: MBE, manufacturer: 'Mercedes-Benz', model: 'E-Class', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline', price: "95" },
+  { label: 'VW Golf GTI', img: GolfGTI, manufacturer: 'Volkswagen', model: 'Golf GTI', year: '2021', doors: '4/5', ac: 'Yes', transmission: 'Automatic', fuel: 'Gasoline', price: "75" },
 ];
 
 // Cities object

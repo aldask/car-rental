@@ -6,6 +6,7 @@ import { cars } from './Booking';
 function RentalFleet() {
 
   const [selectedFleetCar, setSelectedFleetCar] = useState(cars[0]);
+  const [selectedCarPrice, setSelectedCarPrice] = useState(selectedFleetCar.price);
   const [selectedFleetCarImg, setSelectedFleetCarImg] = useState(selectedFleetCar.img);
   const [selectedCarManufaturer, setSelectedCarManufaturer] = useState(selectedFleetCar.manufacturer);
   const [selectedCarModel, setSelectedCarModel] = useState(selectedFleetCar.model);
@@ -19,6 +20,7 @@ function RentalFleet() {
     const selectedCar = cars.find(car => car.label === e.currentTarget.value);
     if (selectedCar) {
       setSelectedFleetCar(selectedCar);
+      setSelectedCarPrice(selectedCar.price);
       setSelectedFleetCarImg(selectedCar.img);
       setSelectedCarManufaturer(selectedCar.manufacturer);
       setSelectedCarModel(selectedCar.model);
@@ -49,7 +51,7 @@ function RentalFleet() {
         <img src={selectedFleetCarImg} alt="chosen-car-picture"></img>
       </div>
       <div className="carDetails">
-        <p className="price">Price: 45€/day</p>
+        <p className="price">Price:&nbsp;<span className="strong">{selectedCarPrice}€</span>/day</p>
         <div className="row">
           <div className="label">Manufacturer</div>
           <div className="value">{selectedCarManufaturer}</div>
@@ -78,7 +80,7 @@ function RentalFleet() {
           <div className="label">Fuel</div>
           <div className="value">{selectedCarFuel}</div>
         </div>
-        <button className="reserveButton">Reserve</button>
+        <button className="reserveButton"><a href="#book">Reserve</a></button>
       </div>
     </div>
   </section>

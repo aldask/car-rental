@@ -432,6 +432,7 @@ input[type="radio"]:checked {
   align-items: center;
   margin: 140px 250px;
   margin-bottom: 150px;
+  flex: 1;
 }
 .containerTexts {
   display: flex;
@@ -448,12 +449,10 @@ input[type="radio"]:checked {
 }
 .carSelections {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
   width: 100%;
   height: 300px;
+  gap: 20px;
 }
-
 .carsSelect {
   display: grid;
   grid-template-columns: 1fr;
@@ -461,10 +460,11 @@ input[type="radio"]:checked {
   height: 100%;
 }
 .carsSelect button {
-  font-size: 21px;
+  font-size: 20px;
   text-align: left;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   font-weight: 600;
+  width: 260px;
   background-color: #f3f3f3;
   color: #000;
   border: none;
@@ -474,6 +474,7 @@ input[type="radio"]:checked {
   cursor: pointer;
   max-height: 100%;
   min-width: 100%;
+  white-space: nowrap;
 }
 .carsSelect button:hover {
   background-color: #3b6fcf;
@@ -486,7 +487,6 @@ input[type="radio"]:checked {
   justify-content: center;
   width: 800px;
   height: 100%;
-  margin: 0 50px;
   box-sizing: border-box;
   position: relative;
 }
@@ -501,7 +501,9 @@ input[type="radio"]:checked {
   font-size: 16px;
   height: 400px;
   max-height: 100%;
-  max-width: 100%;
+  white-space: nowrap;
+  float: left;
+  width: 290px;
 }
 .row {
   display: grid;
@@ -513,9 +515,10 @@ input[type="radio"]:checked {
   font-weight: bold;
 }
 .value {
-  text-align: center;
+  text-align: right;
+  white-space: nowrap;
 }
-.reserveButton {
+.reserveButton, .reserveButton a {
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
@@ -523,6 +526,7 @@ input[type="radio"]:checked {
   border-style: none;
   color: white;
   transition: 0.3s;
+  text-decoration: none;
 }
 .reserveButton:hover {
   box-shadow: 0px 0px 4px 3px rgba(59, 111, 207, 0.39);
@@ -531,6 +535,12 @@ input[type="radio"]:checked {
 .price {
   text-align: center;
   font-size: 21px;
+  background-color: #3b6fcf;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Banner section */
