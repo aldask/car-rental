@@ -5,31 +5,17 @@ import { cars } from "./Booking";
 
 function RentalFleet() {
   const [selectedFleetCar, setSelectedFleetCar] = useState(cars[0]);
-  const [selectedCarPrice, setSelectedCarPrice] = useState(
-    selectedFleetCar.price
-  );
-  const [selectedFleetCarImg, setSelectedFleetCarImg] = useState(
-    selectedFleetCar.img
-  );
-  const [selectedCarManufaturer, setSelectedCarManufaturer] = useState(
-    selectedFleetCar.manufacturer
-  );
-  const [selectedCarModel, setSelectedCarModel] = useState(
-    selectedFleetCar.model
-  );
+  const [selectedCarPrice, setSelectedCarPrice] = useState(selectedFleetCar.price);
+  const [selectedFleetCarImg, setSelectedFleetCarImg] = useState(selectedFleetCar.img);
+  const [selectedCarManufaturer, setSelectedCarManufaturer] = useState(selectedFleetCar.manufacturer);
+  const [selectedCarModel, setSelectedCarModel] = useState(selectedFleetCar.model);
   const [selectedCarYear, setSelectedCarYear] = useState(selectedFleetCar.year);
-  const [selectedCarDoors, setSelectedCarDoors] = useState(
-    selectedFleetCar.doors
-  );
+  const [selectedCarDoors, setSelectedCarDoors] = useState(selectedFleetCar.doors);
   const [selectedCarAC, setSelectedCarAC] = useState(selectedFleetCar.ac);
-  const [selectedCarTransmission, setSelectedCarTransmission] = useState(
-    selectedFleetCar.transmission
-  );
+  const [selectedCarTransmission, setSelectedCarTransmission] = useState(selectedFleetCar.transmission);
   const [selectedCarFuel, setSelectedCarFuel] = useState(selectedFleetCar.fuel);
 
-  const handleCarFleet = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleCarFleet = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const selectedCar = cars.find((car) => car.label === e.currentTarget.value);
     if (selectedCar) {
       setSelectedFleetCar(selectedCar);
