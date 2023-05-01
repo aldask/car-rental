@@ -24,16 +24,15 @@ export const questions: Question[] = [
 
 function Faq() {
     const [selectedQuestion, setSelectedQuestion] = useState("");
+    const [showAnswer, setShowAnswer] = useState(false);
   
-    const handleQuestion = (
-      e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) => {
-      const selectedQuestion = questions.find(
-        (q) => q.asking === e.currentTarget.value
-      );
-      if (selectedQuestion) {
-        setSelectedQuestion(selectedQuestion.answer);
-      }
+    const handleQuestion = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        setShowAnswer(false);
+        const selectedQuestion = questions.find((q) => q.asking === e.currentTarget.value);
+        if (selectedQuestion) {
+            setSelectedQuestion(selectedQuestion.answer);
+            setShowAnswer(true);
+        }
     };
   
     return (
@@ -58,7 +57,9 @@ function Faq() {
                   <FontAwesomeIcon icon={faChevronDown} className="arrow" />
                 </button>
                 {selectedQuestion === q.answer && (
-                  <p className="answer">{selectedQuestion}</p>
+                  <p className={`answer ${showAnswer ? "show" : ""}`}>
+                  {selectedQuestion}
+                </p>
                 )}
               </div>
             ))}

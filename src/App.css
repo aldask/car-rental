@@ -696,6 +696,12 @@ button.pressedCar {
   padding: 10px 35px;
   display: flex;
   box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+  position: relative;
+  top: -100px;
+  transition: top 0.5s ease-in-out;
+}
+.show {
+  top: 0;
 }
 
 /* Download */
