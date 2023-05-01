@@ -456,6 +456,7 @@ input[type="radio"]:checked {
   display: flex;
   gap: 30px;
   height: 400px;
+  justify-content: space-between;
 }
 .carsSelect {
   display: flex;
@@ -499,7 +500,7 @@ input[type="radio"]:checked {
   display: grid;
   font-size: 16px;
   white-space: nowrap;
-  width: 290px;
+  width: 240px;
 }
 .row {
   display: grid;
@@ -538,6 +539,10 @@ input[type="radio"]:checked {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+button.pressedCar {
+  background-color: #3b6fcf;
+  color: white;
 }
 
 /* Banner section */

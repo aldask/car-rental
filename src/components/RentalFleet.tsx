@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { cars } from "./Booking";
 
-// Set car model and img
+// Set car model and img and all other things for specific car
 
 function RentalFleet() {
   const [selectedFleetCar, setSelectedFleetCar] = useState(cars[0]);
@@ -63,6 +63,7 @@ function RentalFleet() {
                   <button
                     key={car.label}
                     value={car.label}
+                    className={selectedFleetCar.label === car.label ? "pressedCar" : ""}
                     onClick={handleCarFleet}
                   >
                     {car.label}
