@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Question {
   asking: string;
@@ -23,50 +23,49 @@ export const questions: Question[] = [
 ];
 
 function Faq() {
-  const [givenQuestion, setGivenQuestion] = useState("");
-  const [givenAnswer, setGivenAnswer] = useState("");
-
-  const handleQuestion = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    const selectedQuesion = questions.find((q) => q.asking === e.currentTarget.value);
-  };
-
-  return (
-    <>
-      <section className="faqContainer">
-        <div className="faqTitle">
-          <h1>Frequently Asked Questions</h1>
-          <p>
-            Frequently Asked Questions About the Car Rental Booking Process on
-            Our Website: Answers to Common Concerns and Inquiries.
-          </p>
-        </div>
-        <div className="questionBox">
+    const [selectedQuestion, setSelectedQuestion] = useState("");
+  
+    const handleQuestion = (
+      e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
+      const selectedQuestion = questions.find(
+        (q) => q.asking === e.currentTarget.value
+      );
+      if (selectedQuestion) {
+        setSelectedQuestion(selectedQuestion.answer);
+      }
+    };
+  
+    return (
+      <>
+        <section className="faqContainer">
+          <div className="faqTitle">
+            <h1>Frequently Asked Questions</h1>
+            <p>
+              Frequently Asked Questions About the Car Rental Booking Process on
+              Our Website: Answers to Common Concerns and Inquiries.
+            </p>
+          </div>
+          <div className="questionBox">
             {questions.map((q) => (
-                  <button
-                    key={q.asking}
-                    value={q.asking}
-                    onClick={handleQuestion}
-                    className="question"
-                  >
-                    {q.asking}
-                  </button>
-                  ))}
-                  {questions.map((q) => (
-                  <button
-                    key={q.answer}
-                    value={q.answer}
-                    onClick={handleQuestion}
-                  >
-                    {q.answer}
-                  </button>
-                  ))}
-            <FontAwesomeIcon icon={faChevronDown} className="arrow" />
-          <div className="answer">test</div>
-        </div>
-      </section>
-    </>
-  );
-}
-
+              <div key={q.asking}>
+                <button
+                  value={q.asking}
+                  onClick={handleQuestion}
+                  className="question"
+                >
+                  {q.asking}
+                  <FontAwesomeIcon icon={faChevronDown} className="arrow" />
+                </button>
+                {selectedQuestion === q.answer && (
+                  <p className="answer">{selectedQuestion}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      </>
+    );
+  }
+  
 export default Faq;

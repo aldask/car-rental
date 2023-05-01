@@ -547,7 +547,6 @@ button.pressedCar {
 
 /* Banner section */
 
-
 .banner {
   background-image: url("../src/images/bookingBC.png");
   background-position: -225px 255px;
@@ -650,7 +649,7 @@ button.pressedCar {
   justify-content: space-between;
 }
 
-/* Reviews */
+/* FAQ */
 
 .faqContainer {
   display: flex;
@@ -695,11 +694,8 @@ button.pressedCar {
   text-align: left;
   background-color: white;
   padding: 10px 35px;
-  display: none;
+  display: flex;
   box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
-}
-.down {
-  text-align: right;
 }
 
 /* Download */
