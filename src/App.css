@@ -355,6 +355,9 @@ p {
   background: linear-gradient(0deg, rgba(0,176,255,0.4206057422969187) 0%, rgba(59,150,240,1) 62%, rgba(59,111,207,1) 100%);
   box-shadow: -1px -2px 30px 0px rgba(0, 0, 0, 0.288);
 }
+.userDetails h2 {
+  color: rgb(224, 224, 224);
+}
 .userInfo {
   display: flex;
   flex-direction: column;
@@ -398,12 +401,17 @@ input[type="radio"] {
 }
 input[type="radio"]:checked {
   border-color: rgb(243, 243, 243);
-  background-color: rgb(15, 126, 0);
+  background-color: rgb(19, 161, 0);
 }
 .subscription {
   display: flex;
   flex-direction: row;
   gap: 12px;
+  margin-top: 15px;
+}
+.subscription label {
+  font-weight: 500;
+  color:rgb(224, 224, 224);
 }
 .bottomBar {
   display: flex;
@@ -415,114 +423,59 @@ input[type="radio"]:checked {
 }
 
 
-/*.booking {
+/* Fleet section */
+
+.fleet {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: center;
-  background-color: rgb(240, 240, 240);
-  flex-wrap: wrap;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
-  padding: 25px;
-  background-image: url("./images/bookingBC.png");
-  background-size: cover;
-  margin: 140px 250px;
-}
-
-.booking-box {
-  display: grid;
-  grid-template: repeat(2, auto) / repeat(3, 1fr);
-  grid-gap: 15px;
-  justify-content: flex-start;
   align-items: center;
+  margin-top: 100px;
 }
-.selectionBox label {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.selectionBox label:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-.selectionBox input,
-.selectionBox select,
-.selectionBox button {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
-.selectionBox input,
-.selectionBox select {
-  border: 1px solid #ccd7e6
-}
-.selectionBox label {
-display: flex;
-  align-items: center;
-}
-.confirmBooking {
-  font-size: 18px;
-  font-weight: 500;
-  padding: 14px;
-  border-radius: 5px;
-  background-color: rgb(59, 111, 207);
-  border-style: none;
-  color: white;
-  transition: 0.3s;
-}
-.confirmBooking:hover {
-  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
-  cursor: pointer;
-}
-
-/* Car booking section */
-
 .fleetContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 140px 250px;
-  margin-bottom: 150px;
 }
-.containerTexts {
+.fleetTxt {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-bottom: 50px;
 }
-.containerTexts p {
+.fleetTxt p {
   width: 60%;
+  margin-bottom: 2.1rem;
 }
-.containerTexts h1 {
+.fleetTxt h1 {
   margin-bottom: 2.1rem;
 }
 .carSelections {
   display: flex;
+  gap: 30px;
+  height: 400px;
   justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
 }
 .carsSelect {
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  grid-gap: 0.2rem;
 }
 .carsSelect button {
-  font-size: 21px;
+  font-size: 20px;
   text-align: left;
-  padding: 1.5rem 2.5rem;
+  padding: 1rem;
   font-weight: 600;
   background-color: #f3f3f3;
   color: #000;
   border: none;
-  margin: 0.2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
   cursor: pointer;
-  max-height: 100%;
+  white-space: nowrap;
+  height: 100%;
 }
 .carsSelect button:hover {
   background-color: #3b6fcf;
@@ -530,22 +483,28 @@ display: flex;
   color: #fff;
 }
 .carPic {
-  margin: 0 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 100%;
+  box-sizing: border-box;
 }
 .carPic img {
-  display: block;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .carDetails {
   display: grid;
   font-size: 16px;
-  max-height: 100%;
+  white-space: nowrap;
+  width: 240px;
 }
 .row {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 5px;
 }
@@ -553,9 +512,11 @@ display: flex;
   font-weight: bold;
 }
 .value {
-  text-align: center;
+  text-align: right;
+  white-space: nowrap;
 }
-.reserveButton {
+.reserveButton,
+.reserveButton a {
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
@@ -563,6 +524,7 @@ display: flex;
   border-style: none;
   color: white;
   transition: 0.3s;
+  text-decoration: none;
 }
 .reserveButton:hover {
   box-shadow: 0px 0px 4px 3px rgba(59, 111, 207, 0.39);
@@ -571,6 +533,16 @@ display: flex;
 .price {
   text-align: center;
   font-size: 21px;
+  background-color: #3b6fcf;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button.pressedCar {
+  background-color: #3b6fcf;
+  color: white;
 }
 
 /* Banner section */
