@@ -166,8 +166,7 @@ function Booking() {
 
   // Display modal if inputs are filled
   const handleSetModalTrue = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (
       carModel === "" ||
