@@ -25,7 +25,8 @@ const questions: Question[] = [
 function Faq() {
   const [selectedQuestion, setSelectedQuestion] = useState("");
 
-  const handleQuestion = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleQuestion = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const selectedQuestion = questions.find((q) => q.asking === e.currentTarget.value);
     if (selectedQuestion) {
       setSelectedQuestion(selectedQuestion.answer);
@@ -37,32 +38,31 @@ function Faq() {
   return (
     <section className="faq">
       <div className="container">
-        <div className="faqTitle">
-          <h1>Frequently Asked Questions</h1>
-          <p>
-            Frequently Asked Questions About the Car Rental Booking Process on
-            Our Website: Answers to Common Concerns and Inquiries.
-          </p>
-        </div>
-        <div className="questionBox">
-          {questions.map((q) => (
-            <div key={q.asking}>
-              <button
-                value={q.asking}
-                onClick={handleQuestion}
-                className="question"
-              >
-                {q.asking}
-                <FontAwesomeIcon
-                  icon={faChevronDown}
-                  className="arrow"
-                />
-              </button>
-              {selectedQuestion === q.answer && (
-                <p className="answer">{selectedQuestion}</p>
-              )}
-            </div>
-          ))}
+        <div className="faqBox">
+          <div className="faqTitle">
+            <h1>Frequently Asked Questions</h1>
+            <p>
+              Frequently Asked Questions About the Car Rental Booking Process on
+              Our Website: Answers to Common Concerns and Inquiries.
+            </p>
+          </div>
+          <div className="questionBox">
+            {questions.map((q) => (
+              <div key={q.asking}>
+                <button
+                  value={q.asking}
+                  onClick={handleQuestion}
+                  className="question"
+                >
+                  {q.asking}
+                  <FontAwesomeIcon icon={faChevronDown} className="arrow" />
+                </button>
+                {selectedQuestion === q.answer && (
+                  <p className="answer">{selectedQuestion}</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -610,7 +610,13 @@ button.pressedCar {
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-  width: 100%;
+}
+.faqBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
 }
 .faqTitle {
   display: flex;
@@ -631,22 +637,23 @@ button.pressedCar {
   justify-content: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
+  width: 850px;
 }
 .questionBox button {
   width: 100%;
   text-align: left;
-  padding: 1rem;
+  padding: 20px;
   border: none;
   background-color: #f7f7f7;
-  font-size: 1rem;
   font-weight: 700;
+  font-size: 20px;
   cursor: pointer;
   position: relative;
 }
 .questionBox button .arrow {
   position: absolute;
-  right: 1rem;
+  right: 1.25rem;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.3s ease-in-out;
@@ -656,7 +663,7 @@ button.pressedCar {
   transform: translateY(-50%) rotate(-180deg);
 }
 .answer {
-  padding: 1rem;
+  padding: 20px;
   background-color: #f7f7f7;
   border-top: 1px solid #ccc;
   animation: fadeIn 500ms ease-in-out;
