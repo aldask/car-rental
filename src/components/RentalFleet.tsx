@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cars } from "./Booking";
+import { cars, Car } from '../Data/cars';
 
 // Set car model and img and all other things for specific car
 
