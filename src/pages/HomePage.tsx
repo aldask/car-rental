@@ -15,6 +15,7 @@ function HomePage() {
       <Booking />
       <RentalFleet />
       <Banner />
+      <Reviews />
       <Faq />
     </>
   );

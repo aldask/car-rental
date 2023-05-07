@@ -602,6 +602,82 @@ button.pressedCar {
   flex: 1;
 }
 
+/* Reviews */
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.reviewBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reviewsTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 60%;
+}
+.reviewsBoxes {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.userBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+  padding: 20px 25px;
+  width: 40%;
+}
+.userBox > .message {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.reviewerCredentials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.sideOne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.sideOne p {
+  font-weight: 600;
+}
+.sideOne img {
+  width: 60px;
+  border-radius: 50%;
+}
+.sideTwo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.quote {
+  font-size: 100px;
+  color: rgb(59, 111, 207);
+  display: flex;
+  align-items: flex-start;
+  width: 100px;
+  height: 50px;
+}
+
 /* FAQ */
 
 .faq {
@@ -616,7 +692,6 @@ button.pressedCar {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-self: center;
 }
 .faqTitle {
   display: flex;

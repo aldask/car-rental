@@ -166,8 +166,7 @@ function Booking() {
 
   // Display modal if inputs are filled
   const handleSetModalTrue = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (
       carModel === "" ||
@@ -177,7 +176,11 @@ function Booking() {
       dropDate === ""
     ) {
       setShowErrorMessage(true);
-    } else {
+    } else if (
+      pickUpCity === "Select car pick-up location" ||
+      dropOffCity === "Select car drop-off location"
+    ) setShowErrorMessage(true); 
+    else {
       setModal(true);
       setShowErrorMessage(false);
       document.body.style.overflow = "hidden";
