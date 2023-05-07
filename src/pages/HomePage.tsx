@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import Reviews from "../components/Reviews";
 import Faq from "../components/Faq";
 import DownloadApp from "../components/DownloadApp";
+import Footer from "../components/Footer";
 
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
       <Reviews />
       <Faq />
       <DownloadApp />
+      <Footer />
     </>
   );
 }
