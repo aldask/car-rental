@@ -790,20 +790,60 @@ button.pressedCar {
 .footer {
   display: flex;
   flex-direction: column;
+  background-color: rgb(59, 111, 207);
+  color: white;
 }
 .footerBox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 500px;
+  margin-bottom: 50px;
+}
+.footerBox a {
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  font-weight: 700;
+  font-size: 20px;
 }
 .column1,
 .column2,
-.column3,
-.column4 {
+.column3 {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
+  width: 20%;
+  gap: 10px;
+}
+.column3 li {
+  width: 100%;
+}
+.column3 input {
+  border: 1px solid #ccd7e6;
+  width: 100%;
+  padding: 10px 20px;
+}
+.column3 button {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgb(71, 71, 71);
+  border-style: none;
+  color: white;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.column3 button:hover {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.329);
+  cursor: pointer;
+}
+.black {
+  color: black;
+}
+.footerBox p {
+  color: #d8d8d8;
 }
