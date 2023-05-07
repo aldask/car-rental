@@ -756,25 +756,31 @@ button.pressedCar {
 
 /* Download */
 
-.downloadContainer {
+.download {
   background-image: url("./images/download.png");
-  background-position: top;
   background-repeat: no-repeat;
-  background-size: auto;
-  padding: 10rem 0;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  max-width: 133rem
+  padding: 10rem;
+  height: 100%;
+  background-color: #e2e2e2;
+  margin-bottom: 50px;
+}
+.apps {
+  width: 50%;
 }
 .downloadText {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 55rem;
   text-align: left;
-  margin: 0 auto!important;
-    max-width: 133rem!important;
-    padding: 0;
 }
-.empty {
-  width: 500%;
+.downloadButtons {
+  display: flex;
+  flex-direction:row;
+  gap: 3rem;
+}
+.downloadButtons img {
+  width: 220px;
 }
