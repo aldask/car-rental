@@ -624,24 +624,26 @@ button.pressedCar {
 }
 .reviewsBoxes {
   display: flex;
-  gap: 1rem;
   justify-content: center;
   padding: 1rem;
-  width: 95%;
+  width: 100%;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 .userBox {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
-  padding: 50px;
+  padding: 20px 25px;
+  width: 40%;
 }
 .userBox > .message {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .reviewerCredentials {
   display: flex;
@@ -652,14 +654,29 @@ button.pressedCar {
 .sideOne {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.sideOne p {
+  font-weight: 600;
+}
+.sideOne img {
+  width: 60px;
+  border-radius: 50%;
 }
 .sideTwo {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
-
+.quote {
+  font-size: 100px;
+  color: rgb(59, 111, 207);
+  display: flex;
+  align-items: flex-start;
+  width: 100px;
+  height: 50px;
+}
 
 /* FAQ */
 
