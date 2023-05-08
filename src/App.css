@@ -1,50 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+  --blue: rgb(19, 94, 206);
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 html {
   scroll-behavior: smooth;
 }
 body {
   position: relative;
-  background-color: rgb(231, 231, 231);
+  background-color: #DDE9F5;
   overflow: auto;
 }
 .container {
-  margin: 0 133px!important;
+  margin: 0 135px!important;
   max-width: 133rem!important;
 }
 
-/* Universal */
+/* Universal styles */
 
 h1 {
-  font-size: 61px;
+  font-size: 60px;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 h2 {
-  font-size: 30px;
+  font-size: 45px;
   margin-bottom: 25px;
-  font-weight: 700;
+  font-weight: 500;
 }
 h3 {
-  font-size: 30px;
-}
-h4 {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 .blue {
-  color: rgb(59, 111, 207);
+  color: var(--blue);
 }
 p {
   font-size: 17px;
-  line-height: 30px;
-  color: #636366;
+  line-height: 25px;
+  color: #5a5a5a;
 }
 .red {
   color: red;
@@ -62,7 +65,8 @@ p {
 
 .header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 10px 135px;
   align-items: center;
   position: fixed;
   top: 0;
@@ -78,7 +82,7 @@ p {
   text-decoration: none;
   color: black;
   font-size: 19px;
-  transition: 0.4s;
+  transition: all 0.2s ease-in-out;
 }
 .header a:hover {
   color: rgb(0, 85, 241);
@@ -94,7 +98,7 @@ p {
 }
 .header .headerSide2:last-child a:last-child {
   border-radius: 30px;
-  background: rgb(59, 111, 207);
+  background: var(--blue);
   padding: 7px 21px;
   color: white;
 }
@@ -114,6 +118,8 @@ p {
 .heroContent {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 .heroSide1 {
   display: flex;
@@ -121,6 +127,7 @@ p {
   justify-content: space-evenly;
   align-items: flex-start;
   color: black;
+  width: 35%;
 }
 .heroSide1 p {
   margin-bottom: 60px;
@@ -133,13 +140,14 @@ p {
   font-weight: 500;
   padding: 14px;
   border-radius: 5px;
-  background-color: rgb(59, 111, 207);
+  background-color: var(--blue);
+  box-shadow: 6px 8px 20px -7px var(--blue);
   border-style: none;
   color: white;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 .tripPlan:hover {
-  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
+  box-shadow: 0px 0px 10px 3px var(--blue);
   cursor: pointer;
 }
 
@@ -151,10 +159,11 @@ p {
   position: relative;
   justify-items: center;
   padding-top: 100px;
+  margin-bottom: 100px;
 }
 .carsBookingBox {
-  margin-bottom: 20px;
-  background-color: rgb(240, 240, 240);
+  margin-bottom: 100px;
+  background-color: #f1f3f5;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
   padding: 25px;
   background-image: url("./images/bookingBC.png");
@@ -204,14 +213,14 @@ p {
   font-weight: 500;
   padding: 14px;
   border-radius: 5px;
-  background-color: rgb(59, 111, 207);
+  background-color: var(--blue);
   border-style: none;
   color: white;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
   align-self: flex-end;
 }
 .confirmBooking:hover {
-  box-shadow: 0px 0px 4px 1px rgb(59, 111, 207);
+  box-shadow: 0px 0px 10px 1px var(--blue);
   cursor: pointer;
 }
 
@@ -244,13 +253,12 @@ p {
 .disabled {
   display: none;
 }
-/* bad */
 .activeModal {
   position: fixed;
   display: flex;
   flex-direction: column;
   z-index: 999999999999;
-  background-color: rgb(231, 231, 231);
+  background-color: #f1f3f5;
   color: #010103;
   height: 100vh;
   left: 50%;
@@ -268,14 +276,14 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6); /* You can change the opacity by changing the last value (0.6) */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1000;
 }
 .upperBar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(59, 111, 207);
+  background-color: var(--blue);
   color: white;
   padding: 1.25rem 2rem;
   text-transform: uppercase;
@@ -286,10 +294,11 @@ p {
   font-weight: 700;
   font-size: 20px;
   color: white;
+  margin: 0;
 }
 .upperBar p {
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .upperBar p:hover {
   color: red;
@@ -351,8 +360,7 @@ p {
 }
 .userDetails {
   padding: 2rem 3rem;
-  background: rgb(0,176,255);
-  background: linear-gradient(0deg, rgba(0,176,255,0.4206057422969187) 0%, rgba(59,150,240,1) 62%, rgba(59,111,207,1) 100%);
+  background: linear-gradient(0deg, rgba(8, 164, 236, 0.733) 0%, rgba(59,150,240,1) 62%, rgba(59,111,207,1) 100%);
   box-shadow: -1px -2px 30px 0px rgba(0, 0, 0, 0.288);
 }
 .userDetails h2 {
@@ -429,7 +437,7 @@ input[type="radio"]:checked {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .fleetContainer {
   display: flex;
@@ -445,10 +453,7 @@ input[type="radio"]:checked {
   margin-bottom: 50px;
 }
 .fleetTxt p {
-  width: 60%;
-  margin-bottom: 2.1rem;
-}
-.fleetTxt h1 {
+  width: 70%;
   margin-bottom: 2.1rem;
 }
 .carSelections {
@@ -467,17 +472,17 @@ input[type="radio"]:checked {
   text-align: left;
   padding: 1rem;
   font-weight: 600;
-  background-color: #f3f3f3;
+  background-color: #f1f3f5;
   color: #000;
   border: none;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   white-space: nowrap;
   height: 100%;
 }
 .carsSelect button:hover {
-  background-color: #3b6fcf;
+  background-color: var(--blue);
   box-shadow: 0 10px 20px 0 rgba(59, 111, 207, 0.1);
   color: #fff;
 }
@@ -519,20 +524,20 @@ input[type="radio"]:checked {
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
-  background-color: rgb(59, 111, 207);
+  background-color: var(--blue);
   border-style: none;
   color: white;
-  transition: 0.3s;
+  transition: all 0.2s ease-in-out;
   text-decoration: none;
 }
 .reserveButton:hover {
-  box-shadow: 0px 0px 4px 3px rgba(59, 111, 207, 0.39);
+  box-shadow: 0px 0px 10px 1px var(--blue);
   cursor: pointer;
 }
 .price {
   text-align: center;
   font-size: 21px;
-  background-color: #3b6fcf;
+  background-color: var(--blue);
   color: white;
   border-radius: 5px;
   display: flex;
@@ -540,7 +545,16 @@ input[type="radio"]:checked {
   justify-content: center;
 }
 button.pressedCar {
-  background-color: #3b6fcf;
+  background-color: var(--blue);
+  color: white;
+}
+
+/* Divider */
+
+.divider {
+  background-color: #2d2d2d;
+  margin-top: 100px;
+  height: 100px;
   color: white;
 }
 
@@ -551,6 +565,7 @@ button.pressedCar {
   background-position: -225px 255px;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 100px;
 }
 .bannerBox {
   display: flex;
@@ -587,7 +602,7 @@ button.pressedCar {
 }
 .icons {
   font-size: 100px;
-  color: rgb(59, 111, 207);
+  color: var(--blue);
   display: flex;
   align-items: flex-start;
   width: 100px;
@@ -602,6 +617,82 @@ button.pressedCar {
   flex: 1;
 }
 
+/* Reviews */
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.reviewBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reviewsTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 70%;
+}
+.reviewsBoxes {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.userBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f1f3f5;
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+  padding: 20px 25px;
+  width: 40%;
+}
+.userBox > .message {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.reviewerCredentials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.sideOne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.sideOne p {
+  font-weight: 600;
+}
+.sideOne img {
+  width: 60px;
+  border-radius: 50%;
+}
+.sideTwo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.quote {
+  font-size: 100px;
+  color: var(--blue);
+  display: flex;
+  align-items: flex-start;
+  width: 100px;
+  height: 50px;
+}
+
 /* FAQ */
 
 .faq {
@@ -609,14 +700,16 @@ button.pressedCar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-bottom: 100px;
+  background-image: url("./images/FAQBC.png");
+  background-repeat: no-repeat;
+  background-position: left;
 }
 .faqBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-self: center;
 }
 .faqTitle {
   display: flex;
@@ -624,9 +717,7 @@ button.pressedCar {
   align-items: center;
   text-align: center;
   margin-bottom: 50px;
-}
-.faqTitle h1 {
-  margin-bottom: 2.1rem;
+  width: 70%;
 }
 .faqTitle p {
   margin-bottom: 2.1rem;
@@ -637,7 +728,6 @@ button.pressedCar {
   justify-content: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 20px;
   width: 850px;
 }
 .questionBox button {
@@ -645,7 +735,7 @@ button.pressedCar {
   text-align: left;
   padding: 20px;
   border: none;
-  background-color: #f7f7f7;
+  background-color: #f1f3f5;
   font-weight: 700;
   font-size: 20px;
   cursor: pointer;
@@ -656,7 +746,7 @@ button.pressedCar {
   right: 1.25rem;
   top: 50%;
   transform: translateY(-50%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 .questionBox button:focus .arrow,
 .questionBox button:hover .arrow {
@@ -664,7 +754,7 @@ button.pressedCar {
 }
 .answer {
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #f1f3f5;
   border-top: 1px solid #ccc;
   animation: fadeIn 500ms ease-in-out;
 }
@@ -681,25 +771,93 @@ button.pressedCar {
 
 /* Download */
 
-.downloadContainer {
+.download {
   background-image: url("./images/download.png");
-  background-position: top;
   background-repeat: no-repeat;
-  background-size: auto;
-  padding: 10rem 0;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  max-width: 133rem
+  padding: 10rem;
+  height: 100%;
+}
+.apps {
+  width: 50%;
 }
 .downloadText {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 55rem;
   text-align: left;
-  margin: 0 auto!important;
-    max-width: 133rem!important;
-    padding: 0;
 }
-.empty {
-  width: 500%;
+.downloadButtons {
+  display: flex;
+  flex-direction:row;
+  gap: 3rem;
+}
+.downloadButtons img {
+  width: 220px;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blue);
+  color: white;
+  box-shadow: 0px -1px 16px 1px rgba(0, 0, 0, 0.438);
+  padding-bottom: 50px;
+}
+.footerBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.footerBox a {
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  font-weight: 700;
+  font-size: 20px;
+}
+.column1,
+.column2,
+.column3 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  width: 20%;
+  gap: 10px;
+}
+.column3 li {
+  width: 100%;
+}
+.column3 input {
+  border: 1px solid #ccd7e6;
+  width: 100%;
+  padding: 10px 20px;
+}
+.column3 button {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgb(71, 71, 71);
+  border-style: none;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+.column3 button:hover {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.329);
+  cursor: pointer;
+}
+.black {
+  color: black;
+}
+.footerBox p {
+  color: #d8d8d8;
 }

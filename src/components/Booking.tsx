@@ -1,122 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal } from "./Modal";
-
-// Img's for cars
-import AudiA3 from "../images/AudiA3.png";
-import BMW3 from "../images/BMW3.png";
-import MBE from "../images/MBE.png";
-import GolfGTI from "../images/GolfGTI.png";
-
-// Cars object
-interface Car {
-  label: string;
-  img: any;
-  manufacturer: string;
-  model: string;
-  year: string;
-  doors: string;
-  ac: string;
-  transmission: string;
-  fuel: string;
-  price: string;
-}
-export const cars: Car[] = [
-  {
-    label: "Audi A3",
-    img: AudiA3,
-    manufacturer: "Audi",
-    model: "A3",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "42",
-  },
-  {
-    label: "BMW 3 Series",
-    img: BMW3,
-    manufacturer: "BMW",
-    model: "3 Series",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "70",
-  },
-  {
-    label: "Mercedes-Benz E-Class",
-    img: MBE,
-    manufacturer: "Mercedes-Benz",
-    model: "E-Class",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "95",
-  },
-  {
-    label: "VW Golf GTI",
-    img: GolfGTI,
-    manufacturer: "Volkswagen",
-    model: "Golf GTI",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "75",
-  },
-  {
-    label: "New Car",
-    img: GolfGTI,
-    manufacturer: "Volkswagen",
-    model: "Golf GTI",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "75",
-  },
-  {
-    label: "New Car4",
-    img: GolfGTI,
-    manufacturer: "Volkswagen",
-    model: "Golf GTI",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "75",
-  },
-  {
-    label: "New Car44",
-    img: GolfGTI,
-    manufacturer: "Volkswagen",
-    model: "Golf GTI",
-    year: "2021",
-    doors: "4/5",
-    ac: "Yes",
-    transmission: "Automatic",
-    fuel: "Gasoline",
-    price: "75",
-  },
-];
-
-// Cities object
-interface City {
-  label: string;
-};
-const cities: City[] = [
-  { label: "Vilnius" },
-  { label: "Kaunas" },
-  { label: "Riga" },
-  { label: "Warsaw" },
-];
+import { cars } from '../Data/cars';
+import { cities } from '../Data/cities';
 
 function Booking() {
   // Modal states
@@ -166,13 +51,14 @@ function Booking() {
 
   // Display modal if inputs are filled
   const handleSetModalTrue = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (
       carModel === "" ||
       pickUpCity === "" ||
+      pickUpCity === "Select car pick-up location" ||
       dropOffCity === "" ||
+      dropOffCity === "Select car drop-off location" ||
       pickDate === "" ||
       dropDate === ""
     ) {
@@ -183,8 +69,6 @@ function Booking() {
       document.body.style.overflow = "hidden";
     }
   };
-
-  // Car img cases
 
   return (
     <>
@@ -202,7 +86,7 @@ function Booking() {
       <section className="booking" id="book">
         <div className="container">
           <div className="carsBookingBox">
-            <h2 className="bookingTitle">Book a Car</h2>
+            <h3 className="bookingTitle">Book a Car</h3>
             {showErrorMessage && (
               <p className="fail">All fields need to be selected</p>
             )}
