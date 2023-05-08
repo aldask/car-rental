@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cars, Car } from '../Data/cars';
+import { cars } from '../Data/cars';
 
 // Set car model and img and all other things for specific car
 
@@ -37,7 +37,7 @@ function RentalFleet() {
         <div className="container">
           <div className="fleetContainer">
             <div className="fleetTxt">
-              <h1>Our Rental Fleet</h1>
+              <h2>Our Rental Fleet</h2>
               <p>
                 Choose from a variety of our amazing vehicles to rent for your
                 next adventure or business trip.

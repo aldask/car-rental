@@ -4,7 +4,7 @@ function Divider() {
         <section className="divider">
             <div className="container">
                 <div className="dividerBox">
-                    new banner is here
+                    <h2>new banner</h2>
                 </div>
             </div>
         </section>

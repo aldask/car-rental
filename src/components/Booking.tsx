@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "./Modal";
-import { cars, Car } from '../Data/cars';
-
-// Cities object
-interface City {
-  label: string;
-};
-const cities: City[] = [
-  { label: "Vilnius" },
-  { label: "Kaunas" },
-  { label: "Riga" },
-  { label: "Warsaw" },
-];
+import { cars } from '../Data/cars';
+import { cities } from '../Data/cities';
 
 function Booking() {
   // Modal states
@@ -66,23 +56,19 @@ function Booking() {
     if (
       carModel === "" ||
       pickUpCity === "" ||
+      pickUpCity === "Select car pick-up location" ||
       dropOffCity === "" ||
+      dropOffCity === "Select car drop-off location" ||
       pickDate === "" ||
       dropDate === ""
     ) {
       setShowErrorMessage(true);
-    } else if (
-      pickUpCity === "Select car pick-up location" ||
-      dropOffCity === "Select car drop-off location"
-    ) setShowErrorMessage(true); 
-    else {
+    } else {
       setModal(true);
       setShowErrorMessage(false);
       document.body.style.overflow = "hidden";
     }
   };
-
-  // Car img cases
 
   return (
     <>
@@ -100,7 +86,7 @@ function Booking() {
       <section className="booking" id="book">
         <div className="container">
           <div className="carsBookingBox">
-            <h2 className="bookingTitle">Book a Car</h2>
+            <h3 className="bookingTitle">Book a Car</h3>
             {showErrorMessage && (
               <p className="fail">All fields need to be selected</p>
             )}

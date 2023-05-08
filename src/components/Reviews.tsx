@@ -9,7 +9,7 @@ function Reviews() {
         <div className="container">
           <div className="reviewBox">
             <div className="reviewsTitle">
-              <h1>Client's Testimonials</h1>
+              <h2>Client's Testimonials</h2>
               <p>
                 Discover the positive impact we've made on the our clients by
                 reading through their testimonials. Our clients have experienced

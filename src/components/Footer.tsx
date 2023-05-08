@@ -9,7 +9,11 @@ function Footer() {
                   <h2>Car<span className="black strong">O</span></h2>
                 </li>
                 <li>
-                  <p>We offer something nice</p>
+                  <p>
+                    The go-to car rental service for all your transportation needs. Affordable prices, 
+                    excellent customer service, and a wide selection of reliable vehicles to choose from. 
+                    Book your rental today and experience convenience!
+                  </p>
                 </li>
                 <li>
                   <a href="tel:+4733378901">+47 333 78 901</a>
