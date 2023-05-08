@@ -109,12 +109,12 @@ export function Modal({
               </div>
             </div>
             <div className="selectedCar">
-              <h2 className="strong">{carModel}</h2>
+              <h3 className="strong">{carModel}</h3>
               <img src={carImg} alt="selected-car"></img>
             </div>
           </div>
           <div className="userDetails">
-            <h2>Personal info</h2>
+            <h3>Personal info</h3>
             <form className="userInfo">
               <div className="two-cols">
                 <span className="data">

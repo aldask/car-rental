@@ -11,7 +11,7 @@ function Banner() {
             <img src={bannerPic} alt="bannerPic"></img>
             <div className="whyChoose">
               <div className="boxSide1">
-                <h2>Best valued deals you will ever find</h2>
+                <h3>Best valued deals you will ever find</h3>
                 <p>
                   Discover the best deals you'll ever find with our unbeatable
                   offers. We're dedicated to providing you with the best value
@@ -25,7 +25,7 @@ function Banner() {
                 <div className="insideBox">
                   <FontAwesomeIcon icon={faCar} className="icons" />
                   <div className="insideBoxInside">
-                    <h2>Cross Country Drive</h2>
+                    <h3>Cross Country Drive</h3>
                     <p>
                       Take your driving experience to the next level with our
                       top-notch vehicles for your cross-country adventures.
@@ -35,7 +35,7 @@ function Banner() {
                 <div className="insideBox">
                   <FontAwesomeIcon icon={faEuroSign} className="icons" />
                   <div className="insideBoxInside">
-                    <h2>All Inclusive Pricing</h2>
+                    <h3>All Inclusive Pricing</h3>
                     <p>
                       Get everything you need in one convenient, transparent
                       price with our all-inclusive pricing policy.
@@ -45,7 +45,7 @@ function Banner() {
                 <div className="insideBox align-top">
                   <FontAwesomeIcon icon={faBan} className="icons" />
                   <div className="insideBoxInside">
-                    <h2>No Hidden Charges</h2>
+                    <h3>No Hidden Charges</h3>
                     <p>
                       Enjoy peace of mind with our no hidden charges policy. We
                       believe in transparent and honest pricing.
