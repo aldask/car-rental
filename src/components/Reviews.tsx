@@ -7,8 +7,8 @@ function Reviews() {
     <>
       <section className="reviews">
         <div className="container">
-          <div className="reviewBox">
-            <div className="reviewsTitle">
+          <div className="reviews__box">
+            <div className="reviews__title">
               <h2>Client's Testimonials</h2>
               <p>
                 Discover the positive impact we've made on the our clients by
@@ -17,17 +17,20 @@ function Reviews() {
                 positive experiences with you.
               </p>
             </div>
-            <div className="reviewsBoxes">
+            <div className="reviews__boxes">
               {users.map((user, index) => (
-                <div className="userBox" key={index}>
-                  <p className="message">{user.userMessage}</p>
-                  <div className="reviewerCredentials">
-                    <div className="sideOne">
+                <div className="review__user-box" key={index}>
+                  <p className="review__message">{user.userMessage}</p>
+                  <div className="review__credentials">
+                    <div className="review__side-one">
                       <img src={user.userPic} alt="user"></img>
                       <p>{user.fullname}</p>
                     </div>
-                    <div className="sideTwo">
-                      <FontAwesomeIcon icon={faQuoteRight} className="quote" />
+                    <div className="review__side-two">
+                      <FontAwesomeIcon
+                        icon={faQuoteRight}
+                        className="review__quote"
+                      />
                     </div>
                   </div>
                 </div>

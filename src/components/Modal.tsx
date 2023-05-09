@@ -38,23 +38,23 @@ export function Modal({
   return (
     <>
       {isOpen && <div className=" body overlay" />}
-      <section className={`${isOpen ? "activeModal" : "disabled"}`}>
-        <div className="upperBar">
+      <section className={`${isOpen ? "active-modal" : "disabled"}`}>
+        <div className="upper-bar">
           <h3>Complete reservation</h3>
           <p onClick={handleExit}>X</p>
         </div>
-        <div className="modalContainer">
-          <div className="userSelections">
+        <div className="modal-container">
+          <div className="user-selections">
             <div className="side1">
               <h4 className="strong">Location & Date</h4>
-              <div className="infoBox">
+              <div className="info-box">
                 <div className="choice">
                   <FontAwesomeIcon icon={faCalendarDays} />
                   <div className="result">
-                    <div className="resultTitle">
+                    <div className="result-title">
                       <p>Pick-Up Date & Time</p>
                     </div>
-                    <div className="resultData">
+                    <div className="result-data">
                       <p>
                         {pickDate} /{" "}
                         <input
@@ -69,10 +69,10 @@ export function Modal({
                 <div className="choice">
                   <FontAwesomeIcon icon={faCalendarDays} />
                   <div className="result">
-                    <div className="resultTitle">
+                    <div className="result-title">
                       <p>Drop-Off Date & Time</p>
                     </div>
-                    <div className="resultData">
+                    <div className="result-data">
                       <p>
                         {dropDate} /{" "}
                         <input
@@ -87,10 +87,10 @@ export function Modal({
                 <div className="choice">
                   <FontAwesomeIcon icon={faLocationDot} />
                   <div className="result">
-                    <div className="resultTitle">
+                    <div className="result-title">
                       <p>Pick-Up Location</p>
                     </div>
-                    <div className="resultData">
+                    <div className="result-data">
                       <p>{pickUpCity}</p>
                     </div>
                   </div>
@@ -98,10 +98,10 @@ export function Modal({
                 <div className="choice">
                   <FontAwesomeIcon icon={faLocationDot} />
                   <div className="result">
-                    <div className="resultTitle">
+                    <div className="result-title">
                       <p>Drop-Off Location</p>
                     </div>
-                    <div className="resultData">
+                    <div className="result-data">
                       <p>{dropOffCity}</p>
                     </div>
                   </div>
@@ -201,7 +201,7 @@ export function Modal({
               <input type="radio" />
               <label>Subscribe to our newsletter</label>
             </div>
-            <div className="bottomBar">
+            <div className="bottom-bar">
               <button className="tripPlan" onClick={handleDone}>Complete Reservation</button>
             </div>
           </div>

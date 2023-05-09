@@ -78,25 +78,25 @@ p {
   background-color: #eff0f4;
   z-index: 1;
 }
-.header a {
+.header__link {
   text-decoration: none;
   color: black;
   font-size: 19px;
   transition: all 0.2s ease-in-out;
 }
-.header a:hover {
+.header__link:hover {
   color: rgb(0, 85, 241);
   cursor: pointer;
 }
-.header img {
+.header__side1 img {
   max-width: 200px;
 }
-.header .headerSide2 {
+.header__side2 {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.header .headerSide2:last-child a:last-child {
+.header__link--active {
   border-radius: 30px;
   background: var(--blue);
   padding: 7px 21px;
@@ -109,19 +109,19 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./images/heroBack.png');
+  background-image: url('/src/images/Hero/heroBack.png');
   background-repeat: no-repeat;
   background-position: right;
   height: 100vh;
   position: relative;
 }
-.heroContent {
+.hero__content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
-.heroSide1 {
+.hero__side1 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -129,13 +129,16 @@ p {
   color: black;
   width: 35%;
 }
-.heroSide1 p {
+.hero__title {
+  margin-bottom: 0;
+}
+.hero__description {
   margin-bottom: 60px;
 }
-.heroSide2 img {
-  width: 820px;;
+.hero__side2 .hero__image {
+  width: 820px;
 }
-.tripPlan {
+.hero__button {
   font-size: 18px;
   font-weight: 500;
   padding: 14px;
@@ -146,7 +149,7 @@ p {
   color: white;
   transition: all 0.2s ease-in-out;
 }
-.tripPlan:hover {
+.hero__button:hover {
   box-shadow: 0px 0px 10px 3px var(--blue);
   cursor: pointer;
 }
@@ -159,10 +162,10 @@ p {
   position: relative;
   justify-items: center;
   padding-top: 100px;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 .carsBookingBox {
-  margin-bottom: 100px;
+  padding-bottom: 100px;
   background-color: #f1f3f5;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
   padding: 25px;
@@ -253,7 +256,7 @@ p {
 .disabled {
   display: none;
 }
-.activeModal {
+.active-modal {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -279,7 +282,7 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1000;
 }
-.upperBar {
+.upper-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -289,27 +292,27 @@ p {
   text-transform: uppercase;
   box-shadow: -1px -2px 30px 0px rgba(0, 0, 0, 0.288);
 }
-.upperBar h3,
-.upperBar p {
+.upper-bar h3,
+.upper-bar p {
   font-weight: 700;
   font-size: 20px;
   color: white;
   margin: 0;
 }
-.upperBar p {
+.upper-bar p {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.upperBar p:hover {
+.upper-bar p:hover {
   color: red;
 }
-.modalContainer {
+.modal-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
 }
-.userSelections {
+.user-selections {
   display: flex;
   flex-direction: row;
   padding: 2rem 3rem;
@@ -322,7 +325,7 @@ p {
   flex-direction: column;
   width: 50%;
 }
-.infoBox {
+.info-box {
   display: flex;
   flex-direction: column;
   margin-top: 33px;
@@ -339,11 +342,11 @@ p {
   flex-direction: column;
   justify-content: space-around;
 }
-.resultTitle p {
+.result-title p {
   font-weight: 900;
   color: black
 }
-.resultData p {
+.result-data p {
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -421,7 +424,7 @@ input[type="radio"]:checked {
   font-weight: 500;
   color:rgb(224, 224, 224);
 }
-.bottomBar {
+.bottom-bar {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -437,37 +440,37 @@ input[type="radio"]:checked {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
-.fleetContainer {
+.fleet-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.fleetTxt {
+.fleet-txt {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-bottom: 50px;
 }
-.fleetTxt p {
+.fleet-txt p {
   width: 70%;
   margin-bottom: 2.1rem;
 }
-.carSelections {
+.car-selections {
   display: flex;
   gap: 30px;
   height: 400px;
   justify-content: space-between;
 }
-.carsSelect {
+.cars-select {
   display: flex;
   flex-direction: column;
   grid-gap: 0.2rem;
 }
-.carsSelect button {
+.cars-select button {
   font-size: 20px;
   text-align: left;
   padding: 1rem;
@@ -481,12 +484,12 @@ input[type="radio"]:checked {
   white-space: nowrap;
   height: 100%;
 }
-.carsSelect button:hover {
+.cars-select button:hover {
   background-color: var(--blue);
   box-shadow: 0 10px 20px 0 rgba(59, 111, 207, 0.1);
   color: #fff;
 }
-.carPic {
+.car-pic {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -494,13 +497,13 @@ input[type="radio"]:checked {
   height: 100%;
   box-sizing: border-box;
 }
-.carPic img {
+.car-pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-.carDetails {
+.car-details {
   display: grid;
   font-size: 16px;
   white-space: nowrap;
@@ -519,8 +522,8 @@ input[type="radio"]:checked {
   text-align: right;
   white-space: nowrap;
 }
-.reserveButton,
-.reserveButton a {
+.reserve-button,
+.reserve-button a {
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
@@ -530,7 +533,7 @@ input[type="radio"]:checked {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
 }
-.reserveButton:hover {
+.reserve-button:hover {
   box-shadow: 0px 0px 10px 1px var(--blue);
   cursor: pointer;
 }
@@ -544,7 +547,7 @@ input[type="radio"]:checked {
   align-items: center;
   justify-content: center;
 }
-button.pressedCar {
+button.pressed-car {
   background-color: var(--blue);
   color: white;
 }
@@ -561,20 +564,20 @@ button.pressedCar {
 /* Banner section */
 
 .banner {
-  background-image: url("../src/images/bookingBC.png");
+  background-image: url("../src/images/TireMarks.png");
   background-position: -225px 255px;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
-.bannerBox {
+.banner__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 10rem;
 }
-.whyChoose {
+.banner__why-choose {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -582,25 +585,25 @@ button.pressedCar {
   width: 100%;
   gap: 50px;
 }
-.boxSide1 {
+.banner__content-side1 {
   display: flex;
   flex-direction: column;
   width: 50%;
   align-items: left;
 }
-.boxSide2 {
+.banner__content-side2 {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.insideBox {
+.banner__inside-box {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 2rem;
   margin: 10px;
 }
-.icons {
+.banner__icon {
   font-size: 100px;
   color: var(--blue);
   display: flex;
@@ -608,7 +611,7 @@ button.pressedCar {
   width: 100px;
   height: 100px;
 }
-.insideBoxInside {
+.banner__inside-box-inside {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -624,20 +627,20 @@ button.pressedCar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
-.reviewBox {
+.reviews__box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.reviewsTitle {
+.reviews__title {
   text-align: center;
   margin-bottom: 50px;
   width: 70%;
 }
-.reviewsBoxes {
+.reviews__boxes {
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -645,7 +648,7 @@ button.pressedCar {
   flex-wrap: wrap;
   gap: 1rem;
 }
-.userBox {
+.review__user-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -654,37 +657,37 @@ button.pressedCar {
   padding: 20px 25px;
   width: 40%;
 }
-.userBox > .message {
+.review__message {
   font-size: 18px;
   font-weight: 500;
   text-align: left;
   margin-bottom: 20px;
 }
-.reviewerCredentials {
+.review__credentials {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.sideOne {
+.review__side-one {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
-.sideOne p {
+.review__side-one p {
   font-weight: 600;
 }
-.sideOne img {
+.review__side-one img {
   width: 60px;
   border-radius: 50%;
 }
-.sideTwo {
+.review__side-two {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
-.quote {
+.review__quote {
   font-size: 100px;
   color: var(--blue);
   display: flex;
@@ -700,7 +703,7 @@ button.pressedCar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
   background-image: url("./images/FAQBC.png");
   background-repeat: no-repeat;
   background-position: left;

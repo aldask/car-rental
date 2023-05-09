@@ -4,14 +4,16 @@ function Navbar() {
   return (
     <>
       <section className="header">
-        <div className="headerSide1">
-          <a href="#"><img src={Logo} alt="logo"></img></a>
+        <div className="header__side1">
+          <a href="#">
+            <img src={Logo} alt="logo"></img>
+          </a>
         </div>
-        <div className="headerSide2">
-          <a href="#">About</a>
-          <a href="#">Vehicles</a>
-          <a href="#">Our Team</a>
-          <a href="#">Customer Area</a>
+        <div className="header__side2">
+          <a href="#" className="header__link">About</a>
+          <a href="#" className="header__link">Vehicles</a>
+          <a href="#" className="header__link">Our Team</a>
+          <a href="#" className="header__link header__link--active">Customer Area</a>
         </div>
       </section>
     </>

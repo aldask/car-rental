@@ -35,31 +35,31 @@ function RentalFleet() {
     <>
       <section className="fleet">
         <div className="container">
-          <div className="fleetContainer">
-            <div className="fleetTxt">
+          <div className="fleet-container">
+            <div className="fleet-txt">
               <h2>Our Rental Fleet</h2>
               <p>
                 Choose from a variety of our amazing vehicles to rent for your
                 next adventure or business trip.
               </p>
             </div>
-            <div className="carSelections">
-              <div className="carsSelect">
+            <div className="car-selections">
+              <div className="cars-select">
                 {cars.map((car) => (
                   <button
                     key={car.label}
                     value={car.label}
-                    className={selectedFleetCar.label === car.label ? "pressedCar" : ""}
+                    className={selectedFleetCar.label === car.label ? "pressed-car" : ""}
                     onClick={handleCarFleet}
                   >
                     {car.label}
                   </button>
                 ))}
               </div>
-              <div className="carPic">
+              <div className="car-pic">
                 <img src={selectedFleetCarImg} alt="chosen-car-picture"></img>
               </div>
-              <div className="carDetails">
+              <div className="car-details">
                 <p className="price">Price:&nbsp;<span className="strong">{selectedCarPrice}€</span>/day</p>
                 <div className="row">
                   <div className="label">Manufacturer</div>
@@ -89,7 +89,7 @@ function RentalFleet() {
                   <div className="label">Fuel</div>
                   <div className="value">{selectedCarFuel}</div>
                 </div>
-                <button className="reserveButton">
+                <button className="reserve-button">
                   <a href="#book">Reserve</a>
                 </button>
               </div>
