@@ -7,19 +7,27 @@ function DownloadApp() {
       <section className="download">
         <div className="container">
           <div className="apps">
-            <div className="downloadText">
-              <h2>Download our app to get most out of it</h2>
-              <p>
+            <div className="download__text">
+              <h2 className="download__title">Download our app to get most out of it</h2>
+              <p className="download__desc">
                 Thrown shy denote ten ladies though ask saw. Or by to he going
                 think order event music. Incommode so intention defective at
                 convinced. Led income months itself and houses you.
               </p>
-              <div className="downloadButtons">
+              <div className="download__buttons">
                 <a href="https://google.com">
-                  <img src={GooglePlay} alt="google-play"></img>
+                  <img
+                    className="download__google-play"
+                    src={GooglePlay}
+                    alt="google-play"
+                  ></img>
                 </a>
                 <a href="https://apple.com">
-                  <img src={AppStore} alt="apple"></img>
+                  <img
+                    className="download__apple-store"
+                    src={AppStore}
+                    alt="apple"
+                  ></img>
                 </a>
               </div>
             </div>
@@ -31,4 +39,3 @@ function DownloadApp() {
 }
 
 export default DownloadApp;
-
