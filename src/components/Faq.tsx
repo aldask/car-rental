@@ -1,6 +1,7 @@
+import { useState } from "react";
+import "../styles/Faq/faq-style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 
 interface Question {
   asking: string;

@@ -1,0 +1,38 @@
+.download {
+    background-image: url("/src/images/Download/download.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 10rem;
+    height: 100%;
+}
+.apps {
+    width: 50%;
+}
+.download__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+.download__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(110, 108, 108);
+}
+.download__desc {
+    font-size: 1.5rem;
+    color: white;
+}
+.download__buttons {
+    display: flex;
+    flex-direction:row;
+    gap: 3rem;
+}
+.download__google-play {
+    width: 220px;
+}
+.download__apple-store {
+    width: 220px;
+}

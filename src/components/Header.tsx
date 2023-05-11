@@ -1,6 +1,7 @@
-import Logo from "../images/logo.png";
+import "../styles/Header/header-style.css";
+import Logo from "../images/Header/logo.png";
 
-function Navbar() {
+function Header() {
   return (
     <>
       <section className="header">
@@ -20,4 +21,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Header;

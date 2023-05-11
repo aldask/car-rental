@@ -1,4 +1,5 @@
 import mainCar from "../images/Hero/mainCar.png";
+import "../styles/Hero/hero-style.css";
 
 function HeroSection() {
   return (

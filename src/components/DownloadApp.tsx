@@ -1,5 +1,6 @@
-import AppStore from "../images/appstore.svg";
-import GooglePlay from "../images/googleplay.svg";
+import "../styles/Download/download-style.css";
+import AppStore from "../images/Download/appstore.svg";
+import GooglePlay from "../images/Download/googleplay.svg";
 
 function DownloadApp() {
   return (

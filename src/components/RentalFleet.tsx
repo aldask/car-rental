@@ -1,3 +1,4 @@
+import "../styles/RentalFleet/rental-fleet-style.css";
 import { useState } from "react";
 import { cars } from '../Data/cars';
 
@@ -35,16 +36,16 @@ function RentalFleet() {
     <>
       <section className="fleet">
         <div className="container">
-          <div className="fleet-container">
-            <div className="fleet-txt">
+          <div className="fleet__container--main">
+            <div className="fleet__text">
               <h2>Our Rental Fleet</h2>
               <p>
                 Choose from a variety of our amazing vehicles to rent for your
                 next adventure or business trip.
               </p>
             </div>
-            <div className="car-selections">
-              <div className="cars-select">
+            <div className="fleet__car-selections">
+              <div className="fleet__car-selection-buttons">
                 {cars.map((car) => (
                   <button
                     key={car.label}
@@ -56,40 +57,40 @@ function RentalFleet() {
                   </button>
                 ))}
               </div>
-              <div className="car-pic">
-                <img src={selectedFleetCarImg} alt="chosen-car-picture"></img>
+              <div className="fleet__car-image">
+                <img src={selectedFleetCarImg} alt="chosen-fleet__car-imageture"></img>
               </div>
-              <div className="car-details">
-                <p className="price">Price:&nbsp;<span className="strong">{selectedCarPrice}€</span>/day</p>
-                <div className="row">
-                  <div className="label">Manufacturer</div>
-                  <div className="value">{selectedCarManufaturer}</div>
+              <div className="fleet__car-details">
+                <p className="fleet__car-price">Price:&nbsp;<span className="strong">{selectedCarPrice}€</span>/day</p>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">Manufacturer</div>
+                  <div className="fleet__car-details-value">{selectedCarManufaturer}</div>
                 </div>
-                <div className="row">
-                  <div className="label">Model</div>
-                  <div className="value">{selectedCarModel}</div>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">Model</div>
+                  <div className="fleet__car-details-value">{selectedCarModel}</div>
                 </div>
-                <div className="row">
-                  <div className="label">Year</div>
-                  <div className="value">{selectedCarYear}</div>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">Year</div>
+                  <div className="fleet__car-details-value">{selectedCarYear}</div>
                 </div>
-                <div className="row">
-                  <div className="label">Doors</div>
-                  <div className="value">{selectedCarDoors}</div>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">Doors</div>
+                  <div className="fleet__car-details-value">{selectedCarDoors}</div>
                 </div>
-                <div className="row">
-                  <div className="label">AC</div>
-                  <div className="value">{selectedCarAC}</div>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">AC</div>
+                  <div className="fleet__car-details-value">{selectedCarAC}</div>
                 </div>
-                <div className="row">
-                  <div className="label">Transmission</div>
-                  <div className="value">{selectedCarTransmission}</div>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">Transmission</div>
+                  <div className="fleet__car-details-value">{selectedCarTransmission}</div>
                 </div>
-                <div className="row">
-                  <div className="label">Fuel</div>
-                  <div className="value">{selectedCarFuel}</div>
+                <div className="fleet__car-details-row">
+                  <div className="fleet__car-details-label">Fuel</div>
+                  <div className="fleet__car-details-value">{selectedCarFuel}</div>
                 </div>
-                <button className="reserve-button">
+                <button className="fleet__reserve-button">
                   <a href="#book">Reserve</a>
                 </button>
               </div>

@@ -1,3 +1,4 @@
+import "../styles/Reviews/reviews-style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { users } from "../Data/users";

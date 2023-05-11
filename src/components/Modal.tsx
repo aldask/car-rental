@@ -1,3 +1,4 @@
+import "../styles/Booking/modal-style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 

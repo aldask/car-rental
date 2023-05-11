@@ -1,3 +1,5 @@
+import "../styles/Footer/footer-style.css";
+
 function Footer() {
   return (
     <>
@@ -6,7 +8,7 @@ function Footer() {
           <div className="footer__box">
             <ul className="footer__column footer__column--1">
               <li>
-                <h2 className="footer__heading footer__heading--logo">
+                <h2 className="footer__heading">
                   Car<span className="footer__heading--black">O</span>
                 </h2>
               </li>
