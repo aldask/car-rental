@@ -15,13 +15,6 @@ function HomePage() {
       <Header />
       <HeroSection />
       <Booking />
-      <RentalFleet />
-      <Banner />
-      <WhyUs />
-      <Reviews />
-      <Faq />
-      <DownloadApp />
-      <Footer />
     </>
   );
 }
