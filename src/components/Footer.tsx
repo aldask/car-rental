@@ -1,4 +1,8 @@
 import "../styles/Footer/footer-style.css";
+import YT from "../images/Footer/yt.png";
+import IG from "../images/Footer/ig.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquarePhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
@@ -8,28 +12,29 @@ function Footer() {
           <div className="footer__box">
             <ul className="footer__column footer__column--1">
               <li>
-                <h2 className="footer__heading">
-                  Car<span className="footer__heading--black">O</span>
-                </h2>
+                <h3 className="footer__heading">
+                  Car<span className="blue strong">O</span>
+                </h3>
               </li>
               <li>
                 <p className="footer__text footer__text--description">
-                  The go-to car rental service for all your transportation
-                  needs. Affordable prices, excellent customer service, and a
-                  wide selection of reliable vehicles to choose from. Book your
-                  rental today and experience convenience!
+                  Affordable car rentals with excellent customer service and a wide selection of reliable vehicles. Book now for convenient transportation!
                 </p>
               </li>
               <li>
-                <a href="tel:+4733378901" className="footer__link">+47 333 78 901</a>
+                <a href="tel:123456789" className="footer__link"><FontAwesomeIcon icon={faSquarePhone} />&nbsp;+123456789</a>
               </li>
               <li>
-                <a href="mailto:aaa@aa.com" className="footer__link">Send Email</a>
+                <a href="mailto:support@caro.com" className="footer__link"><FontAwesomeIcon icon={faEnvelope} />&nbsp;support@caro.com</a>
+              </li>
+              <li className="footer__link-urls">
+                <a href="https://instagram.com"><img src={IG} alt="instagram" /></a>
+                <a href="https://youtube.com"><img src={YT} alt="youtube" /></a>
               </li>
             </ul>
             <ul className="footer__column footer__column--2">
               <li>
-                <h2 className="footer__heading">Working Hours</h2>
+                <h3 className="footer__heading">Working Hours</h3>
               </li>
               <li>
                 <p className="footer__text">Mon - Fri: 9:00AM - 9:00PM</p>
@@ -43,7 +48,7 @@ function Footer() {
             </ul>
             <ul className="footer__column footer__column--3">
               <li>
-                <h2 className="footer__heading">Subscription</h2>
+                <h3 className="footer__heading">Subscription</h3>
               </li>
               <li>
                 <p className="footer__text">

@@ -13,6 +13,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  align-items: stretch;
 }
 .hero__side1 {
   display: flex;
@@ -20,16 +21,18 @@
   justify-content: space-evenly;
   align-items: flex-start;
   color: black;
-  width: 35%;
+  width: 50%;
 }
 .hero__title {
   margin-bottom: 0;
 }
 .hero__description {
   margin-bottom: 60px;
+  width: 80%;
 }
-.hero__side2 .hero__image {
-  width: 820px;
+.hero__side2 {
+  width: 50%;
+  margin-left: -100px;
 }
 .hero__button {
   font-size: 18px;

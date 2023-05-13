@@ -5,8 +5,9 @@ function Banner() {
         <>
         <section className="banner">
             <div className="container">
-                <div className="dividerBox">
-                    <h2>new banner</h2>
+                <div className="banner__box">
+                    <h2>Save big with Car<span className="blue strong">O</span> car rental!</h2>
+                    <p>Top Cities. <span className="blue strong">24/7</span> Support!</p>
                 </div>
             </div>
         </section>

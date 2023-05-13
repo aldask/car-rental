@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: #f1f3f5;
-  box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+  box-shadow: 0 15px 20px 0 rgba(0,0,0,.08);
   padding: 20px 25px;
   width: 40%;
 }
@@ -52,7 +52,8 @@
   gap: 10px;
 }
 .review__side-one p {
-  font-weight: 600;
+  font-weight: 800;
+  color: rgb(15, 15, 15);
 }
 .review__side-one img {
   width: 60px;
