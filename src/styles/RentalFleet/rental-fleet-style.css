@@ -1,0 +1,116 @@
+.fleet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.fleet__container--main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fleet__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.fleet__text p {
+  width: 70%;
+  margin-bottom: 2.1rem;
+}
+.fleet__car-selections {
+  display: flex;
+  gap: 30px;
+  height: 400px;
+  justify-content: space-between;
+}
+.fleet__car-selection-buttons {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.2rem;
+}
+.fleet__car-selection-buttons button {
+  font-size: 20px;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+  background-color: #f1f3f5;
+  color: #000;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  white-space: nowrap;
+  height: 100%;
+}
+.fleet__car-selection-buttons button:hover {
+  background-color: var(--blue);
+  box-shadow: 0 10px 20px 0 rgba(59, 111, 207, 0.1);
+  color: #fff;
+}
+.fleet__car-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.fleet__car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.fleet__car-details {
+  display: grid;
+  font-size: 16px;
+  white-space: nowrap;
+  width: 240px;
+}
+.fleet__car-details-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5px;
+}
+.fleet__car-details-label {
+  font-weight: bold;
+}
+.fleet__car-details-value {
+  text-align: right;
+  white-space: nowrap;
+}
+.fleet__reserve-button,
+.fleet__reserve-button a {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: var(--blue);
+  border-style: none;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+.fleet__reserve-button:hover {
+  box-shadow: 0px 0px 10px 1px var(--blue);
+  cursor: pointer;
+}
+.fleet__car-price {
+  text-align: center;
+  font-size: 21px;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button.pressed-car {
+  background-color: var(--blue);
+  color: white;
+}

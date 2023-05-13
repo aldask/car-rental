@@ -1,3 +1,4 @@
+import "../styles/Booking/modal-style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
@@ -38,70 +39,70 @@ export function Modal({
   return (
     <>
       {isOpen && <div className=" body overlay" />}
-      <section className={`${isOpen ? "activeModal" : "disabled"}`}>
-        <div className="upperBar">
+      <section className={`${isOpen ? "modal--active" : "modal--disabled"}`}>
+      <div className="modal__modal__upper-bar">
           <h3>Complete reservation</h3>
           <p onClick={handleExit}>X</p>
         </div>
-        <div className="modalContainer">
-          <div className="userSelections">
-            <div className="side1">
+        <div className="modal-container">
+          <div className="modal__modal__user-selections">
+            <div className="modal__modal__user-selections__side1">
               <h4 className="strong">Location & Date</h4>
-              <div className="infoBox">
-                <div className="choice">
+              <div className="modal__modal__user-selections__info-box">
+                <div className="modal__user-selections__info-box__choice">
                   <FontAwesomeIcon icon={faCalendarDays} />
-                  <div className="result">
-                    <div className="resultTitle">
+                  <div className="modal__user-selections__info-box__choice__result">
+                    <div className="modal__user-selections__info-box__choice__result__title">
                       <p>Pick-Up Date & Time</p>
                     </div>
-                    <div className="resultData">
+                    <div className="modal__user-selections__info-box__choice__result__data">
                       <p>
                         {pickDate} /{" "}
                         <input
                           type="time"
-                          className="input-time"
+                          className="modal__user-selections__info-box__choice__result__data__input-time"
                           name="pickup-time"
                         />
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="choice">
+                <div className="modal__user-selections__info-box__choice">
                   <FontAwesomeIcon icon={faCalendarDays} />
-                  <div className="result">
-                    <div className="resultTitle">
+                  <div className="modal__user-selections__info-box__choice__result">
+                    <div className="modal__user-selections__info-box__choice__result__title">
                       <p>Drop-Off Date & Time</p>
                     </div>
-                    <div className="resultData">
+                    <div className="modal__user-selections__info-box__choice__result__data">
                       <p>
                         {dropDate} /{" "}
                         <input
                           type="time"
-                          className="input-time"
+                          className="modal__user-selections__info-box__choice__result__data__input-time"
                           name="dropoff-time"
                         />
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="choice">
+                <div className="modal__user-selections__info-box__choice">
                   <FontAwesomeIcon icon={faLocationDot} />
-                  <div className="result">
-                    <div className="resultTitle">
+                  <div className="modal__user-selections__info-box__choice__result">
+                    <div className="modal__user-selections__info-box__choice__result__title">
                       <p>Pick-Up Location</p>
                     </div>
-                    <div className="resultData">
+                    <div className="modal__user-selections__info-box__choice__result__data">
                       <p>{pickUpCity}</p>
                     </div>
                   </div>
                 </div>
-                <div className="choice">
+                <div className="modal__user-selections__info-box__choice">
                   <FontAwesomeIcon icon={faLocationDot} />
-                  <div className="result">
-                    <div className="resultTitle">
+                  <div className="modal__user-selections__info-box__choice__result">
+                    <div className="modal__user-selections__info-box__choice__result__title">
                       <p>Drop-Off Location</p>
                     </div>
-                    <div className="resultData">
+                    <div className="modal__user-selections__info-box__choice__result__data">
                       <p>{dropOffCity}</p>
                     </div>
                   </div>
@@ -113,11 +114,11 @@ export function Modal({
               <img src={carImg} alt="selected-car"></img>
             </div>
           </div>
-          <div className="userDetails">
+          <div className="modal__user-details">
             <h3>Personal info</h3>
-            <form className="userInfo">
-              <div className="two-cols">
-                <span className="data">
+            <form className="modal__user-details__info">
+              <div className="modal__user-details__info__two-cols">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>First Name <span className="red">*</span></label>
                   <input
                     type="text"
@@ -127,7 +128,7 @@ export function Modal({
                     placeholder="Enter Your First Name"
                   ></input>
                 </span>
-                <span className="data">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>
                     Last Name <span className="red">*</span>
                   </label>
@@ -139,7 +140,7 @@ export function Modal({
                     placeholder="Enter Your Last Name"
                   ></input>
                 </span>
-                <span className="data">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>Phone Number <span className="red">*</span></label>
                   <input
                     type="tel"
@@ -149,7 +150,7 @@ export function Modal({
                     placeholder="Enter Your Phone Number"
                   ></input>
                 </span>
-                <span className="data">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>Age <span className="red">*</span></label>
                   <input
                     type="number"
@@ -160,8 +161,8 @@ export function Modal({
                   ></input>
                 </span>
               </div>
-              <div className="one-col">
-                <span className="data">
+              <div className="modal__user-details__info__one-col">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>Email <span className="red">*</span></label>
                   <input
                     type="email"
@@ -169,7 +170,7 @@ export function Modal({
                     placeholder="Enter Your Email"
                   ></input>
                 </span>
-                <span className="data">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>Address <span className="red">*</span></label>
                   <input
                     type="text"
@@ -178,8 +179,8 @@ export function Modal({
                   ></input>
                 </span>
               </div>
-              <div className="two-cols">
-                <span className="data">
+              <div className="modal__user-details__info__two-cols">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>City <span className="red">*</span></label>
                   <input
                     type="text"
@@ -187,7 +188,7 @@ export function Modal({
                     placeholder="Enter Your City"
                   ></input>
                 </span>
-                <span className="data">
+                <span className="modal__user-details__info__two-cols__data">
                   <label>Zip Code <span className="red">*</span></label>
                   <input
                     type="text"
@@ -197,12 +198,12 @@ export function Modal({
                 </span>
               </div>
             </form>
-            <div className="subscription">
+            <div className="modal__user-details__subscription">
               <input type="radio" />
               <label>Subscribe to our newsletter</label>
             </div>
-            <div className="bottomBar">
-              <button className="tripPlan" onClick={handleDone}>Complete Reservation</button>
+            <div className="modal__bottom-bar">
+              <button className="modal__bottom-bar__trip-plan" onClick={handleDone}>Complete Reservation</button>
             </div>
           </div>
         </div>

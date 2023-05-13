@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 135px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 85px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.212);
+  gap: 20px;
+  background-color: #eff0f4;
+  z-index: 1;
+}
+.header__link {
+  text-decoration: none;
+  color: black;
+  font-size: 19px;
+  transition: all 0.2s ease-in-out;
+}
+.header__link:hover {
+  color: rgb(0, 85, 241);
+  cursor: pointer;
+}
+.header__side1 img {
+  max-width: 200px;
+}
+.header__side2 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.header__link--active {
+  border-radius: 30px;
+  background: var(--blue);
+  padding: 7px 21px;
+  color: white;
+}
