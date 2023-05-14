@@ -4,13 +4,14 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     height: 100%;
 }
 .apps {
     width: 50%;
 }
 .download__text {
+    display: flex;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -27,4 +28,37 @@
 .download__google-play,
 .download__apple-store {
     width: 220px;
+}
+@media screen and (max-width: 930px) {
+
+    .apps {
+        width: 65%;
+    }
+    .download__buttons {
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width: 650px) {
+
+    .apps {
+        width: 85%;
+    }
+    .download__text {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    
+}
+@media screen and (max-width: 610px) {
+
+    .apps {
+        width: 100%;
+    }
+    .download__text {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
 }
