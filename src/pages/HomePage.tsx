@@ -18,6 +18,9 @@ function HomePage() {
       <RentalFleet />
       <Banner />
       <WhyUs />
+      <Reviews />
+      <Faq />
+      <Footer />
     </>
   );
 }

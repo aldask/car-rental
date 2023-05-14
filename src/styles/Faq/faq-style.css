@@ -33,7 +33,7 @@
   justify-content: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 850px;
+  width: 70%;
 }
 .faq__question-box button {
   width: 100%;
@@ -71,20 +71,5 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media screen and (max-width: 1400px) {
-  
-  .faq__title {
-    width: 100%;
-  }
-  .faq__question-box {
-    width: 500px;
-  }
-}
-@media screen and (max-width: 1080px) {
-
-  .faq__question-box {
-    width: 450px;
   }
 }
