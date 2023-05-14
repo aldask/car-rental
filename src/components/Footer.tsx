@@ -7,7 +7,7 @@ import { faSquarePhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Footer() {
   return (
     <>
-      <section className="footer footer--blue">
+      <section className="footer">
         <div className="container">
           <div className="footer__box">
             <ul className="footer__column footer__column--1">

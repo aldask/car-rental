@@ -202,3 +202,37 @@ input[type="radio"]:checked {
     border-color: rgb(243, 243, 243);
     background-color: var(--blue);
 }
+@media screen and (max-width: 1400px) {
+    
+    .modal--active {
+        height: 650px;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 950px) {
+    
+    .modal--active {
+        height: 580px;
+        width: 60%;
+    }
+    .selectedCar {
+        width: 100%;
+    }
+    .selectedCar img {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px) {
+    
+    .modal__modal__user-selections {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .selectedCar h3 {
+        margin-top: 20px;
+    }
+    .modal__user-details__info__two-cols {
+        grid-template-columns: 1fr;
+    }
+}

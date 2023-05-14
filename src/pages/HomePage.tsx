@@ -20,7 +20,6 @@ function HomePage() {
       <WhyUs />
       <Reviews />
       <Faq />
-      <DownloadApp />
       <Footer />
     </>
   );

@@ -1,12 +1,5 @@
 .faq {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding-bottom: 100px;
-  background-image: url("/src/images/Faq/FAQBC.png");
-  background-repeat: no-repeat;
-  background-position: left;
 }
 .faq__container {
   display: flex;
@@ -45,7 +38,7 @@
 .faq__question-box button {
   width: 100%;
   text-align: left;
-  padding: 20px;
+  padding: 20px 50px 20px 20px;
   border: none;
   background-color: #f1f3f5;
   font-weight: 700;
@@ -55,7 +48,7 @@
 }
 .faq__arrow {
   position: absolute;
-  right: 1.25rem;
+  right: 25px;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.2s ease-in-out;
@@ -78,5 +71,20 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media screen and (max-width: 1400px) {
+  
+  .faq__title {
+    width: 100%;
+  }
+  .faq__question-box {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 1080px) {
+
+  .faq__question-box {
+    width: 450px;
   }
 }

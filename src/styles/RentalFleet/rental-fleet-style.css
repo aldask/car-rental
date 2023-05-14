@@ -1,42 +1,44 @@
-.fleet {
+.rental-fleet {
+  position: relative;
+  margin-bottom: 100px;
+}
+.rental-fleet__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  width: 100%;
 }
-.fleet__container--main {
+.rental-fleet__car-info {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5rem;
 }
-.fleet__text {
+.rental-fleet__text {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 50px;
 }
-.fleet__text p {
+.rental-fleet__text p {
   width: 70%;
   margin-bottom: 2.1rem;
 }
-.fleet__car-selections {
+.rental-fleet__car-selections {
   display: flex;
-  gap: 30px;
-  height: 400px;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 5rem;
 }
-.fleet__car-selection-buttons {
+.rental-fleet__car-selection-buttons {
   display: flex;
   flex-direction: column;
   grid-gap: 0.2rem;
+  justify-content: center;
 }
-.fleet__car-selection-buttons button {
+.rental-fleet__car-selection-buttons button {
   font-size: 20px;
   text-align: left;
-  padding: 1rem;
+  padding: 0.75rem;
   font-weight: 600;
   background-color: #f1f3f5;
   color: #000;
@@ -44,49 +46,46 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  white-space: nowrap;
-  height: 100%;
 }
-.fleet__car-selection-buttons button:hover {
+.rental-fleet__car-selection-buttons button:hover {
   background-color: var(--blue);
   box-shadow: 0 10px 20px 0 rgba(59, 111, 207, 0.1);
   color: #fff;
 }
-.fleet__car-image {
+.rental-fleet__car-image {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 800px;
-  height: 100%;
+  height: 400px;
+  max-width: 600px;
+  overflow: hidden;
   box-sizing: border-box;
 }
-.fleet__car-image img {
-  width: 100%;
-  height: 100%;
+.rental-fleet__car-image img {
+  max-width: 100%;
   object-fit: cover;
   object-position: center;
 }
-.fleet__car-details {
+.rental-fleet__car-details {
   display: grid;
+  width: 15rem;
   font-size: 16px;
-  white-space: nowrap;
-  width: 240px;
 }
-.fleet__car-details-row {
+.rental-rental-fleet__car-details-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 5px;
+  border-top: 1px solid black;
 }
-.fleet__car-details-label {
+.rental-rental-fleet__car-details-label {
   font-weight: bold;
 }
-.fleet__car-details-value {
+.rental-rental-fleet__car-details-value {
   text-align: right;
   white-space: nowrap;
 }
-.fleet__reserve-button,
-.fleet__reserve-button a {
+.rental-fleet__reserve-button,
+.rental-fleet__reserve-button a {
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
@@ -96,21 +95,48 @@
   transition: all 0.2s ease-in-out;
   text-decoration: none;
 }
-.fleet__reserve-button:hover {
+.rental-fleet__reserve-button:hover {
   box-shadow: 0px 0px 10px 1px var(--blue);
   cursor: pointer;
 }
-.fleet__car-price {
+.rental-fleet__car-price {
   text-align: center;
   font-size: 21px;
-  background-color: var(--blue);
-  color: white;
+  color: #000;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-button.pressed-car {
+button.rental-fleet__pressed-car {
   background-color: var(--blue);
   color: white;
+}
+@media screen and (max-width: 1400px) {
+
+  .rental-fleet__car-selections {
+    flex-direction: column;
+  }
+  .rental-fleet__text p {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+
+  .rental-fleet__car-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .rental-fleet__car-details {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+@media screen and (max-width: 600px) {
+
+  .rental-fleet__car-image {
+    max-height: 200px;
+    max-width: 400px;
+  }
 }
