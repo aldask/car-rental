@@ -6,7 +6,7 @@
   gap: 20px;
   height: 85px;
   justify-content: space-between;
-  padding: 10px 135px;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   right: 0;
@@ -26,7 +26,7 @@
   align-items: center;
   list-style: none;
   gap: 2rem;
-  font-size: 2rem;
+  font-size: 1.25rem;
   color: black;
   transition: all 0.2s ease-in-out;
 }
@@ -75,7 +75,7 @@
   align-items: center;
   list-style: none;
   gap: 2rem;
-  font-size: 4rem;
+  font-size: 1.5rem;
   color: black;
   transition: all 0.2s ease-in-out;
 }
