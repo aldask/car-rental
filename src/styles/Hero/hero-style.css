@@ -1,7 +1,7 @@
 .hero {
   height: 100vh;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 .hero__background {
   position: absolute;
@@ -30,6 +30,8 @@
 .hero__content-side2 {
   width: 50%;
   margin-left: -100px;
+  display: flex;
+  align-items: center;
   z-index: 2;
 }
 .hero__content-title {
@@ -38,8 +40,7 @@
 .hero__content-image {
   position: absolute;
   right: 0;
-  width: 65%;
-  margin-top: 3rem;
+  width: 70%;
 }
 .hero__content-description {
   margin-bottom: 60px;
@@ -59,6 +60,13 @@
 .hero__content-button:hover {
   box-shadow: 0px 0px 10px 3px var(--blue);
   cursor: pointer;
+}
+@media screen and (max-width: 1220px) {
+
+  .hero__content-side2 {
+    width: 70%;
+    margin-left: 100px;
+  }
 }
 @media screen and (max-width: 1400px) {
 
