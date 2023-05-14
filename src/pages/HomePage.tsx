@@ -16,6 +16,11 @@ function HomePage() {
       <HeroSection />
       <Booking />
       <RentalFleet />
+      <Banner />
+      <WhyUs />
+      <Reviews />
+      <Faq />
+      <Footer />
     </>
   );
 }
