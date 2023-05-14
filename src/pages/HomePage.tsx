@@ -15,6 +15,7 @@ function HomePage() {
       <Header />
       <HeroSection />
       <Booking />
+      <RentalFleet />
     </>
   );
 }

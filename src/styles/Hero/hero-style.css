@@ -1,6 +1,7 @@
 .hero {
   height: 100vh;
   position: relative;
+  margin-bottom: 100px;
 }
 .hero__background {
   position: absolute;
@@ -38,7 +39,7 @@
   position: absolute;
   right: 0;
   width: 65%;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .hero__content-description {
   margin-bottom: 60px;

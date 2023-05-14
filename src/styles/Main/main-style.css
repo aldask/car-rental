@@ -14,9 +14,9 @@ body {
   background-color: #DDE9F5;
 }
 .container {
-  max-width: 133rem;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  max-width: 135rem;
+  padding: 0 5.5rem
 }
 h1 {
   font-size: 72px;
