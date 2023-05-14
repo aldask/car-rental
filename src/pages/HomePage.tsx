@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import Booking from "../components/Booking";
 import RentalFleet from "../components/RentalFleet";
@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 function HomePage() {
   return (
     <>
-      <Header />
+      <Navbar />
       <HeroSection />
       <Booking />
       <RentalFleet />
