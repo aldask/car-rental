@@ -18,18 +18,30 @@ function Footer() {
               </li>
               <li>
                 <p className="footer__text footer__text--description">
-                  Affordable car rentals with excellent customer service and a wide selection of reliable vehicles. Book now for convenient transportation!
+                  Affordable car rentals with excellent customer service and a
+                  wide selection of reliable vehicles. Book now for convenient
+                  transportation!
                 </p>
               </li>
               <li>
-                <a href="tel:123456789" className="footer__link"><FontAwesomeIcon icon={faSquarePhone} />&nbsp;+123456789</a>
+                <a href="tel:123456789" className="footer__link">
+                  <FontAwesomeIcon icon={faSquarePhone} />
+                  &nbsp;+123456789
+                </a>
               </li>
               <li>
-                <a href="mailto:support@caro.com" className="footer__link"><FontAwesomeIcon icon={faEnvelope} />&nbsp;support@caro.com</a>
+                <a href="mailto:support@caro.com" className="footer__link">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  &nbsp;support@caro.com
+                </a>
               </li>
               <li className="footer__link-urls">
-                <a href="https://instagram.com"><img src={IG} alt="instagram" /></a>
-                <a href="https://youtube.com"><img src={YT} alt="youtube" /></a>
+                <a href="https://instagram.com">
+                  <img src={IG} alt="instagram" />
+                </a>
+                <a href="https://youtube.com">
+                  <img src={YT} alt="youtube" />
+                </a>
               </li>
             </ul>
             <ul className="footer__column footer__column--2">

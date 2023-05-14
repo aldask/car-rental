@@ -104,19 +104,19 @@
     font-weight: 600;
     color: #000;
 }
-.selectedCar {
+.modal__selected-car {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 60%;
 }
-.selectedCar h3 {
+.modal__selected-car h3 {
     margin: 0;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
-.selectedCar img {
+.modal__selected-car img {
     max-width: 100%;
     height: auto;
 }
@@ -215,10 +215,10 @@ input[type="radio"]:checked {
         height: 700px;
         width: 100%;
     }
-    .selectedCar {
+    .modal__selected-car {
         width: 100%;
     }
-    .selectedCar img {
+    .modal__selected-car img {
         width: 100%;
     }
 }
@@ -229,7 +229,7 @@ input[type="radio"]:checked {
         justify-content: center;
         align-items: center;
     }
-    .selectedCar h3 {
+    .modal__selected-car h3 {
         margin-top: 20px;
     }
     .modal__user-details__info__two-cols {

@@ -7,17 +7,17 @@
     padding: 2rem;
     height: 100%;
 }
-.apps {
+.download__apps {
     width: 50%;
 }
-.download__text {
+.download__content {
     display: flex;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     text-align: left;
 }
-.download__title {
+.download__heading {
     background-color: rgba(0, 255, 255, 0);
 }
 .download__buttons {
@@ -31,7 +31,7 @@
 }
 @media screen and (max-width: 930px) {
 
-    .apps {
+    .download__apps {
         width: 65%;
     }
     .download__buttons {
@@ -41,10 +41,10 @@
 }
 @media screen and (max-width: 650px) {
 
-    .apps {
+    .download__apps {
         width: 85%;
     }
-    .download__text {
+    .download__content {
         display: flex;
         align-items: center;
         text-align: center;
@@ -53,10 +53,10 @@
 }
 @media screen and (max-width: 610px) {
 
-    .apps {
+    .download__apps {
         width: 100%;
     }
-    .download__text {
+    .download__content {
         display: flex;
         align-items: center;
         text-align: center;

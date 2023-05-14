@@ -9,7 +9,11 @@ function WhyUs() {
       <section className="why-us">
         <div className="container">
           <div className="why-us__content">
-            <img src={WhyUsBC} alt="why-us-background" className="why-us__image" />
+            <img
+              src={WhyUsBC}
+              alt="why-us-background"
+              className="why-us__image"
+            />
             <div className="why-use__why-choose">
               <div className="why-us__content-side1">
                 <h3 className="why-us__title">
