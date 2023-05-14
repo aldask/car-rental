@@ -1,25 +1,42 @@
-import mainCar from '../images/mainCar.png'
+import MainCar from "../images/Hero/mainCar.png";
+import Background from "../images/Hero/heroBack.png";
+import "../styles/Hero/hero-style.css";
 
 function HeroSection() {
   return (
-  <>
-    <section className="hero">
-      <div className='container'>
-        <div className='heroContent'>
-          <div className="heroSide1">
-            <h1>Welcome to <span className='strong'>Car<span className='strong blue'>O</span></span></h1>
-            <p>The go-to car rental service for all your transportation needs. 
-              Affordable prices, excellent customer service, and a wide selection of 
-              reliable vehicles to choose from. Book your rental today and experience convenience!</p>
-              <a href="#book"><button className='tripPlan'>Book Ride! ✓</button></a>
-          </div>
-          <div className="heroSide2">
-            <img src={mainCar} alt="mainCar" />
+    <>
+      <section className="hero">
+        <img className="hero__background" src={Background} alt="background"></img>
+        <div className="container">
+          <div className="hero__content">
+            <div className="hero__content-side1">
+              <h1 className="hero__content-title">
+                Welcome to{" "}
+                <span className="strong">
+                  Car<span className="strong blue">O</span>
+                </span>
+              </h1>
+              <p className="hero__content-description">
+                The go-to car rental service for all your transportation needs.
+                Affordable prices, excellent customer service, and a wide
+                selection of reliable vehicles to choose from. Book your rental
+                today and experience convenience!
+              </p>
+              <a href="#book">
+                <button className="hero__content-button">Book Ride! ✓</button>
+              </a>
+            </div>
+            <div className="hero__content-side2">
+              <img
+                className="hero__content-image"
+                src={MainCar}
+                alt="hero car"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </>
+      </section>
+    </>
   );
 }
 

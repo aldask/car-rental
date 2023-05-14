@@ -1,0 +1,76 @@
+.why-us {
+    background-image: url("/src/images/WhyUs/TireMarks.png");
+    background-position: -225px 255px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+.why-us__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.why-us__image {
+    max-width: 100vw;
+}
+.why-use__why-choose {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+}
+.why-us__content-side1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: left;
+}
+.why-us__content-side2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.why-us__inside-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin: 10px;
+}
+.why-us__icon {
+    font-size: 100px;
+    color: var(--blue);
+    display: flex;
+    align-items: flex-start;
+    width: 100px;
+    height: 100px;
+}
+.why-us__inside-box-inside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 10px;
+    flex: 1;
+}
+@media screen and (max-width: 1400px) {
+
+    .why-use__why-choose {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .why-us__content-side1 {
+        width: 100%;
+        text-align: center;
+    }
+    .why-us__content-side2 {
+        width: 100%;
+    }
+    
+}

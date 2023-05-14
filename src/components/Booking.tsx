@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Booking/booking-style.css";
 import { Modal } from "./Modal";
 import { cars } from '../Data/cars';
 import { cities } from '../Data/cities';
@@ -50,8 +51,7 @@ function Booking() {
   };
 
   // Display modal if inputs are filled
-  const handleSetModalTrue = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSetModalTrue = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (
       carModel === "" ||
@@ -85,18 +85,18 @@ function Booking() {
       />
       <section className="booking" id="book">
         <div className="container">
-          <div className="carsBookingBox">
-            <h3 className="bookingTitle">Book a Car</h3>
+          <div className="booking__cars">
+            <h3 className="booking__title">Book a Car</h3>
             {showErrorMessage && (
-              <p className="fail">All fields need to be selected</p>
+              <p className="booking__message--fail">All fields need to be selected</p>
             )}
             {showSuccessMessage && (
-              <p className="success">
+              <p className="booking__message--success">
                 Check your email to confirm the reservation!
               </p>
             )}
-            <div className="bookingBox">
-              <div className="selectionBox">
+            <div className="booking__form">
+              <div className="booking__select">
                 <label>Car Model <span className="red">*</span></label>
                 <select value={carModel} onChange={handleCar}>
                   <option>Select car model</option>
@@ -107,7 +107,7 @@ function Booking() {
                   ))}
                 </select>
               </div>
-              <div className="selectionBox">
+              <div className="booking__select">
                 <label>Pick-up location <span className="red">*</span></label>
                 <select value={pickUpCity} onChange={handlePickCity}>
                   <option>Select car pick-up location</option>
@@ -118,7 +118,7 @@ function Booking() {
                   ))}
                 </select>
               </div>
-              <div className="selectionBox">
+              <div className="booking__select">
                 <label>Drop-off location <span className="red">*</span></label>
                 <select value={dropOffCity} onChange={handleDropCity}>
                   <option>Select car drop-off location</option>
@@ -129,7 +129,7 @@ function Booking() {
                   ))}
                 </select>
               </div>
-              <div className="selectionBox">
+              <div className="booking__select">
                 <label>Car pick-up date <span className="red">*</span></label>
                 <input
                   type="date"
@@ -137,7 +137,7 @@ function Booking() {
                   onChange={handlePickDate}
                 ></input>
               </div>
-              <div className="selectionBox">
+              <div className="booking__select">
                 <label>Car drop-off date <span className="red">*</span></label>
                 <input
                   type="date"
@@ -145,8 +145,8 @@ function Booking() {
                   onChange={handleDropDate}
                 ></input>
               </div>
-              <div className="selectionBox">
-                <button className="confirmBooking" onClick={handleSetModalTrue}>Confirm</button>
+              <div className="booking__select">
+                <button className="booking__submit" onClick={handleSetModalTrue}>Confirm</button>
               </div>
             </div>
           </div>
