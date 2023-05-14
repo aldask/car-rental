@@ -73,3 +73,12 @@
     transform: translateY(0);
   }
 }
+@media screen and (max-width: 1400px) {
+  
+  .faq__title {
+    width: 100%;
+  }
+  .faq__question-box {
+    width: 100%;
+  }
+}

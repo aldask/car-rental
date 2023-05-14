@@ -16,7 +16,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 135rem;
-  padding: 0 1.5rem
+  padding: 0 5.5rem
 }
 h1 {
   font-size: 72px;
@@ -51,4 +51,10 @@ p {
 }
 .lessStrong {
   font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+
+  .container {
+    padding: 0 2.5rem
+  }
 }
