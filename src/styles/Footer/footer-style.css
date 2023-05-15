@@ -75,9 +75,6 @@
     align-items: center;
     gap: 20px;
   }
-  .faq__question-box {
-    max-width: 200px;
-  }
   .footer__column--1,
   .footer__column--2,
   .footer__column--3

@@ -38,9 +38,9 @@ export function Modal({
 
   return (
     <>
-      {isOpen && <div className=" body overlay" />}
+      {isOpen && <div className=" body overlay " />}
       <section className={`${isOpen ? "modal--active" : "modal--disabled"}`}>
-      <div className="modal__modal__upper-bar">
+        <div className="modal__modal__upper-bar">
           <h3>Complete reservation</h3>
           <p onClick={handleExit}>X</p>
         </div>
@@ -109,7 +109,7 @@ export function Modal({
                 </div>
               </div>
             </div>
-            <div className="selectedCar">
+            <div className="modal__selected-car">
               <h3 className="strong">{carModel}</h3>
               <img src={carImg} alt="selected-car"></img>
             </div>
@@ -119,7 +119,9 @@ export function Modal({
             <form className="modal__user-details__info">
               <div className="modal__user-details__info__two-cols">
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>First Name <span className="red">*</span></label>
+                  <label>
+                    First Name <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
                     max={16}
@@ -141,7 +143,9 @@ export function Modal({
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Phone Number <span className="red">*</span></label>
+                  <label>
+                    Phone Number <span className="red">*</span>
+                  </label>
                   <input
                     type="tel"
                     min={9}
@@ -151,7 +155,9 @@ export function Modal({
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Age <span className="red">*</span></label>
+                  <label>
+                    Age <span className="red">*</span>
+                  </label>
                   <input
                     type="number"
                     max={18}
@@ -163,7 +169,9 @@ export function Modal({
               </div>
               <div className="modal__user-details__info__one-col">
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Email <span className="red">*</span></label>
+                  <label>
+                    Email <span className="red">*</span>
+                  </label>
                   <input
                     type="email"
                     required
@@ -171,7 +179,9 @@ export function Modal({
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Address <span className="red">*</span></label>
+                  <label>
+                    Address <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
                     required
@@ -181,7 +191,9 @@ export function Modal({
               </div>
               <div className="modal__user-details__info__two-cols">
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>City <span className="red">*</span></label>
+                  <label>
+                    City <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
                     required
@@ -189,7 +201,9 @@ export function Modal({
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Zip Code <span className="red">*</span></label>
+                  <label>
+                    Zip Code <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
                     required
@@ -203,7 +217,12 @@ export function Modal({
               <label>Subscribe to our newsletter</label>
             </div>
             <div className="modal__bottom-bar">
-              <button className="modal__bottom-bar__trip-plan" onClick={handleDone}>Complete Reservation</button>
+              <button
+                className="modal__bottom-bar__trip-plan"
+                onClick={handleDone}
+              >
+                Complete Reservation
+              </button>
             </div>
           </div>
         </div>

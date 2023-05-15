@@ -16,7 +16,10 @@ function Navbar() {
       <section className="navbar">
         <nav>
           <div
-            className={`navbar__mobile-menu ${navOn ? "navbar__mobile-menu--open" : ""}`}>
+            className={`navbar__mobile-menu ${
+              navOn ? "navbar__mobile-menu--open" : ""
+            }`}
+          >
             <div onClick={handleNav} className="navbar__mobile-menu-close">
               <FontAwesomeIcon icon={faX} />
             </div>
@@ -60,7 +63,6 @@ function Navbar() {
               <FontAwesomeIcon icon={faBars} />
             </div>
           </div>
-
         </nav>
       </section>
     </>
