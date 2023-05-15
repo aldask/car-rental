@@ -45,7 +45,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 750px;
     width: 100%;
-    height: 800px;
+    height: 95vh;
     overflow-y: scroll;
 }
 .modal__modal__upper-bar {
@@ -205,15 +205,13 @@ input[type="radio"]:checked {
 @media screen and (max-width: 1400px) {
     
     .modal--active {
-        height: 700px;
         width: 80%;
     }
 }
 @media screen and (max-width: 950px) {
     
     .modal--active {
-        height: 700px;
-        width: 100%;
+        width: 80%;
     }
     .modal__selected-car {
         width: 100%;

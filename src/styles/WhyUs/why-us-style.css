@@ -40,13 +40,14 @@
     justify-content: space-evenly;
     gap: 2rem;
     margin: 10px;
+    width: 100%;
 }
 .why-us__icon {
     font-size: 100px;
     color: var(--blue);
     display: flex;
     align-items: flex-start;
-    width: 100px;
+    min-width: 100px;
     height: 100px;
 }
 .why-us__inside-box-inside {
