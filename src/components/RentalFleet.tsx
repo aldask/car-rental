@@ -61,7 +61,7 @@ function RentalFleet() {
                 <div className="rental-fleet__car-image">
                   <img
                     src={selectedFleetCarImg}
-                    alt="chosen-rental-fleet__car-imageture"
+                    alt="chosen car"
                   ></img>
                 </div>
                 <div className="rental-fleet__car-details">
