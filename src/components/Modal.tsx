@@ -38,7 +38,7 @@ export function Modal({
 
   return (
     <>
-      {isOpen && <div className=" body overlay" />}
+      {isOpen && <div className=" body overlay " />}
       <section className={`${isOpen ? "modal--active" : "modal--disabled"}`}>
         <div className="modal__modal__upper-bar">
           <h3>Complete reservation</h3>

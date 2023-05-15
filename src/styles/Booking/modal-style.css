@@ -205,13 +205,13 @@ input[type="radio"]:checked {
 @media screen and (max-width: 1400px) {
     
     .modal--active {
-        width: 80%;
+        width: 80vw;
     }
 }
 @media screen and (max-width: 950px) {
     
     .modal--active {
-        width: 80%;
+        width: 80vw;
     }
     .modal__selected-car {
         width: 100%;
@@ -236,4 +236,11 @@ input[type="radio"]:checked {
     .modal__modal__user-selections__side1 {
         text-align: center;
     }
+    .modal__user-selections__info-box__choice__result {
+        text-align: left;
+    }
+    .modal__modal__user-selections__info-box {
+        width: 100%;
+    }
+    
 }
