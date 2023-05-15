@@ -59,6 +59,10 @@
   max-width: 600px;
   overflow: hidden;
   box-sizing: border-box;
+  transition: opacity 0.3s;
+}
+.rental-fleet__car-image.loading {
+  opacity: 0.5;
 }
 .rental-fleet__car-image img {
   max-width: 100%;
