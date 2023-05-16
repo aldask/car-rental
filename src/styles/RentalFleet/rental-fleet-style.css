@@ -59,15 +59,22 @@
   max-width: 600px;
   overflow: hidden;
   box-sizing: border-box;
-  transition: opacity 0.3s;
-}
-.rental-fleet__car-image.loading {
-  opacity: 0.5;
 }
 .rental-fleet__car-image img {
   max-width: 100%;
   object-fit: cover;
   object-position: center;
+  animation: car-pop 0.5s ease-in-out;
+}
+@keyframes car-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .rental-fleet__car-details {
   display: grid;
