@@ -45,7 +45,7 @@
   border-radius: 30px;
   background: var(--blue);
   padding: 7px 21px;
-  color: white!important;
+  color: white !important;
 }
 .navbar__hamburger {
   font-size: 2.8rem;

@@ -9,7 +9,9 @@ function DownloadApp() {
         <div className="container">
           <div className="download__apps">
             <div className="download__content">
-              <h2 className="download__heading">Download our app to get most out of it</h2>
+              <h2 className="download__heading">
+                Download our app to get most out of it
+              </h2>
               <p className="download__description">
                 Thrown shy denote ten ladies though ask saw. Or by to he going
                 think order event music. Incommode so intention defective at

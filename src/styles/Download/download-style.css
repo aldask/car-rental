@@ -1,64 +1,57 @@
 .download {
-    background-image: url("/src/images/Download/download.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    padding: 2rem;
-    height: 100%;
+  background-image: url("/src/images/Download/download.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10rem 0;
 }
 .download__apps {
-    width: 50%;
+  width: 50%;
 }
 .download__content {
-    display: flex;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: left;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: left;
 }
 .download__heading {
-    background-color: rgba(0, 255, 255, 0);
+  background-color: rgba(0, 255, 255, 0);
 }
 .download__buttons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 .download__google-play,
 .download__apple-store {
-    width: 220px;
+  width: 220px;
 }
 @media screen and (max-width: 930px) {
-
-    .download__apps {
-        width: 65%;
-    }
-    .download__buttons {
-        flex-direction: column;
-    }
-    
+  .download__apps {
+    width: 65%;
+  }
+  .download__buttons {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 650px) {
-
-    .download__apps {
-        width: 85%;
-    }
-    .download__content {
-        display: flex;
-        align-items: center;
-        text-align: center;
-    }
-    
+  .download__apps {
+    width: 85%;
+  }
+  .download__content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 610px) {
-
-    .download__apps {
-        width: 100%;
-    }
-    .download__content {
-        display: flex;
-        align-items: center;
-        text-align: center;
-    }
+  .download__apps {
+    width: 100%;
+  }
+  .download__content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 }

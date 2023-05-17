@@ -7,8 +7,12 @@ import { questions } from "../Data/questions";
 function Faq() {
   const [selectedQuestion, setSelectedQuestion] = useState("");
 
-  const handleQuestion = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const selectedQuestion = questions.find((q) => q.asking === e.currentTarget.value);
+  const handleQuestion = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const selectedQuestion = questions.find(
+      (q) => q.asking === e.currentTarget.value
+    );
     if (selectedQuestion) {
       setSelectedQuestion(selectedQuestion.answer);
     } else {

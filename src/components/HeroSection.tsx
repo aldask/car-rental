@@ -27,7 +27,9 @@ function HeroSection() {
                 today and experience convenience!
               </p>
               <a href="#book">
-                <button className="hero-block__content-button">Book Ride! ✓</button>
+                <button className="hero-block__content-button">
+                  Book Ride! ✓
+                </button>
               </a>
             </div>
             <div className="hero-block__content-side2">
