@@ -1,5 +1,6 @@
 .reviews {
-  padding: 10rem 0;
+  position: relative;
+  padding: 4rem 0;
 }
 .reviews__box {
   display: flex;

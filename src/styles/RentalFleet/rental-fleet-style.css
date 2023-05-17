@@ -1,6 +1,6 @@
 .rental-fleet {
   position: relative;
-  padding: 10rem 0;
+  padding: 5rem 0;
 }
 .rental-fleet__container {
   display: flex;
@@ -129,6 +129,9 @@ button.rental-fleet__pressed-car {
   }
   .rental-fleet__text p {
     width: 100%;
+  }
+  .rental-fleet__car-selection-buttons button {
+    text-align: center;
   }
 }
 @media screen and (max-width: 1000px) {

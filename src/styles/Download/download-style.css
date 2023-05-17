@@ -3,7 +3,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 10rem 0;
+  padding: 5rem 0;
+  position: relative;
 }
 .download__apps {
   width: 50%;
@@ -29,29 +30,19 @@
 }
 @media screen and (max-width: 930px) {
   .download__apps {
-    width: 65%;
-  }
-  .download__buttons {
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 650px) {
-  .download__apps {
-    width: 85%;
-  }
-  .download__content {
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 610px) {
-  .download__apps {
     width: 100%;
   }
   .download__content {
     display: flex;
     align-items: center;
     text-align: center;
+  }
+  .download {
+    background-image: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .download__buttons {
+    flex-direction: column;
   }
 }

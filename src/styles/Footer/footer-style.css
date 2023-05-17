@@ -2,7 +2,8 @@
   background-color: #f5f5f5;
   color: black;
   box-shadow: 0px -1px 16px 1px rgba(0, 0, 0, 0.438);
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
+  position: relative;
 }
 .footer__box {
   display: flex;
