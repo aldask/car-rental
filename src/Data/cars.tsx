@@ -16,7 +16,7 @@ interface Car {
   transmission: string;
   fuel: string;
   price: string;
-};
+}
 
 export const cars: Car[] = [
   {

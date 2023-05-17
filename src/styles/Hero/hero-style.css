@@ -62,26 +62,22 @@
   cursor: pointer;
 }
 @media screen and (max-width: 1220px) {
-
   .hero-block__content-side2 {
     width: 70%;
     margin-left: 100px;
   }
 }
 @media screen and (max-width: 1400px) {
-
   .hero-block__content-side1 {
     padding: 8rem 0;
   }
 }
 @media screen and (max-width: 950px) {
-
   .hero-block {
     margin-bottom: 210px;
   }
 }
 @media screen and (max-width: 768px) {
-
   .hero-block__content {
     justify-content: center;
     margin-top: 100px;

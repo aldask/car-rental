@@ -8,7 +8,6 @@ function WhyUs() {
     <>
       <section className="why-us">
         <div className="container">
-
           <div className="why-us__content">
             <img
               src={WhyUsBC}
@@ -16,7 +15,6 @@ function WhyUs() {
               className="why-us__image"
             />
             <div className="why-use__why-choose">
-
               <div className="why-us__content-side1">
                 <h3 className="why-us__title">
                   Best valued deals you will ever find
@@ -30,7 +28,6 @@ function WhyUs() {
                   your chance to save big.
                 </p>
               </div>
-
               <div className="why-us__content-side2">
                 <div className="why-us__inside-box">
                   <FontAwesomeIcon icon={faCar} className="why-us__icon" />
@@ -63,10 +60,8 @@ function WhyUs() {
                   </div>
                 </div>
               </div>
-              
             </div>
           </div>
-
         </div>
       </section>
     </>

@@ -16,7 +16,10 @@ function Navbar() {
       <section className="navbar">
         <nav>
           <div
-            className={`navbar__mobile-menu ${navOn ? "navbar__mobile-menu--open" : ""}`}>
+            className={`navbar__mobile-menu ${
+              navOn ? "navbar__mobile-menu--open" : ""
+            }`}
+          >
             <div onClick={handleNav} className="navbar__mobile-menu-close">
               <FontAwesomeIcon icon={faX} />
             </div>
@@ -53,7 +56,9 @@ function Navbar() {
                 <a href="#">Our Team</a>
               </li>
               <li>
-                <a href="#" className="navbar__menu-sign-in">Sign In</a>
+                <a href="#" className="navbar__menu-sign-in">
+                  Sign In
+                </a>
               </li>
             </ul>
             <div className="navbar__hamburger" onClick={handleNav}>

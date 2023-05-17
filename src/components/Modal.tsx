@@ -1,6 +1,9 @@
 import "../styles/Booking/modal-style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDays,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 interface ModalProps {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
