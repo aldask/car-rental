@@ -1,5 +1,5 @@
 import "../styles/RentalFleet/rental-fleet-style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cars } from "../Data/cars";
 
 // Set car model and img and all other things for specific car
@@ -16,7 +16,10 @@ function RentalFleet() {
   const [selectedCarTransmission, setSelectedCarTransmission] = useState(selectedFleetCar.transmission);
   const [selectedCarFuel, setSelectedCarFuel] = useState(selectedFleetCar.fuel);
 
+  const [imgKey, setImgKey] = useState(0); // Add imgKey state
+
   const handleCarFleet = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
     const selectedCar = cars.find((car) => car.label === e.currentTarget.value);
     if (selectedCar) {
       setSelectedFleetCar(selectedCar);
@@ -29,9 +32,11 @@ function RentalFleet() {
       setSelectedCarAC(selectedCar.ac);
       setSelectedCarTransmission(selectedCar.transmission);
       setSelectedCarFuel(selectedCar.fuel);
+      setImgKey(imgKey + 1);
+      
     }
   };
-
+  
   return (
     <>
       <section className="rental-fleet">
@@ -60,6 +65,7 @@ function RentalFleet() {
               <div className="rental-fleet__car-info">
                 <div className="rental-fleet__car-image">
                   <img
+                    key={imgKey}
                     src={selectedFleetCarImg}
                     alt="chosen car"
                   ></img>
