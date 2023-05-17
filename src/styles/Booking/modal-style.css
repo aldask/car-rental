@@ -230,13 +230,12 @@ input[type="radio"]:checked {
   .modal__user-details__info__two-cols {
     grid-template-columns: 1fr;
   }
-  .modal__modal__user-selections__side1 {
-    text-align: center;
-  }
-  .modal__user-selections__info-box__choice__result {
-    text-align: left;
-  }
   .modal__modal__user-selections__info-box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .modal__modal__user-selections__side1 {
     width: 100%;
   }
 }
