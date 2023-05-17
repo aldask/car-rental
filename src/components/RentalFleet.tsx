@@ -1,5 +1,5 @@
 import "../styles/RentalFleet/rental-fleet-style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cars } from "../Data/cars";
 
 // Set car model and img and all other things for specific car
@@ -28,9 +28,12 @@ function RentalFleet() {
   );
   const [selectedCarFuel, setSelectedCarFuel] = useState(selectedFleetCar.fuel);
 
+  const [imgKey, setImgKey] = useState(0); // Add imgKey state
+
   const handleCarFleet = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
+    e.preventDefault();
     const selectedCar = cars.find((car) => car.label === e.currentTarget.value);
     if (selectedCar) {
       setSelectedFleetCar(selectedCar);
@@ -43,6 +46,7 @@ function RentalFleet() {
       setSelectedCarAC(selectedCar.ac);
       setSelectedCarTransmission(selectedCar.transmission);
       setSelectedCarFuel(selectedCar.fuel);
+      setImgKey(imgKey + 1);
     }
   };
 
@@ -76,78 +80,79 @@ function RentalFleet() {
                 ))}
               </div>
               <div className="rental-fleet__car-info">
-              <div className="rental-fleet__car-image">
-                <img
-                  src={selectedFleetCarImg}
-                  alt="chosen-rental-fleet__car-imageture"
-                ></img>
+                <div className="rental-fleet__car-image">
+                  <img
+                    key={imgKey}
+                    src={selectedFleetCarImg}
+                    alt="chosen car"
+                  ></img>
+                </div>
+                <div className="rental-fleet__car-details">
+                  <p className="rental-fleet__car-price">
+                    Price:&nbsp;
+                    <span className="strong">{selectedCarPrice}€</span>/day
+                  </p>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      Manufacturer
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarManufaturer}
+                    </div>
+                  </div>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      Model
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarModel}
+                    </div>
+                  </div>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      Year
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarYear}
+                    </div>
+                  </div>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      Doors
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarDoors}
+                    </div>
+                  </div>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      AC
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarAC}
+                    </div>
+                  </div>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      Transmission
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarTransmission}
+                    </div>
+                  </div>
+                  <div className="rental-rental-fleet__car-details-row">
+                    <div className="rental-rental-fleet__car-details-label">
+                      Fuel
+                    </div>
+                    <div className="rental-rental-fleet__car-details-value">
+                      {selectedCarFuel}
+                    </div>
+                  </div>
+                  <button className="rental-fleet__reserve-button">
+                    <a href="#book">Reserve</a>
+                  </button>
+                </div>
               </div>
-              <div className="rental-fleet__car-details">
-                <p className="rental-fleet__car-price">
-                  Price:&nbsp;
-                  <span className="strong">{selectedCarPrice}€</span>/day
-                </p>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    Manufacturer
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarManufaturer}
-                  </div>
-                </div>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    Model
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarModel}
-                  </div>
-                </div>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    Year
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarYear}
-                  </div>
-                </div>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    Doors
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarDoors}
-                  </div>
-                </div>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    AC
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarAC}
-                  </div>
-                </div>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    Transmission
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarTransmission}
-                  </div>
-                </div>
-                <div className="rental-rental-fleet__car-details-row">
-                  <div className="rental-rental-fleet__car-details-label">
-                    Fuel
-                  </div>
-                  <div className="rental-rental-fleet__car-details-value">
-                    {selectedCarFuel}
-                  </div>
-                </div>
-                <button className="rental-fleet__reserve-button">
-                  <a href="#book">Reserve</a>
-                </button>
-              </div>
-            </div>
             </div>
           </div>
         </div>

@@ -1,26 +1,26 @@
 .banner {
-    background-color: #2d2d2d;
-    margin-top: 100px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
+  background-color: #2d2d2d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 0;
+  height: auto;
 }
 .banner p {
-    color: #fff;
-    font-size: 2rem;
+  color: #fff;
+  font-size: 2rem;
 }
 .banner h2 {
-    font-weight: 800;
+  font-weight: 800;
 }
 @media (max-width: 750px) {
-    .banner h2 {
-        font-size: 2rem;
-    }
-    .banner p {
-        font-size: 1.25rem;
-    }
+  .banner h2 {
+    font-size: 2.5rem;
+  }
+  .banner p {
+    font-size: 1.75rem;
+  }
 }

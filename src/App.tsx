@@ -1,11 +1,10 @@
 import React from 'react';
-import "../src/styles/Main/main-style.css";
+import "../src/styles/Global/global-style.css";
 import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <>
-      <div className='container'>test</div>
       <HomePage />
     </>
   );

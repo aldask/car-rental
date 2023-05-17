@@ -1,5 +1,6 @@
 .reviews {
-  padding-bottom: 100px;
+  position: relative;
+  padding: 4rem 0;
 }
 .reviews__box {
   display: flex;
@@ -16,7 +17,7 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
-  width: 100%;
+  width: 100vw;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -25,7 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: #f1f3f5;
-  box-shadow: 0 15px 20px 0 rgba(0,0,0,.08);
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.08);
   padding: 25px 25px;
   width: 40%;
 }
@@ -69,20 +70,19 @@
   height: 50px;
 }
 @media screen and (max-width: 950px) {
-  
   .reviews__boxes {
     justify-content: center;
     align-items: center;
+    width: 100vw;
   }
   .review__user-box {
-    width: 100%;
+    width: 100vw;
   }
   .reviews__title {
     width: 100%;
   }
 }
 @media screen and (max-width: 460px) {
-  
   .review__side-two {
     display: none;
   }

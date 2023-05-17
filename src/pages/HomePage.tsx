@@ -1,8 +1,8 @@
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import Booking from "../components/Booking";
 import RentalFleet from "../components/RentalFleet";
-import Banner from "../components/Banner"
+import Banner from "../components/Banner";
 import WhyUs from "../components/WhyUs";
 import Reviews from "../components/Reviews";
 import Faq from "../components/Faq";
@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 function HomePage() {
   return (
     <>
-      <Header />
+      <Navbar />
       <HeroSection />
       <Booking />
       <RentalFleet />
@@ -20,6 +20,7 @@ function HomePage() {
       <WhyUs />
       <Reviews />
       <Faq />
+      <DownloadApp />
       <Footer />
     </>
   );

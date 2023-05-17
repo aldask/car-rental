@@ -1,6 +1,23 @@
 import "../styles/Booking/modal-style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDays, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDays,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
+import { ChangeEvent, useState } from "react";
+
+interface FormData {
+  pickTime: string;
+  dropTime: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  age: string;
+  email: string;
+  address: string;
+  city: string;
+  zipCode: string;
+}
 
 interface ModalProps {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,22 +42,68 @@ export function Modal({
   dropDate,
   setSuccessMessage,
 }: ModalProps) {
+
+  const initialFormData: FormData = {
+    pickTime: "",
+    dropTime: "",
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    age: "",
+    email: "",
+    address: "",
+    city: "",
+    zipCode: "",
+  };
+
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [lostInputs, setLostInputs] = useState(false);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   function handleExit() {
     setModal(false);
     document.body.style.overflow = "auto";
   }
 
   function handleDone() {
-    setModal(false);
-    setSuccessMessage(true);
-    document.body.style.overflow = "auto";
+    // Checking if all required fields are filled
+    const requiredFields: (keyof FormData)[] = [
+      "pickTime",
+      "dropTime",
+      "firstName",
+      "lastName",
+      "phoneNumber",
+      "age",
+      "email",
+      "address",
+      "city",
+      "zipCode",
+    ];
+
+    const isAnyFieldEmpty = requiredFields.some((field) => !formData[field]);
+
+    if (isAnyFieldEmpty) {
+      setLostInputs(true);
+      return;
+    } else {
+      setModal(false);
+      setSuccessMessage(true);
+      setLostInputs(false);
+      setFormData(initialFormData);
+      document.body.style.overflow = "auto";
+    }
   }
 
   return (
     <>
-      {isOpen && <div className=" body overlay" />}
+      {isOpen && <div className=" body overlay " />}
       <section className={`${isOpen ? "modal--active" : "modal--disabled"}`}>
-      <div className="modal__modal__upper-bar">
+        <div className="modal__modal__upper-bar">
           <h3>Complete reservation</h3>
           <p onClick={handleExit}>X</p>
         </div>
@@ -61,7 +124,9 @@ export function Modal({
                         <input
                           type="time"
                           className="modal__user-selections__info-box__choice__result__data__input-time"
-                          name="pickup-time"
+                          name="pickTime"
+                          value={formData.pickTime}
+                          onChange={handleChange}
                         />
                       </p>
                     </div>
@@ -79,7 +144,9 @@ export function Modal({
                         <input
                           type="time"
                           className="modal__user-selections__info-box__choice__result__data__input-time"
-                          name="dropoff-time"
+                          value={formData.dropTime}
+                          name="dropTime"
+                          onChange={handleChange}
                         />
                       </p>
                     </div>
@@ -109,19 +176,29 @@ export function Modal({
                 </div>
               </div>
             </div>
-            <div className="selectedCar">
+            <div className="modal__selected-car">
               <h3 className="strong">{carModel}</h3>
               <img src={carImg} alt="selected-car"></img>
             </div>
           </div>
           <div className="modal__user-details">
             <h3>Personal info</h3>
+            {lostInputs && (
+              <p className="booking__message--fail">
+                All fields needs to be filled
+              </p>
+            )}
             <form className="modal__user-details__info">
               <div className="modal__user-details__info__two-cols">
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>First Name <span className="red">*</span></label>
+                  <label>
+                    First Name <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     max={16}
                     min={2}
                     required
@@ -134,6 +211,9 @@ export function Modal({
                   </label>
                   <input
                     type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     max={16}
                     min={2}
                     required
@@ -141,9 +221,14 @@ export function Modal({
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Phone Number <span className="red">*</span></label>
+                  <label>
+                    Phone Number <span className="red">*</span>
+                  </label>
                   <input
                     type="tel"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
                     min={9}
                     max={9}
                     required
@@ -151,11 +236,16 @@ export function Modal({
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Age <span className="red">*</span></label>
+                  <label>
+                    Age <span className="red">*</span>
+                  </label>
                   <input
                     type="number"
                     max={18}
                     min={120}
+                    name="age"
+                    value={formData.age}
+                    onChange={handleChange}
                     required
                     placeholder="Enter Your Age"
                   ></input>
@@ -163,17 +253,27 @@ export function Modal({
               </div>
               <div className="modal__user-details__info__one-col">
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Email <span className="red">*</span></label>
+                  <label>
+                    Email <span className="red">*</span>
+                  </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                     placeholder="Enter Your Email"
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Address <span className="red">*</span></label>
+                  <label>
+                    Address <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleChange}
                     required
                     placeholder="Enter Your Street Address"
                   ></input>
@@ -181,17 +281,27 @@ export function Modal({
               </div>
               <div className="modal__user-details__info__two-cols">
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>City <span className="red">*</span></label>
+                  <label>
+                    City <span className="red">*</span>
+                  </label>
                   <input
                     type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
                     required
                     placeholder="Enter Your City"
                   ></input>
                 </span>
                 <span className="modal__user-details__info__two-cols__data">
-                  <label>Zip Code <span className="red">*</span></label>
+                  <label>
+                    Zip Code <span className="red">*</span>
+                  </label>
                   <input
-                    type="text"
+                    type="number"
+                    name="zipCode"
+                    value={formData.zipCode}
+                    onChange={handleChange}
                     required
                     placeholder="Enter Your Zip Code"
                   ></input>
@@ -203,7 +313,12 @@ export function Modal({
               <label>Subscribe to our newsletter</label>
             </div>
             <div className="modal__bottom-bar">
-              <button className="modal__bottom-bar__trip-plan" onClick={handleDone}>Complete Reservation</button>
+              <button
+                className="modal__bottom-bar__trip-plan"
+                onClick={handleDone}
+              >
+                Complete Reservation
+              </button>
             </div>
           </div>
         </div>

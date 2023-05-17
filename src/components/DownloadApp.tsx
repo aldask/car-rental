@@ -1,16 +1,18 @@
 import "../styles/Download/download-style.css";
-import AppStore from "../images/Download/appstore.svg";
-import GooglePlay from "../images/Download/googleplay.svg";
+import AppStore from "../images/Download/appstore.png";
+import GooglePlay from "../images/Download/googleplay.png";
 
 function DownloadApp() {
   return (
     <>
       <section className="download">
         <div className="container">
-          <div className="apps">
-            <div className="download__text">
-              <h2 className="download__title">Download our app to get most out of it</h2>
-              <p className="download__desc">
+          <div className="download__apps">
+            <div className="download__content">
+              <h2 className="download__heading">
+                Download our app to get most out of it
+              </h2>
+              <p className="download__description">
                 Thrown shy denote ten ladies though ask saw. Or by to he going
                 think order event music. Incommode so intention defective at
                 convinced. Led income months itself and houses you.

@@ -1,6 +1,6 @@
 .rental-fleet {
   position: relative;
-  margin-bottom: 100px;
+  padding: 5rem 0;
 }
 .rental-fleet__container {
   display: flex;
@@ -64,6 +64,17 @@
   max-width: 100%;
   object-fit: cover;
   object-position: center;
+  animation: car-pop 0.5s ease-in-out;
+}
+@keyframes car-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .rental-fleet__car-details {
   display: grid;
@@ -113,16 +124,17 @@ button.rental-fleet__pressed-car {
   color: white;
 }
 @media screen and (max-width: 1400px) {
-
   .rental-fleet__car-selections {
     flex-direction: column;
   }
   .rental-fleet__text p {
     width: 100%;
   }
+  .rental-fleet__car-selection-buttons button {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 1000px) {
-
   .rental-fleet__car-info {
     flex-direction: column;
     align-items: center;
@@ -134,7 +146,6 @@ button.rental-fleet__pressed-car {
   }
 }
 @media screen and (max-width: 600px) {
-
   .rental-fleet__car-image {
     max-height: 200px;
     max-width: 400px;
