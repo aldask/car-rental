@@ -91,7 +91,7 @@ function Booking() {
             <h3 className="booking__title">Book a Car</h3>
             {showErrorMessage && (
               <p className="booking__message--fail">
-                All fields need to be selected
+                All fields needs to be selected
               </p>
             )}
             {showSuccessMessage && (
