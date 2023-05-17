@@ -3,14 +3,14 @@
   background-position: -225px 255px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2rem 0 10rem;
+  padding: 6rem 0 8rem;
+  position: relative;
 }
 .why-us__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10rem;
 }
 .why-us__image {
   max-width: 100vw;

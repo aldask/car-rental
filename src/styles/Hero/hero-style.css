@@ -1,7 +1,6 @@
 .hero-block {
   height: 100vh;
   position: relative;
-  margin-bottom: 100px;
 }
 .hero-block__background {
   position: absolute;
