@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="public/logo.png" alt="Logo">
+    <img src="src/images/Navbar/Logo.png" alt="Logo">
 </div>
 
 ## About the Project
