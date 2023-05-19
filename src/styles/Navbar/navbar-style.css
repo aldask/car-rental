@@ -62,7 +62,7 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -100%;
+  right: -100%;
   background-color: #fff;
   z-index: 999999;
   justify-content: center;
@@ -91,7 +91,7 @@
   color: #ff0000;
 }
 .navbar__mobile-menu--open {
-  left: 0;
+  right: 0;
 }
 @media (max-width: 1000px) {
   .navbar__menu {
