@@ -1,0 +1,51 @@
+.vehicles {
+  margin: 10rem auto;
+}
+.vehicles__title {
+  text-align: center;
+}
+.vehicles__fleet {
+  padding: 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  width: 100%;
+  justify-content: center;
+}
+.vehicles__fleet-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f1f3f5;
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.08);
+  width: 500px;
+}
+.vehicles__fleet-box-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.vehicles__fleet-box-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.vehicles__box-data {
+  text-align: center;
+  border-top: 2px solid rgb(207, 207, 207);
+  font-weight: 600;
+}
+.vehicles__box-make {
+  color: black;
+}
+@media screen and (max-width: 1325px) {
+  .vehicles__fleet-box {
+    max-width: 100vw;
+  }
+  .vehicles__fleet {
+    padding: 0;
+  }
+}
