@@ -1,0 +1,27 @@
+.about {
+  margin: 12rem auto;
+  max-width: 85rem;
+}
+.about__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8rem;
+}
+.about__container--side2 {
+  flex-direction: column;
+  width: 60%;
+}
+@media screen and (max-width: 1120px) {
+  .about__container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .about__container--side2 {
+    text-align: center;
+  }
+  .about {
+    margin: 8rem auto;
+  }
+}

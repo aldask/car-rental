@@ -41,6 +41,9 @@ p {
   line-height: 1.5;
   color: var(--grey);
 }
+.black {
+  color: black;
+}
 .red {
   color: red;
   font-weight: 700;
