@@ -26,13 +26,19 @@ function Navbar() {
             </div>
             <ul className="navbar__mobile-menu-items">
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/about" onClick={handleNav}>
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/vehicles">Vehicles</Link>
+                <Link to="/vehicles" onClick={handleNav}>
+                  Vehicles
+                </Link>
               </li>
               <li>
-                <Link to="/ourteam">Our Team</Link>
+                <Link to="/ourteam" onClick={handleNav}>
+                  Our Team
+                </Link>
               </li>
               <li>
                 <a href="#">Sign In</a>
@@ -57,9 +63,9 @@ function Navbar() {
                 <Link to="/ourteam">Our Team</Link>
               </li>
               <li>
-                <Link to="/signin" className="navbar__menu-sign-in">
+                <a href="#" className="navbar__menu-sign-in">
                   Sign In
-                </Link>
+                </a>
               </li>
             </ul>
             <div className="navbar__hamburger" onClick={handleNav}>
