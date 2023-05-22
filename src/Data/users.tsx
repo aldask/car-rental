@@ -9,6 +9,7 @@ export interface User {
   fullname: string;
   userPic: string;
   userMessage: string;
+  jobTitle: string;
 }
 
 export const users: User[] = [
@@ -17,35 +18,41 @@ export const users: User[] = [
     userPic: ArielleSwaney,
     userMessage:
       "I had a fantastic experience renting a car from this website. The process was incredibly easy and the customer service was top-notch. The car was clean and in great condition. I would definitely rent from them again!",
+    jobTitle: "Marketing Manager",
   },
   {
     fullname: "Davis Bosson",
     userPic: DavisBosson,
     userMessage:
       "This website made renting a car a breeze! The prices were really competitive and the selection of cars was impressive. Customer service was friendly and helpful. I would definitely recommend this website to anyone in need of a car rental.",
+    jobTitle: "Software Engineer",
   },
   {
     fullname: "Darrick Aderman",
     userPic: DarrickAderman,
     userMessage:
       "I was blown away by how easy and affordable it was to rent a car from this website. The car was in excellent condition and the customer service was excellent. I will definitely be using this website again!",
+    jobTitle: "Financial Analyst",
   },
   {
     fullname: "Reynaldo Choque",
     userPic: ReynaldoChoque,
     userMessage:
       "I had a wonderful experience renting a car from this website. The process was straightforward and the prices were very reasonable. The customer service was fantastic and the car itself was great. Highly recommend!",
+    jobTitle: "Graphic Designer",
   },
   {
     fullname: "Meda Hubers",
     userPic: MedaHubers,
     userMessage:
       "I was really impressed with the level of service I received from this car rental website. The prices were competitive and the selection of cars was great. The customer service reps were friendly and knowledgeable. I will definitely be using this website again!",
+    jobTitle: "Sales Representative",
   },
   {
     fullname: "Nerissa Heilbrun",
     userPic: NerissaHeilbrun,
     userMessage:
       "I had a great experience renting a car from this website. The process was really easy and the prices were really reasonable. The customer service was fantastic and the car was in excellent condition. I would definitely recommend this website to anyone in need of a car rental.",
+    jobTitle: "Human Resources Manager",
   },
 ];

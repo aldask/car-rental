@@ -34,7 +34,7 @@
   z-index: 2;
 }
 .hero-block__content-title {
-  margin-bottom: 0;
+  margin: 3rem 0;
 }
 .hero-block__content-image {
   position: absolute;
@@ -93,7 +93,7 @@
     display: none;
   }
   .hero-block__content-title {
-    margin-bottom: 30px;
+    margin: 1rem 0 2rem;
   }
   .hero-block__content-description {
     width: 100%;
