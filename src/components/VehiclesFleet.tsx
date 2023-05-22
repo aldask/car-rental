@@ -4,7 +4,7 @@ import { cars } from "../Data/cars";
 function VehiclesFleet() {
   return (
     <section className="vehicles">
-      <div className="vehicles__container">
+      <div className="container">
         <div className="vehicles__title">
           <h2>Our Cars</h2>
         </div>
