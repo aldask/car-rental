@@ -3,6 +3,7 @@ import Logo from "../images/Navbar/logo.png";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX, faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [navOn, setNavOn] = useState(false);
@@ -25,13 +26,19 @@ function Navbar() {
             </div>
             <ul className="navbar__mobile-menu-items">
               <li>
-                <a href="#">About</a>
+                <Link to="/about" onClick={handleNav}>
+                  About
+                </Link>
               </li>
               <li>
-                <a href="#">Vehicles</a>
+                <Link to="/vehicles" onClick={handleNav}>
+                  Vehicles
+                </Link>
               </li>
               <li>
-                <a href="#">Our Team</a>
+                <Link to="/ourteam" onClick={handleNav}>
+                  Our Team
+                </Link>
               </li>
               <li>
                 <a href="#">Sign In</a>
@@ -41,19 +48,19 @@ function Navbar() {
 
           <div className="navbar">
             <div className="navbar__logo">
-              <a href="#">
+              <Link to="/">
                 <img src={Logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             <ul className="navbar__menu">
               <li>
-                <a href="#">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="#">Vehicles</a>
+                <Link to="/vehicles">Vehicles</Link>
               </li>
               <li>
-                <a href="#">Our Team</a>
+                <Link to="/ourteam">Our Team</Link>
               </li>
               <li>
                 <a href="#" className="navbar__menu-sign-in">
