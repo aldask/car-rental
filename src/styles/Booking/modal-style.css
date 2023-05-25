@@ -48,7 +48,7 @@
   height: 95vh;
   overflow-y: scroll;
 }
-.modal__modal__upper-bar {
+.modal__upper-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,11 +58,11 @@
   background-color: var(--blue);
   color: white;
 }
-.modal__modal__upper-bar h3 {
+.modal__upper-bar h3 {
   margin: 0;
   font-size: 1.5rem;
 }
-.modal__modal__upper-bar p {
+.modal__upper-bar p {
   margin: 0;
   font-size: 1.5rem;
   cursor: pointer;
@@ -70,37 +70,37 @@
   transition: 0.2s ease-in-out;
   font-weight: 600;
 }
-.modal__modal__upper-bar p:hover {
+.modal__upper-bar p:hover {
   color: rgb(212, 1, 1);
 }
 .modal-container {
   padding: 0px 15px;
 }
-.modal__modal__user-selections {
+.modal__user-selections {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.modal__modal__user-selections__side1 {
+.modal__user-selections__side1 {
   width: 40%;
 }
-.modal__modal__user-selections__side1 h4 {
+.modal__user-selections__side1 h4 {
   margin: 0;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
-.modal__modal__user-selections__info-box {
+.modal__user-selections__info-box {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.modal__user-selections__info-box__choice {
+.modal__info-box__choice {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 15px;
 }
-.modal__user-selections__info-box__choice__result__title p {
+.modal__info-box__choice-result__title p {
   font-weight: 600;
   color: #000;
 }
@@ -131,31 +131,31 @@
   gap: 10px;
   margin-bottom: 10px;
 }
-.modal__user-details__info__two-cols {
+.modal__user-details__info-two-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
-.modal__user-details__info__two-cols__data {
+.modal__user-details__info-two-cols-data {
   display: flex;
   flex-direction: column;
 }
-.modal__user-details__info__two-cols__data label {
+.modal__user-details__info-two-cols-data label {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
   width: 100%;
   box-sizing: border-box;
 }
-.modal__user-details__info__two-cols__data input {
+.modal__user-details__info-two-cols-data input {
   border: 1px solid #ccd7e6;
 }
-.modal__user-details__info__two-cols__data input {
+.modal__user-details__info-two-cols-data input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
-.modal__user-details__info__one-col {
+.modal__user-details__info-one-col {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -219,7 +219,7 @@ input[type="radio"]:checked {
   }
 }
 @media screen and (max-width: 800px) {
-  .modal__modal__user-selections {
+  .modal__user-selections {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -227,15 +227,15 @@ input[type="radio"]:checked {
   .modal__selected-car h3 {
     margin-top: 20px;
   }
-  .modal__user-details__info__two-cols {
+  .modal__user-details__info-two-cols {
     grid-template-columns: 1fr;
   }
-  .modal__modal__user-selections__info-box {
+  .modal__user-selections__info-box {
     width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
-  .modal__modal__user-selections__side1 {
+  .modal__user-selections__side1 {
     width: 100%;
   }
 }

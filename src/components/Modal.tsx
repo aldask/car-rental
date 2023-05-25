@@ -5,6 +5,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEvent, useState } from "react";
+import InputForm from "./InputForm";
 
 interface FormData {
   pickTime: string;
@@ -42,7 +43,6 @@ export function Modal({
   dropDate,
   setSuccessMessage,
 }: ModalProps) {
-
   const initialFormData: FormData = {
     pickTime: "",
     dropTime: "",
@@ -85,7 +85,12 @@ export function Modal({
       "zipCode",
     ];
 
-    const isAnyFieldEmpty = requiredFields.some((field) => !formData[field]);
+    const isAnyFieldEmpty = requiredFields.some((field) => {
+      if (field === "zipCode") {
+        return !formData[field] || formData[field].length < 5;
+      }
+      return !formData[field];
+    });
 
     if (isAnyFieldEmpty) {
       setLostInputs(true);
@@ -103,22 +108,22 @@ export function Modal({
     <>
       {isOpen && <div className=" body overlay " />}
       <section className={`${isOpen ? "modal--active" : "modal--disabled"}`}>
-        <div className="modal__modal__upper-bar">
+        <div className="modal__upper-bar">
           <h3>Complete reservation</h3>
           <p onClick={handleExit}>X</p>
         </div>
         <div className="modal-container">
-          <div className="modal__modal__user-selections">
-            <div className="modal__modal__user-selections__side1">
+          <div className="modal__user-selections">
+            <div className="modal__user-selections__side1">
               <h4 className="strong">Location & Date</h4>
-              <div className="modal__modal__user-selections__info-box">
-                <div className="modal__user-selections__info-box__choice">
+              <div className="modal__user-selections__info-box">
+                <div className="modal__info-box__choice">
                   <FontAwesomeIcon icon={faCalendarDays} />
-                  <div className="modal__user-selections__info-box__choice__result">
-                    <div className="modal__user-selections__info-box__choice__result__title">
+                  <div className="modal__info-box__choice-result">
+                    <div className="modal__info-box__choice-result__title">
                       <p>Pick-Up Date & Time</p>
                     </div>
-                    <div className="modal__user-selections__info-box__choice__result__data">
+                    <div className="modal__info-box__choice-result__data">
                       <p>
                         {pickDate} /{" "}
                         <input
@@ -132,13 +137,13 @@ export function Modal({
                     </div>
                   </div>
                 </div>
-                <div className="modal__user-selections__info-box__choice">
+                <div className="modal__info-box__choice">
                   <FontAwesomeIcon icon={faCalendarDays} />
-                  <div className="modal__user-selections__info-box__choice__result">
-                    <div className="modal__user-selections__info-box__choice__result__title">
+                  <div className="modal__info-box__choice-result">
+                    <div className="modal__info-box__choice-result__title">
                       <p>Drop-Off Date & Time</p>
                     </div>
-                    <div className="modal__user-selections__info-box__choice__result__data">
+                    <div className="modal__info-box__choice-result__data">
                       <p>
                         {dropDate} /{" "}
                         <input
@@ -152,24 +157,24 @@ export function Modal({
                     </div>
                   </div>
                 </div>
-                <div className="modal__user-selections__info-box__choice">
+                <div className="modal__info-box__choice">
                   <FontAwesomeIcon icon={faLocationDot} />
-                  <div className="modal__user-selections__info-box__choice__result">
-                    <div className="modal__user-selections__info-box__choice__result__title">
+                  <div className="modal__info-box__choice-result">
+                    <div className="modal__info-box__choice-result__title">
                       <p>Pick-Up Location</p>
                     </div>
-                    <div className="modal__user-selections__info-box__choice__result__data">
+                    <div className="modal__info-box__choice-result__data">
                       <p>{pickUpCity}</p>
                     </div>
                   </div>
                 </div>
-                <div className="modal__user-selections__info-box__choice">
+                <div className="modal__info-box__choice">
                   <FontAwesomeIcon icon={faLocationDot} />
-                  <div className="modal__user-selections__info-box__choice__result">
-                    <div className="modal__user-selections__info-box__choice__result__title">
+                  <div className="modal__info-box__choice-result">
+                    <div className="modal__info-box__choice-result__title">
                       <p>Drop-Off Location</p>
                     </div>
-                    <div className="modal__user-selections__info-box__choice__result__data">
+                    <div className="modal__info-box__choice-result__data">
                       <p>{dropOffCity}</p>
                     </div>
                   </div>
@@ -189,13 +194,11 @@ export function Modal({
               </p>
             )}
             <form className="modal__user-details__info">
-              <div className="modal__user-details__info__two-cols">
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    First Name <span className="red">*</span>
-                  </label>
-                  <input
+              <div className="modal__user-details__info-two-cols">
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="text"
+                    label="First Name"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
@@ -203,14 +206,12 @@ export function Modal({
                     min={2}
                     required
                     placeholder="Enter Your First Name"
-                  ></input>
+                  />
                 </span>
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    Last Name <span className="red">*</span>
-                  </label>
-                  <input
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="text"
+                    label="Last Name"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
@@ -218,98 +219,88 @@ export function Modal({
                     min={2}
                     required
                     placeholder="Enter Your Last Name"
-                  ></input>
+                  />
                 </span>
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    Phone Number <span className="red">*</span>
-                  </label>
-                  <input
-                    type="tel"
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
+                    type="number"
+                    label="Phone Number"
                     name="phoneNumber"
                     value={formData.phoneNumber}
+                    pattern="\+370[0-9]{6}"
                     onChange={handleChange}
-                    min={9}
-                    max={9}
+                    max={16}
+                    min={2}
                     required
                     placeholder="Enter Your Phone Number"
-                  ></input>
+                  />
                 </span>
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    Age <span className="red">*</span>
-                  </label>
-                  <input
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="number"
-                    max={18}
-                    min={120}
+                    label="Age"
                     name="age"
                     value={formData.age}
                     onChange={handleChange}
+                    max={120}
+                    min={18}
                     required
                     placeholder="Enter Your Age"
-                  ></input>
+                  />
                 </span>
               </div>
-              <div className="modal__user-details__info__one-col">
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    Email <span className="red">*</span>
-                  </label>
-                  <input
+              <div className="modal__user-details__info-one-col">
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="email"
+                    label="Email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                     placeholder="Enter Your Email"
-                  ></input>
+                  />
                 </span>
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    Address <span className="red">*</span>
-                  </label>
-                  <input
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="text"
+                    label="Address"
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
                     required
                     placeholder="Enter Your Street Address"
-                  ></input>
+                  />
                 </span>
               </div>
-              <div className="modal__user-details__info__two-cols">
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    City <span className="red">*</span>
-                  </label>
-                  <input
+              <div className="modal__user-details__info-two-cols">
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="text"
+                    label="City"
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
                     required
                     placeholder="Enter Your City"
-                  ></input>
+                  />
                 </span>
-                <span className="modal__user-details__info__two-cols__data">
-                  <label>
-                    Zip Code <span className="red">*</span>
-                  </label>
-                  <input
+                <span className="modal__user-details__info-two-cols-data">
+                  <InputForm
                     type="number"
+                    label="Zip Code"
                     name="zipCode"
                     value={formData.zipCode}
                     onChange={handleChange}
                     required
                     placeholder="Enter Your Zip Code"
-                  ></input>
+                    pattern="[0-9]{5,}"
+                  />
                 </span>
               </div>
             </form>
             <div className="modal__user-details__subscription">
-              <input type="radio" />
+              <input type="checkbox" />
               <label>Subscribe to our newsletter</label>
             </div>
             <div className="modal__bottom-bar">
