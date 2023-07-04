@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
-  width: 100vw;
+  width: 95vw;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -73,7 +73,7 @@
   .reviews__boxes {
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 95vw;
   }
   .review__user-box {
     width: 100vw;
