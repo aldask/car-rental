@@ -12,6 +12,11 @@ function Navbar() {
     setNavOn(!navOn);
   };
 
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+    handleNav();
+  };
+
   return (
     <>
       <section className="navbar">
@@ -26,17 +31,17 @@ function Navbar() {
             </div>
             <ul className="navbar__mobile-menu-items">
               <li>
-                <Link to="/about" onClick={handleNav}>
+                <Link to="/about" onClick={handleLinkClick}>
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/vehicles" onClick={handleNav}>
+                <Link to="/vehicles" onClick={handleLinkClick}>
                   Vehicles
                 </Link>
               </li>
               <li>
-                <Link to="/ourteam" onClick={handleNav}>
+                <Link to="/ourteam" onClick={handleLinkClick}>
                   Our Team
                 </Link>
               </li>
@@ -54,13 +59,19 @@ function Navbar() {
             </div>
             <ul className="navbar__menu">
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/about" onClick={handleLinkClick}>
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/vehicles">Vehicles</Link>
+                <Link to="/vehicles" onClick={handleLinkClick}>
+                  Vehicles
+                </Link>
               </li>
               <li>
-                <Link to="/ourteam">Our Team</Link>
+                <Link to="/ourteam" onClick={handleLinkClick}>
+                  Our Team
+                </Link>
               </li>
               <li>
                 <a href="#" className="navbar__menu-sign-in">
